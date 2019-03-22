@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="./../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./../css/mypage_check.css">
+</head>
+<body>
+<header>
+    <h1>
+        查看
+    </h1>
+</header>
+<section class="section1">
+    <div>
+    <ol>
+        <li>
+            <h3 class="but1">
+                    <span>1</span>
+<span>订购商品（<span class="total_product"></span>）</span>
+                <i class="fa fa-angle-down fa-lg downShoot"></i>
+                <i class="fa fa-angle-up fa-lg upShoot"></i>
+            </h3>
+            <div class="table_container">
+            <table>
+                <thead class="thead1">
+                <tr>
+                    <th>产品名称</th>
+                    <th>重量（g）</th>
+                    <th>数量</th>
+                    <th>单价</th>
+                    <th>总计</th>
+                </tr>
+                </thead>
+                <tbody class="tbody1">
+                        <tr>
+                            <td>
+                               <div class="imgBox">
+                                   <img src="./../img/imgMyPage/IMG1533xxO833189044_320.png" alt="">
+                               </div>
+                              <div class="colorBox">
+                                  <span>眼影</span>
+                                  <span class="color"></span>
+                              </div>
+                            </td>
+                            <td><span>30</span></td>
+                            <td><span>2</span></td>
+                            <td><span>$</span><span>10.87</span></td>
+                            <td>
+                                <span>$</span><span class="money">10.87</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="imgBox">
+                                    <img src="./../img/imgMyPage/IMG1533xxO833189044_320.png" alt="">
+                                </div>
+                                <div class="colorBox">
+                                    <span>眼影</span>
+                                    <span class="color"></span>
+                                </div>
+                            </td>
+                            <td><span>30</span></td>
+                            <td><span>2</span></td>
+                            <td><span>$</span><span>10.87</span></td>
+                            <td>
+                                <span>$</span><span class="money">10.87</span>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            </div>
+        </li>
+        <li class="freight">
+            <h3 class="but2">
+                    <span>2</span>
+                    <span>运输信息</span>
+                <i class="fa fa-angle-down fa-lg yunFei_down"></i>
+                <i class="fa fa-angle-up fa-lg yunFei_up"></i>
+            </h3>
+            <div class="Account">
+    <h3>送货信息</h3>
+    <div id="address" data-toggle="distpicker">
+        <select id="province" data-province="---- 选择省 ----"></select>
+        <i class="icons fa fa-angle-down"></i>
+      <div class="selectTwo">
+          <div >
+              <select data-city="---- 选择市 ----"></select>
+              <i class="icons2 fa fa-angle-down"></i>
+          </div>
+          <div>
+              <select data-district="---- 选择区 ----"></select>
+              <i class="icons2 fa fa-angle-down"></i>
+          </div>
+      </div>
+    </div>
+    <div class="details_address">
+        <input type="text" placeholder="详细地址">
+    </div>
+    <div class="email">
+        <input type="text" placeholder="邮件">
+    </div>
+    <div class="user_detail">
+        <input type="text" placeholder="收件人">
+        <input type="text" placeholder="电话">
+    </div>
+    <div class="saveAddress">
+        <div class="save_pic" data-select="false">
+        </div>
+        <span>保存为默认地址</span>
+    </div>
+    <div class="agreement">
+        <p>
+            同意收集和使用个人信息:
+        </p>
+        <ul class="agree_text">
+            <li>所需信息：姓名，地址，邮政编码，国家，电话号码，电子邮件地址</li>
+            <li>收集和使用个人信息的目的：为
+                方便起见，请注册默认送货地址，并发送有关购买信息的电子邮件以方便您使用</li>
+            <li>保留和使用期限：在撤回/终止会员资格之前</li>
+        </ul>
+        <div class="agree">
+            <div class="agree_pic" data-agree="false">
+            </div>
+            <span>是的我同意。（必要）</span>
+        </div>
+    </div>
+    <h3>交货物流</h3>
+    <div class="delivery">
+        <div class="delivery_select" data-choose="false">
+            <div>
+                <div class="delivery_logo"></div>
+            </div>
+            <div class="delivery_text">
+                <div class="delivery__span">
+                    <span>顺丰</span>
+                    <span class="yunFei">11.53</span>
+                    <span>$</span>
+                    <span>2-4天</span>
+                </div>
+                <div>
+                    交货期短，可以跟踪
+                </div>
+            </div>
+        </div>
+        <div class="delivery_select" data-choose="false">
+            <div>
+                <div class="delivery_logo"></div>
+            </div>
+            <div class="delivery_text">
+                <div class="delivery__span">
+                    <span>德邦</span>
+                    <span class="yunFei">15.53</span>
+                    <span>$</span>
+                    <span>4-6天</span>
+                </div>
+                <div>
+                    送货服务比EMS便宜，但仅适用于2kg以下的包裹。
+                </div>
+            </div>
+        </div>
+        <div class="delivery_select" data-choose="false">
+            <div>
+                <div class="delivery_logo"></div>
+            </div>
+            <div class="delivery_text">
+                <div class="delivery__span">
+                    <span>Email</span>
+                    <span class="yunFei">20.33</span>
+                    <span>$</span>
+                    <span>6-8天</span>
+                </div>
+                <div>
+                    20kg以下包装的最快送货服务。设定的运输国家/地区不提供服务。
+                </div>
+            </div>
+        </div>
+        <div class="delivery_select" data-choose="false">
+            <div>
+                <div class="delivery_logo"></div>
+            </div>
+            <div class="delivery_text">
+                <div class="delivery__span">
+                    <span>圆通</span>
+                    <span class="yunFei">15.53</span>
+                    <span>$</span>
+                    <span>4-6天</span>
+                </div>
+                <div>
+                    交货期短，可以跟踪
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </li>
+        <li class="discout-li">
+            <h3 class="but3">
+                    <span>3</span>
+                    <span>优惠</span>
+                <i class="fa fa-angle-down fa-lg onsale_down"></i>
+                <i class="fa fa-angle-up fa-lg onsale_up"></i>
+            </h3>
+            <div class="discount-div">
+                <input type="text" name="discout" placeholder="请输入优惠码">
+                <button type="button">申请优惠</button>
+            </div>
+        </li>
+        <li class="pay-li">
+        </li>
+    </ol>
+    </div>
+</section>
+
+<div class="pay">
+        <diV class="pay_list">
+            <ul>
+                <li>
+                    <span>商品总价</span>
+                    <span class="payAllMoney">10.86</span>
+                    <span>$</span>
+                </li>
+                <li>
+                    <span>折扣</span>
+                    <span class="discount">0</span>
+                </li>
+                <li>
+                    <span>运费</span>
+                    <span class="total_yunFei">0</span>
+                    <span>$</span>
+                </li>
+            </ul>
+            <div class="pay_p">
+                <p>
+                    <span>总计</span>
+                    <span class="total">1.0</span>
+                    <span>$</span>
+                </p>
+                <p>
+                    If you purchase more than $20, shipping is free.
+                </p>
+            </div>
+        </diV>
+
+        <button>购物车</button>
+</div>
+
+
+<script src="./../comm/jquery/jquery-3.2.1.js"></script>
+<script src="./../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="./../comm/address/distpicker.data.js"></script>
+<script src="./../comm/address/distpicker.js"></script>
+<script src="./../comm/address/main.js"></script>
+<script src="./../js/mypage_check.js"></script>
+<script>
+
+</script>
+</body>
+</html>

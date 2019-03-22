@@ -1,0 +1,71 @@
+var page_vars = {};
+
+var Footer = {
+		name : "Footer",
+		init : function() {
+			var frm = $("#frm_notice");
+			Footer.fn.addBtnEvent();
+			
+			
+			var i_iNowPageNo = $("input[name='i_iNowPageNo']", frm).val();
+			var i_iTotalPageCnt = $("input[name='i_iTotalPageCnt']", frm).val();
+			var i_iRecordCnt = $("input[name='i_iRecordCnt']", frm).val();
+			
+		}, 
+		fn : {
+			
+			addBtnEvent : function(){
+				
+				$("#checkEmail").on("click", function(e) {
+					e.preventDefault();
+					
+					var email = $("input[name='i_sEmailNewletter']").val();
+					var isResult = true
+					
+					var obj = emailChkMsg(email);
+					
+					if (!obj.isResult) {
+						showMessageBox({
+							message : "Please chcek your email"
+						});
+						isResult = false;
+					}
+					
+					if(email == ""){
+						showMessageBox({
+							message : "Please enter your email"
+						});
+						isResult = false;
+					}
+					
+					if(isResult){
+						cmAjax({
+							url : GLOBAL_WEB_ROOT+"user/jo/user_jo_newletter_apply_ajax.do"
+							, type : "POST"
+							, dataType : "json"
+							, data : {
+								i_sEmailNewletter : email
+							}
+							, animation	: false
+							, success : function ( data, textStatus, jqXHR) {
+								if(data.status == "succ") {
+									showMessageBox({
+										message : "Application is completed"
+									});
+								}else if("fail" == data.status){
+									showMessageBox({
+										message : "You are already apply New letter"
+									});
+								}
+							}
+						});
+					}
+				});
+			}
+		}
+}
+
+
+$(function(){
+	Footer.init();
+});

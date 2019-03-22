@@ -1,0 +1,1489 @@
+var page_message = {};
+
+var $winW = $(window).width();
+var $winH = $(window).height();
+var scrollTop = $(window).scrollTop();
+var $header = $("#header");
+var $header = $("#footer");
+var _headerTop = $header.find('.w_header').innerHeight();
+var _headerHeight = $header.innerHeight();
+var _footerHeight = $header.innerHeight();
+var _mheaderHeight = $header.find('.m_header').innerHeight();
+var _fixHeaderY = _headerTop;
+var isFix = false;
+
+if (scrollTop > _fixHeaderY + 100) {
+	isFix = true;
+	$("#wrap").addClass('fixed');
+}
+
+$(function() {
+	$(window).scroll(function(){
+		scrollTop = $(window).scrollTop();
+		if ( scrollTop > _fixHeaderY + 50  ) {
+			if(!isFix){
+				$("#wrap").addClass('fixed');
+				isFix = true;
+			}
+		} else {
+			if(isFix){
+				$("#wrap").removeClass('fixed');
+				isFix = false;
+			}
+		}
+	});
+})
+
+
+var filter = "win16|win32|win64|mac|macintel";
+
+
+var GLOBAL_VAR = {
+	NOW_PAGE_TYPE : ""
+	, PAGE_TYPE : ""
+	, IS_FIX : false
+	, IS_MOBILE_INIT : false
+	, IS_TABLET_INIT : false
+	, IS_MOBILE_TABLET_INIT : false
+	, IS_PC_INIT : false
+	, IS_PC_TABLET_INIT : false
+}
+
+// 
+function GET_WINDOW_WIDTH_TYPE() {
+
+	var tp = "";
+	
+	if ($winW <= 640) 
+		tp = "MOBILE";
+	else if ($winW < 1024) 
+		tp = "TABLET";
+	else 
+		tp = "PC";
+		
+	return tp;
+}
+
+
+//브라우저체크
+(function(){
+	'use strict';
+	var agent = navigator.userAgent.toLowerCase(),
+		name = navigator.appName,
+		browser;
+	if(name === 'Microsoft Internet Explorer' || agent.indexOf('trident') > -1 || agent.indexOf('edge/') > -1) {
+		browser = 'ie';
+		$("body").addClass("msie");
+		if(name === 'Microsoft Internet Explorer') {
+			agent = /msie ([0-9]{1,}[\.0-9]{0,})/.exec(agent);
+			browser += parseInt(agent[1]);
+		} else {
+			if(agent.indexOf('trident') > -1) {
+				browser += 11;
+			} else if(agent.indexOf('edge/') > -1) {
+				browser = 'edge';
+			}
+		}
+	} else if(agent.indexOf('safari') > -1) {
+		if(agent.indexOf('opr') > -1) {
+			browser = 'opera';
+		} else if(agent.indexOf('chrome') > -1) {
+			browser = 'chrome';
+		} else {
+			browser = 'safari';
+		}
+	} else if(agent.indexOf('firefox') > -1) {
+		browser = 'firefox';
+	}
+	document.getElementsByTagName('html')[0].className = browser;
+}());
+
+
+function modalPopup(target){
+	rember_sc = $(window).scrollTop();
+	$('.modal-content').css("marginTop", 0);
+	var $modalContent = $(target).find($('.modal-content'));
+	$(target).css({'overflow': 'auto'}).show().addClass('open');
+	$(target).focus();
+	var $modalContentH = $(target).find($('.modal-content')).outerHeight();
+	var $conPos = ($winH / 2) - ($modalContentH / 2);
+	$('html').css({'overflow' : 'hidden','height' : $winH});
+	if( $winH > $modalContentH ){
+		$modalContent.css({marginTop: $conPos});
+	} else {
+		$modalContent.css({marginTop: 0});
+	}
+	$("<div class='overlay'></div>").appendTo('#wrap');
+	return false;
+};
+
+//모달레이어팝업닫기
+function modalPopupClose(target){
+    //document.removeEventListener('touchmove', lock_touch);
+	if (document.removeEventListener) {
+		document.removeEventListener('touchmove', lock_touch);
+	}
+	else {
+		document.detachEvent('touchmove', lock_touch);
+	}
+	$(target).find($('.modal-content')).css('margin-top',0);
+	$(target).hide().removeClass('open');
+	$(".overlay").remove();
+	$('html').css({'overflow' : 'auto','height' : 'auto'});
+	$('html, body').scrollTop(rember_sc);
+};
+
+
+
+var WebBodyStart = {
+		isRunningAddCart :false
+		, isRunningAddWish : false
+		, p_option : undefined
+		, init : function(){
+			
+		}
+		//장바구니 추가
+		, addUserCart : function (p_option) {
+			if(WebBodyStart.isRunningAddCart) {
+				return ;
+			}
+			
+			WebBodyStart.isRunningAddCart = true;
+			
+			var _defaults = {
+				list : undefined
+				, flagPlus : undefined
+				, callback : undefined
+			};
+					
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+			
+			var flagUseSolo	= "N";
+				
+			flagUseSolo = "N";
+			WebBodyStart.addUserCartAjax(p_option, flagUseSolo);
+				
+		}
+		//장바구니 추가 AJAX
+		, addUserCartAjax : function(p_option, flagUseSolo){
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			var flagPlus = p_option.flagPlus == "Y" ? "Y" : "N";
+			
+			arrParam.push("i_sFlagPlus=" + flagPlus);
+
+			for (var i = 0; i < len; i++) {
+				if(p_option.list[i].statuscd != "0002") {
+					arrParam.push("i_arrProductcd=" + p_option.list[i].productcd);
+					arrParam.push("i_arrOptioncd=" + p_option.list[i].optioncd);
+					arrParam.push("i_arrFlagUseSolo="+ flagUseSolo);
+					
+					var cnt = 0
+					if(p_option.list[i].cnt < 1){
+						cnt = 1;
+					}else{
+						cnt = p_option.list[i].cnt;
+					}
+					
+					arrParam.push("i_arrProductCnt=" + cnt);
+					arrParam.push("i_arrTypecd=0001");
+				}
+			}
+			
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "cart/cart_add_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam.join("&")
+				, animation : false
+				, success : function ( data, textStatus, jqXHR) {
+					if (data.status == "succ") {
+
+						var cartCnt = data.object.v_cart_cnt;
+						cartCnt = isEmpty(cartCnt) ? 0 : parseInt(cartCnt); 
+						$(".s_cart_cnt", "html").text(SetNumComma(cartCnt));
+						
+						if(cartCnt > 0){
+							$(".s_cart_cnt", "html").show();
+						}
+						
+						if (typeof p_option.callback == "function") {
+							p_option.callback(data.object);
+						}
+						
+						cmAjax({
+							url : GLOBAL_WEB_ROOT + "cart/cart_tagging_info_ajax.do"
+							, type : "POST"
+							, dataType : "json"
+							, data : arrParam.join("&")
+							, animation : false
+							, success : function ( data, textStatus, jqXHR) {
+								if (data.status == "succ") {
+									trackGATagEvent(data.object , "Add");
+								}
+							}
+						});
+					}
+					WebBodyStart.isRunningAddCart = false;
+				}
+				, error : function(e) {
+					WebBodyStart.isRunningAddCart = true;
+				}
+			});			
+			
+		}
+		// 장바구니 삭제
+		, removeUserCart : function ( p_option ) {
+			var _defaults = {
+				list : undefined
+				, flagPlus : "N"
+				, callback : undefined
+			};
+				
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			var arrParam2 = [];
+			
+			for (var i = 0; i < len; i++) {
+				arrParam.push("i_arrCartcd=" + p_option.list[i].cartcd);
+				arrParam.push("i_arrSeqno=" + p_option.list[i].seqno);
+				
+				arrParam2.push("i_arrProductcd=" + p_option.list[i].productcd);
+				arrParam2.push("i_arrOptioncd=" + p_option.list[i].optioncd);
+				arrParam2.push("i_arrFlagUseSolo=N");
+				
+				var cnt = 0
+				if(p_option.list[i].cnt < 1){
+					cnt = 1;
+				}else{
+					cnt = p_option.list[i].cnt;
+				}
+				
+				arrParam2.push("i_arrProductCnt=" + cnt);
+				arrParam2.push("i_arrTypecd=0001");
+			}
+			
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "cart/cart_remove_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam.join("&")
+				, animation : false
+				, success : function ( data, textStatus, jqXHR) {
+					if (data.status == "succ") {
+						var cartCnt = data.object;
+						
+						cartCnt = isEmpty(cartCnt) ? 0 : parseInt(cartCnt); 
+						$(".s_cart_cnt", "html").text(SetNumComma(cartCnt));
+						
+						$(".quick_cart_cnt", "html").text("상품 "+SetNumComma(cartCnt)+" 개");
+						
+						if (typeof p_option.callback == "function") {
+							p_option.callback();
+						}
+						
+						cmAjax({
+							url : GLOBAL_WEB_ROOT + "cart/cart_tagging_info_ajax.do"
+							, type : "POST"
+							, dataType : "json"
+							, data : arrParam2.join("&")
+							, animation : false
+							, success : function ( data, textStatus, jqXHR) {
+								if (data.status == "succ") {
+									trackGATagEvent(data.object , "Remove");
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		, addUserSetCart : function (p_option) {
+			if(WebBodyStart.isRunningAddCart) {
+				return ;
+			}
+			
+			WebBodyStart.isRunningAddCart = true;
+			
+			var _defaults = {
+				list : undefined
+				, flagPlus : undefined
+				, callback : undefined
+			};
+					
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+			
+			var flagUseSolo	= "N";
+				
+			flagUseSolo = "N";
+			WebBodyStart.addUserSetCartAjax(p_option, flagUseSolo);
+				
+		}
+		//세트상품 장바구니 추가 AJAX
+		, addUserSetCartAjax : function(p_option, flagUseSolo){
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			var flagPlus = p_option.flagPlus == "Y" ? "Y" : "N";
+			
+			arrParam.push("i_sFlagPlus=" + flagPlus);
+
+			for (var i = 0; i < len; i++) {
+				if(p_option.list[i].statuscd != "0002") {
+					arrParam.push("i_arrProductcd=" + p_option.list[i].productcd)
+					arrParam.push("i_arrOptioncd=" + p_option.list[i].optioncd);
+					arrParam.push("i_arrCompProductcd01=" + p_option.list[i].compProductcd01);
+					arrParam.push("i_arrCompOptioncd01=" + p_option.list[i].compOptioncd01);
+					arrParam.push("i_arrCompProductcd02=" + p_option.list[i].compProductcd02);
+					arrParam.push("i_arrCompOptioncd02=" + p_option.list[i].compOptioncd02);
+					arrParam.push("i_arrCompProductcd03=" + p_option.list[i].compProductcd03);
+					arrParam.push("i_arrCompOptioncd03=" + p_option.list[i].compOptioncd03);
+					arrParam.push("i_arrCompProductcd04=" + p_option.list[i].compProductcd04);
+					arrParam.push("i_arrCompOptioncd04=" + p_option.list[i].compOptioncd04);
+					arrParam.push("i_arrCompProductcd05=" + p_option.list[i].compProductcd05);
+					arrParam.push("i_arrCompOptioncd05=" + p_option.list[i].compOptioncd05);
+					arrParam.push("i_arrFlagUseSolo="+ flagUseSolo);
+					arrParam.push("i_arrProductCnt=" + p_option.list[i].cnt);
+					arrParam.push("i_arrTypecd=0003");
+				}
+			}
+			
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "cart/cart_add_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam.join("&")
+				, animation : false
+				, success : function ( data, textStatus, jqXHR) {
+					if (data.status == "succ") {
+						
+						var cartCnt = data.object.v_cart_cnt;
+						cartCnt = isEmpty(cartCnt) ? 0 : parseInt(cartCnt); 
+						$(".s_cart_cnt", "html").text(SetNumComma(cartCnt));
+						
+						if(cartCnt > 0){
+							$(".s_cart_cnt", "html").show();
+						}
+					
+						cmAjax({
+							url : GLOBAL_WEB_ROOT + "cart/cart_tagging_info_ajax.do"
+							, type : "POST"
+							, dataType : "json"
+							, data : arrParam.join("&")
+							, animation : false
+							, success : function ( data, textStatus, jqXHR) {
+								if (data.status == "succ") {
+									trackGATagEvent(data.object , "Add");
+								}
+							}
+						});
+						
+						if (typeof p_option.callback == "function") {
+							p_option.callback(data.object);
+						}
+						
+					}
+					WebBodyStart.isRunningAddCart = false;
+				}
+				, error : function(e) {
+					WebBodyStart.isRunningAddCart = true;
+				}
+			});			
+			
+		}
+		//위시리스트 추가
+		, addUserWish : function(p_option) {
+			if(WebBodyStart.isRunningAddWish) {
+				return ;
+			}
+			
+			WebBodyStart.isRunningAddWish = true;
+			
+			var _defaults = {
+				list : undefined
+			};
+				
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+		
+			var flagUseSolo = "N";
+			
+			if(p_option.sourceFlag == "BASKET"){
+				
+				flagUseSolo = p_option.flagSoloPack;
+				WebBodyStart.addUserWishAjax(p_option,flagUseSolo);
+				
+			}else{
+					
+				flagUseSolo = "N";
+				WebBodyStart.addUserWishAjax(p_option,flagUseSolo);
+					
+			}
+		
+		}
+		,addUserWishAjax : function(p_option,flagUseSolo){
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			
+			for (var i = 0; i < len; i++) {
+				
+				arrParam.push("i_arrProductCd=" + p_option.list[i].productcd);
+				arrParam.push("i_arrOptionCd=" + p_option.list[i].optioncd);
+				arrParam.push("i_arrProductCnt=" + 1);
+				arrParam.push("i_arrFlagUseSolo=" + flagUseSolo);
+			}
+			
+			var sourceFlag = p_option.sourceFlag != undefined ? p_option.sourceFlag : "BLANK";
+			
+			arrParam.push("i_sSourceFlag=" + sourceFlag);
+			
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "mypage/wi/wish_add_wishlist_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam.join("&")
+			 	, animation: false
+				, success : function(data, textStatus, jqXHR) {
+					WebBodyStart.isRunningAddWish = false;
+					if(data.status == "succ") {
+						
+						showConfirmBox({message : data.message,
+							ok_str : espoir_comm_txt.btn_wish_go,
+							cancel_str : espoir_comm_txt.btn_wish_go_cancel,
+							ok_func : function(){
+								location.href=GLOBAL_WEB_URL +"mypage/wi/mypage_wi_wish_list.do";
+							},
+							cancel_func : function(){
+								if(typeof(p_option.callback) == "function") {
+									p_option.callback();
+								}
+							}
+						});						
+					}
+					else {
+						showConfirmBox({message : data.message,
+							ok_str : espoir_comm_txt.btn_wish_go,
+							cancel_str : espoir_comm_txt.btn_wish_go_cancel,
+							ok_func : function(){
+								location.href=GLOBAL_WEB_URL +"mypage/wi/mypage_wi_wish_list.do";
+							},
+							cancel_func : function(){
+								if(typeof(p_option.callback) == "function") {
+									p_option.callback();
+								}
+							}
+						});	
+					}
+				}
+				, error : function(e) {
+					showMessageBox({message : e.message});
+					WebBodyStart.isRunningAddWish = false;
+				}
+			});			
+		}
+		, removeUserWish : function(p_option) {
+			if(WebBodyStart.isRunningRemoveWish) {
+				return ;
+			}
+			
+			WebBodyStart.isRunningRemoveWish = true;
+			
+			var _defaults = {
+				list : undefined
+			};
+				
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+		
+			flagUseSolo = "N";
+			WebBodyStart.removeUserWishAjax(p_option);
+		
+		}
+		,removeUserWishAjax : function(p_option){
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			
+			for (var i = 0; i < len; i++) {
+				
+				arrParam.push("i_arrProductcd=" + p_option.list[i].productcd);
+				arrParam.push("i_arrOptioncd=" + p_option.list[i].optioncd);
+			}
+			
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "mypage/wi/wish_remove_wishlist_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam.join("&")
+			 	, animation: false
+				, success : function(data, textStatus, jqXHR) {
+					WebBodyStart.isRunningRemoveWish = false;
+					if(data.status == "succ") {
+						p_option.callback();
+					}
+				}
+				, error : function(e) {
+					showMessageBox({message : e.message});
+					WebBodyStart.isRunningRemoveWish = false;
+				}
+			});			
+		}
+		//바로구매하기
+		, immediatelyPurchage : function( p_option ){
+			var _defaults = {
+					list : undefined
+			};
+			
+			p_option = $.extend(_defaults, p_option);
+			
+			if (p_option.list == undefined) {
+				return;
+			}
+				
+			if(p_option.list == ""){
+				showMessageBox({message : espoir_comm_txt.error_choice_option});
+				return;
+			}
+				
+			var flagUseSolo	= "N";
+				
+			if(IS_LOGIN){
+						
+				flagUseSolo = "N";
+				WebBodyStart.PurchageApply(p_option, flagUseSolo);
+						
+			}
+			else if (IS_LOGIN_SNS) {
+						
+				flagUseSolo = "N";
+				WebBodyStart.PurchageApply(p_option, flagUseSolo);
+						
+			}
+			else {
+
+				WebBodyStart.p_option = p_option;
+
+				var pop = $("#pop_modal_nonmember_layer");
+
+				if (pop.length > 0) {
+					modalPopup('#pop_modal_nonmember_layer');
+					return;
+				}
+
+				cmAjax({
+					url : GLOBAL_WEB_ROOT + "user/lo/user_lo_login_layer_ajax.do",
+					type : "post",
+					data : {},
+					dataType : "html",
+					success : function(html, textStatus, jqXHR){
+						$("#pop_user_login_area").html(html);
+						modalPopup('#pop_modal_nonmember_layer');
+					}
+				});
+				
+				/*
+				showConfirmBox({
+					message : espoir_comm_txt.purchage_not_login
+					,ok_str  : espoir_comm_txt.purchage_not_login_ok_str
+					,ok_func : function(){
+						WebBodyStart.goLogin("",p_option.list);
+					}
+					,cancel_str : espoir_comm_txt.purchage_not_login_cancel_str
+					,cancel_func : function(){
+						var flagUseSolo	= "N";
+						WebBodyStart.PurchageApply(p_option, flagUseSolo);
+					}
+				});
+				*/
+			}
+		}
+		, immediatelyPurchageLoginLayerAfter : function () {
+			
+			if (WebBodyStart.p_option == undefined) {
+				$("frm_reload").submit();
+			}
+			
+			WebBodyStart.PurchageApply(WebBodyStart.p_option, "N");
+		}
+		, PurchageApply : function(p_option, flagUseSolo){
+			
+			$("#div_purchase").remove();
+			
+			var len = p_option.list.length;
+			var arrParam = [];
+			var arrParam2 = [];
+			
+			arrParam.push("<div id='div_purchase'>");
+			arrParam.push("<form name='frm_purchase' method='post' action=''>");
+			
+			for (var i = 0; i < len; i++) {
+				
+				arrParam.push("<input type='hidden' name='i_arrProductcd' 		value='"+p_option.list[i].productcd+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrOptioncd' 		value='"+p_option.list[i].optioncd+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrProductCnt' 		value='"+p_option.list[i].cnt+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrProductTypecd' 	value='"+p_option.list[i].typecd+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrFlagUseSolo' 	value='"+flagUseSolo+"'/>");
+				
+				arrParam.push("<input type='hidden' name='i_arrCompProductcd01' 	value='"+p_option.list[i].compProductcd01+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompOptioncd01' 	value='"+p_option.list[i].compOptioncd01+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompProductcd02' 	value='"+p_option.list[i].compProductcd02+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompOptioncd02' 	value='"+p_option.list[i].compOptioncd02+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompProductcd03' 	value='"+p_option.list[i].compProductcd03+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompOptioncd03' 	value='"+p_option.list[i].compOptioncd03+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompProductcd04' 	value='"+p_option.list[i].compProductcd04+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompOptioncd04' 	value='"+p_option.list[i].compOptioncd04+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompProductcd05' 	value='"+p_option.list[i].compProductcd05+"'/>");
+				arrParam.push("<input type='hidden' name='i_arrCompOptioncd05' 	value='"+p_option.list[i].compOptioncd05+"'/>");
+				
+				arrParam2.push("i_arrProductcd=" + p_option.list[i].productcd)
+				arrParam2.push("i_arrOptioncd=" + p_option.list[i].optioncd);
+				arrParam2.push("i_arrCompProductcd01=" + p_option.list[i].compProductcd01);
+				arrParam2.push("i_arrCompOptioncd01=" + p_option.list[i].compOptioncd01);
+				arrParam2.push("i_arrCompProductcd02=" + p_option.list[i].compProductcd02);
+				arrParam2.push("i_arrCompOptioncd02=" + p_option.list[i].compOptioncd02);
+				arrParam2.push("i_arrCompProductcd03=" + p_option.list[i].compProductcd03);
+				arrParam2.push("i_arrCompOptioncd03=" + p_option.list[i].compOptioncd03);
+				arrParam2.push("i_arrCompProductcd04=" + p_option.list[i].compProductcd04);
+				arrParam2.push("i_arrCompOptioncd04=" + p_option.list[i].compOptioncd04);
+				arrParam2.push("i_arrCompProductcd05=" + p_option.list[i].compProductcd05);
+				arrParam2.push("i_arrCompOptioncd05=" + p_option.list[i].compOptioncd05);
+				arrParam2.push("i_arrFlagUseSolo="+ flagUseSolo);
+				arrParam2.push("i_arrProductCnt=" + p_option.list[i].cnt);
+			}
+		
+			if(p_option.list[0].storeCd != undefined){
+				if(!IS_LOGIN){
+					showConfirmBox({
+						message : "도어드랍 서비스는 로그인이 필요합니다.<br/>로그인 하시겠습니까?"
+						, ok_func : function() {
+							WebBodyStart.goLogin("",p_option.list);
+						}
+					});
+					return;
+				}else{
+					arrParam.push("<input type='hidden' name='i_sPosStorecd' 		value='"+p_option.list[0].storeCd+"'/>");
+				}
+			}
+			
+			arrParam.push("</form>");
+			arrParam.push("</div>");
+			
+		   $(arrParam.join("")).appendTo("body");
+		   
+		   cmAjax({
+				url : GLOBAL_WEB_ROOT + "cart/cart_tagging_info_ajax.do"
+				, type : "POST"
+				, dataType : "json"
+				, data : arrParam2.join("&")
+				, animation : false
+				, isModal : true
+				, beforeSend : function(){}
+				, success : function ( data, textStatus, jqXHR) {
+					if (data.status == "succ") {
+						trackGATagEvent(data.object ,"Checkout1");
+					}
+				}
+			});
+
+		   var frm = $("form[name='frm_purchase']");
+		   
+		   frm.attr("action",GLOBAL_SSL_URL+"order/st/order_st_step1.do");
+		   frm.submit();
+		}
+		//로그인페이지이동
+		,goLogin :function(returnUrl, returnParam) {
+			
+			var w = $("body").width();
+			
+			// 현재 로그인 페이지 일경우
+			if ($("#login_box").length > 0 ||  w < 1024) {
+				document.location.href = GLOBAL_SSL_URL + "user/lo/user_lo_login.do";
+				return;
+			}
+			
+			var hd_login_box = $("#hd_login_box");
+			
+			if (hd_login_box.hasClass("init_login_form")) {
+				hd_login_box.show();
+			}
+			else {
+				
+				hd_login_box.on("click", "#btn_hd_login_close", function(e) {
+					e.preventDefault();
+					hd_login_box.hide();
+				});
+				
+				cmAjax({
+					url : GLOBAL_WEB_ROOT + "user/lo/user_lo_login_header_ajax.do",
+					type : "post",
+					data : {},
+					dataType : "html",
+					success : function(html, textStatus, jqXHR){
+						hd_login_box.html(html).show();
+						$("<button class='btn_loginLP' id='btn_hd_login_close' >닫기</button>").appendTo(hd_login_box);
+					}
+				});
+			}
+			
+		}
+		
+		//상품상세보기
+		,getPrdView : function(productcd, optioncd){
+			if (optioncd != undefined && optioncd != "") {
+				document.location.href = GLOBAL_WEB_URL + "shop/shop_prd_view.do?i_sProductcd=" + productcd + "&i_sOptioncd=" + optioncd;
+			} else {
+				document.location.href = GLOBAL_WEB_URL + "shop/shop_prd_view.do?i_sProductcd=" + productcd;
+			}
+		}
+		//검색결과에서 상품상세보기
+		,getPrdView_search : function(productcd){
+			document.location.href = GLOBAL_WEB_URL + "shop/shop_prd_view.do?i_sProductcd=" + productcd + "&i_sFlagSearch=Y";
+		}
+}
+
+//환율 계산
+function getDisplayExchangeRate(price, rate, code, symbol) {
+	
+	if (typeof price != "number") {
+		price = parseInt(price, 10);
+	}
+	
+	if (typeof rate != "number") {
+		rate = parseFloat(rate);
+	}
+	
+	if (rate == 0 ) {
+		code = "KRW";
+		symbol = "";
+		rate = 1;
+	}
+	
+	var chgPrice = "" + (Math.round(price * rate * 100) / 100);
+	
+	if( code == "JPY") {
+		chgPrice = "" + SetNumComma( Math.round((Math.round(price * rate * 100) / 100)));
+		return symbol + chgPrice;
+	}
+	else {
+		chgPrice = "" + SetNumComma(chgPrice);
+		return symbol + chgPrice;
+	}
+}
+
+function getColorHtmlTagForList (info, flag) {
+	var html = "";
+	if (info == undefined) {
+		return "";
+	}
+	
+	var arrColorInfo = info.split("$");
+	var colorInfoLen = arrColorInfo.length;
+
+	if(colorInfoLen > 0) {
+		if(flag == 'COLOR') {
+			var colorInfo = "";
+			var stockInfo = "";
+			var arrColorRGB = null;
+			var cnt = 0;
+			var cnt1 = 0;
+			var tempLen = 0;
+			
+			//우선 전체 rgb값을 모은다
+			for(var i = 0; i < colorInfoLen; i++) {
+				arrColorRGB = arrColorInfo[i].split("^");
+				if(arrColorRGB.length < 5) continue;
+				if("" == arrColorRGB[2].split(",")[0]) continue;
+				
+				colorInfo += arrColorRGB[2]   + ",";
+				
+				tempLen = (arrColorRGB[2].split(",")).length;
+				for (var s = 0; s < tempLen; s++) {
+					stockInfo += arrColorRGB[4]   + ",";
+				}
+			}
+			var colorRGB = colorInfo ? colorInfo.split(",") : new Array();
+			var stockQty = stockInfo ? stockInfo.split(",") : new Array();
+			
+			//html을 생성
+			for(var j = 0; j < colorRGB.length; j++) {
+				var rgb = colorRGB[j];
+				
+				if(cnt < 4) {
+					html += "<li><span ";
+					if(stockQty[j] == undefined || "0" == stockQty[j]) {
+						html += "class='disable' ";
+					}
+					
+					if("ffffff" == rgb) {
+						html += "class='line' ";
+					}
+					
+					html += "style='background: #" + rgb + "'></span></li>";
+					cnt++;
+
+				} else {
+					if(cnt == 4) {
+						html += "<li class='more_color clearfix'>";
+					}
+					html += "<span class='color_0" + (++cnt1);
+					if(cnt == 4 && (stockQty[j] == undefined || "0" == stockQty[j])) {
+						html += " disable";
+					}
+					if("ffffff" == rgb) {
+						html += " line";
+					}
+					html += "' style='background: #" + rgb + "'></span>";
+					cnt++;
+					
+					if(cnt == 7) {
+						html += "<p class='color_etc'>+" + (colorRGB.length - 6) + "</p>";
+						html += "</li>";
+						break;
+					}
+				}
+			}
+		}
+	}
+	return html;
+}
+
+function getColorHtmlTagForView (info, flag) {
+	var html = "";
+	if (info == undefined) {
+		return "";
+	}
+
+	var arrColorInfo = info.split("$");
+	var colorInfoLen = arrColorInfo.length;
+	
+	if(colorInfoLen > 0) {
+		var optcdInfo = "";
+		var colorInfo = "";
+		var stockInfo = "";
+		var arrColorRGB = null;
+		var cnt = 0;
+		
+		//우선 전체 rgb값을 모은다
+		for(var i = 0; i < colorInfoLen - 1; i++) {
+			arrColorRGB = arrColorInfo[i].split("^");
+
+			optcdInfo += arrColorRGB[0] + ",";
+			colorInfo += arrColorRGB[1] + ",";
+			stockInfo += arrColorRGB[2] + ",";
+		}
+		
+		var optioncd = optcdInfo.split(",");
+		var colorRGB = colorInfo.split(",");
+		var stockQty = stockInfo.split(",");
+		var stockQtyLen = stockQty.length;
+		var colorRGBLen = colorRGB.length;
+		//html을 생성
+		for(var j = 0; j < colorRGBLen - 1; j++) {
+			var rgb = colorRGB[j];
+			
+			html += "<dd><button type='button'";
+			html += " id='colorChip_" + optioncd[j] + "'";
+
+			if("N" == flag || stockQtyLen-1 <= j || stockQty[j] == "" || "0" == stockQty[j]) {
+				html += " disabled='disable'";
+			}
+			
+			if ("ffffff" == rgb) {
+				html += " class='line'";
+			}
+			
+			html += " style='background: #" + rgb + "'></button></dd>";
+		}
+	}
+	return html.toString();
+}
+
+function getCartListPop(){
+	cmAjax({
+		url : GLOBAL_WEB_ROOT + "cart/cart_list_quick.do"
+		, type : "POST"
+		, dataType : "html"
+		, animation : false
+		, isModal : true
+		, isModalEnd : true
+		, beforeSend : function(){}
+		, success : function (html) {
+			
+			$("#pop_myCart_list_area").html("");
+			$("#pop_myCart_list_area").html(html);
+			
+			modalPopup("#pop_myCart_list");
+			
+		}
+		, complete : function(){}
+	});
+}
+
+
+function webChat(params) {
+	var popWidth  = 480;
+	var popHeight = 520;
+	
+	var winHeight = document.body.clientHeight;
+	var winWidth  = document.body.clientWidth;
+	var winX = window.screenLeft;
+	var winY = window.screenTop;
+	var popX = winX + (winWidth  - popWidth ) / 2;
+	var popY = winY + (winHeight - popHeight) / 2;
+	
+	var path = GLOBAL_WEB_CHAT_URL + "prichat/espoir/web/customer/client";
+	
+	var url = path + "/chat.htm" + "?" + params;
+	
+	var title  = "amCustWebChat"; // S띄어쓰기 있을 경우 ie7, 8, 9 에서 동작 안함
+	var status = "width="+popWidth+"px,height="+popHeight+"px,resizable=yes,top="+popY+",left="+popX+",status=no,toolbar=no,menubar=no,location=no";
+	window.open( url, title, status);    // form.action에서 적용하므로 생략 가능.
+}
+
+function trackGATagEvent(data , eventcd){
+	
+	/**
+	 * object 필요 항목
+	 * eventType  : event명
+	 * currencycd : 통화코드
+	 * typecd : 호출할 Type명 (add, remove, checkout)
+	 * orderStep : checkout Step
+	 * payMethod : 결제수단
+	 * totalCnt : 상품의 총 수량
+	 * productcd : 상품코드
+	 * productnm : 상품명
+	 * price : 판매가
+	 * productCnt : 상품개수
+	 * optionnm : 옵션명
+	 * flagSet : 세트상품여부 (Y,N)
+	 * setOptioncd : 세트옵션코드
+	 * setCategorycd : 세트카테고리코드
+	 * setProductcd : 세트상품코드
+	 * listPrice : 정상가
+	 */
+	var obj = {
+		
+	};
+	
+	obj.event = eventcd;
+	
+	var products = [];
+	var checkout = {};
+	
+	var len = data.length;
+	for (var i = 0; i < len; i++) {
+		var vo = data[i];
+		
+		if(vo.v_typecd == "0003"){
+			if(eventcd == "Remove"){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_ctg_nm,">","/")
+					, price : undefined
+					, quantity : undefined
+					, variant : undefined
+					, dimension27 : undefined
+					, dimension32 : fnReplaceAll(vo.v_ctg_cd,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : undefined
+				});
+			}
+			if(vo.v_comp_prdcd01 !=undefined){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_comp_ctgnm01,">","/")
+					, price : vo.v_comp_price1
+					, quantity : vo.n_cnt
+					, variant : vo.v_comp_optnm1
+					, dimension27 : vo.v_comp_optcd01
+					, dimension32 : fnReplaceAll(vo.v_comp_ctgcd01,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : vo.n_list_price
+				});
+			}
+			if(vo.v_comp_prdcd02 !=undefined){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_comp_ctgnm02,">","/")
+					, price : vo.v_comp_price2
+					, quantity : vo.n_cnt
+					, variant : vo.v_comp_optnm2
+					, dimension27 : vo.v_comp_optcd02  
+					, dimension32 : fnReplaceAll(vo.v_comp_ctgcd02,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : vo.n_list_price
+				});
+			}
+			if(vo.v_comp_prdcd03 != undefined){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_comp_ctgnm03,">","/")
+					, price : vo.v_comp_price3
+					, quantity : vo.n_cnt
+					, variant : vo.v_comp_optnm3
+					, dimension27 : vo.v_comp_optcd03  
+					, dimension32 : fnReplaceAll(vo.v_comp_ctgcd03,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : vo.n_list_price
+				});
+			}
+			if(vo.v_comp_prdcd04 != undefined){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_comp_ctgnm04,">","/")
+					, price : vo.v_comp_price4
+					, quantity : vo.n_cnt
+					, variant : vo.v_comp_optnm4
+					, dimension27 : vo.v_comp_optcd04  
+					, dimension32 : fnReplaceAll(vo.v_comp_ctgcd04,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : vo.n_list_price
+				});
+			}
+			if(vo.v_comp_prdcd05 != undefined){
+				products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_comp_ctgnm05,">","/")
+					, price : vo.v_comp_price5
+					, quantity : vo.n_cnt
+					, variant : vo.v_comp_optnm5
+					, dimension27 : vo.v_comp_optcd05  
+					, dimension32 : fnReplaceAll(vo.v_comp_ctgcd05,">","/")
+					, dimension50 : vo.v_productcd
+					, metric2 : vo.n_list_price
+				});
+			}
+		}else{
+			//기본상품
+			products.push({
+				id : vo.v_productcd
+				, name : vo.v_productnm
+				, brand : 'ESPOIR'
+					, category : fnReplaceAll(vo.v_ctg_nm,">","/")
+					, price : vo.n_price
+					, quantity : vo.n_cnt
+					, variant : vo.v_optionnm
+					, dimension27 : vo.v_optioncd  
+					, dimension32 : fnReplaceAll(vo.v_ctg_cd,">","/")
+					, dimension50 : 'X'
+					, metric2 : vo.n_list_price
+			});
+		}
+	}
+	
+	if(eventcd == "Add"){
+		dataLayer.push({
+		'event' : eventcd
+			, 'ecommerce' : {
+				'currencyCode' : "KRW"
+				, 'add' : {
+					 'products' : products
+				}
+			}
+		});
+	}else if(eventcd == "Remove"){
+		dataLayer.push({
+			'event' : eventcd
+				, 'ecommerce' : {
+					'currencyCode' : "KRW"
+					, 'remove' : {
+						'products' : products
+					}
+				}
+			});
+	}else if(eventcd == "Checkout1"){
+		dataLayer.push({
+		'event' : eventcd
+		, 'ecommerce' : {
+			'currencyCode' : "KRW"
+			, 'checkout' : {
+				'actionField' : {
+					'step' : 1
+				}
+			, 'products' : products
+				}
+			}
+		});
+	}else if(eventcd == "Checkout2"){
+		dataLayer.push({
+		'event' : eventcd
+			, 'ecommerce' : {
+				'currencyCode' : "KRW"
+				, 'checkout2' : {
+						'actionField' : {
+							'step' : 1
+							, 'option' : data.pginfo
+						}
+					}
+				, 'products' : products
+			}
+		});
+	}
+	
+//	console.log(obj);
+	
+}
+
+function setEspKeyword(keyword, type) {
+	
+	var can_ls = esp_local_storage.getEnable(); // 로컬 스토리지 사용여부
+
+}
+
+function sendSns(sns, url, txt, img_url)
+{
+    var o;
+    var _img_url = encodeURIComponent(img_url);
+    var _url = encodeURIComponent(url);
+    var _txt = encodeURIComponent(txt);
+    var _br  = encodeURIComponent('\r\n');
+
+    switch(sns)
+    {
+        case 'facebook':
+            o = {
+                method:'popup',
+                url:'http://www.facebook.com/sharer/sharer.php?u=' + _url + "&t=" + _txt
+            };
+            break;
+ 
+        case 'twitter':
+            o = {
+                method:'popup',
+                url:'http://twitter.com/intent/tweet?text=' + _txt + '&url=' + _url
+            };
+            break;
+        
+        case 'mail':
+        	if (flag_mobile != "Y") { 
+        		url = 'http://www.naver.com';
+        	} else {
+        		url = 'http://m.naver.com';
+        	}		
+        	o = {
+        		method:'popup',
+        		url : url
+        };
+        	break;
+
+        case 'instagram':
+        	o = {
+        		method:'popup',
+        		url:'https://www.instagram.com/'
+        };
+        	break;
+
+        case 'naver':
+        	o = {
+        		method:'popup',
+        		url:"https://share.naver.com/web/shareView.nhn?url=" + _url + "&title=" + _txt
+        };
+        	break;
+ 
+        case 'kakaotalk':
+            /*o = {
+                method:'web2app',
+                param:'sendurl?msg=' + _txt + '&url=' + _url + '&type=link&apiver=2.0.1&appver=2.0&appid=dev.epiloum.net&appname=' + encodeURIComponent('[eSpoir]'),
+                a_store:'itms-apps://itunes.apple.com/app/id362057947?mt=8',
+                g_store:'market://details?id=com.kakao.talk',
+                a_proto:'kakaolink://',
+                g_proto:'scheme=kakaolink;package=com.kakao.talk'
+            };*/
+        	o = { method:''};
+            try{
+				// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		   	 	Kakao.init(KAKAO_KEY);
+			}catch(e){}
+    		Kakao.Link
+    				.sendDefault({
+    					//container : 'list',
+    					objectType : 'feed',
+    					content : {
+    						title : '[eSpoir]',
+    						description : txt,
+    						imageUrl : img_url,
+    						link : {
+    							mobileWebUrl : url,
+    							webUrl : url
+    						}
+    					},
+    					buttons : [ {
+    						title : '웹으로 보기',
+    						link : {
+    							mobileWebUrl : url,
+    							webUrl : url
+    						}
+    					}]
+    				});
+            break;
+ 
+        case 'kakaostory':
+        	o = { method:''};
+        	try{
+				// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		   	 	Kakao.init(KAKAO_KEY);
+			}catch(e){}
+
+		    // 스토리 공유 버튼을 생성합니다.
+			Kakao.Story.share({
+			        url: url,
+			        text: 'eSpoir-' + txt
+			}); 
+            break;
+
+        default:
+            //alert('지원하지 않는 SNS입니다.');
+            return false;
+    }
+ 
+    switch(o.method)
+    {
+        case 'popup':
+            window.open(o.url);
+            break;
+ 
+        case 'web2app':
+            if(navigator.userAgent.match(/android/i))
+            {
+                // Android
+                setTimeout(function(){ location.href = 'intent://' + o.param + '#Intent;' + o.g_proto + ';end'}, 100);
+            }
+            else if(navigator.userAgent.match(/(iphone)|(ipod)|(ipad)/i))
+            {
+                // Apple
+                setTimeout(function(){ location.href = o.a_store; }, 200);          
+                setTimeout(function(){ location.href = o.a_proto + o.param }, 100);
+            }
+            else
+            {
+                //alert('이 기능은 모바일에서만 사용할 수 있습니다.');
+            }
+            break;
+        default:
+        	return false;
+    }
+}
+
+//GA 태깅용
+function GA_Event(ctg, act, lab) {
+	ga("send", "event", ctg, act, lab);
+}
+
+
+function FN_COMM_CHG_PAGE_TYPE( page_type ) {
+	
+	if (page_type == "MOBILE") {
+		fnCommMobileInit();
+		fnCommMobileTabletInit();
+	}
+	else if (page_type == "TABLET") {
+		fnCommTabletInit();
+		fnCommPcTabletInit();
+		fnCommMobileTabletInit();
+	}
+	else if (page_type == "PC") {
+		fnCommPcInit();
+		fnCommPcTabletInit();
+	}	
+}
+// Mobile/Tablet 에서만 사용하는 공통 영역 관련 이벤트
+
+function fnCommMobileTabletInit() {
+	
+	if (GLOBAL_VAR.IS_MOBILE_TABLET_INIT) {
+		return;
+	}
+	
+	var $rmenu = $('nav#menu-lnb');
+	
+	$rmenu.mmenu({
+		classes : 'mm-fullscreen' //풀화면
+		, iconPanels : true
+		, slidingSubmenus: false
+//		, hooks: {
+//			"openPanel:start": function( $panel ) {
+//				console.log( "This panel is now opening: #" + $panel.attr( "id" ) );
+//			},
+//			"openPanel:finish": function( $panel ) {
+//				console.log( "This panel is now opening: #" + $panel.attr( "id" ) );
+//			}
+//		}
+	});
+	
+	var API = $rmenu.data( "mmenu" );
+	
+	$rmenu.find(".nav_close").click(function(e) {
+		API.close();
+	});
+	
+	$rmenu.find(".mm-list li.depth1 a").click(function(e) {
+		$(this).toggleClass("act");
+		if ($(this).hasClass("act")) {
+			$(this).parent(".depth1").find(".m_depth2").stop().slideDown('fast');
+		} else{
+			$(this).parent(".depth1").find(".m_depth2").stop().slideUp('fast');
+		}
+	});	
+	
+	
+	GLOBAL_VAR.IS_MOBILE_TABLET_INIT = true;
+}
+
+// PC/Tablet 에서만 사용하는 공통 영역 관련 이벤트
+function fnCommPcTabletInit() {
+	
+	if (GLOBAL_VAR.IS_PC_TABLET_INIT) {
+		return;
+	}
+	
+	$(window).on("load scroll", function(){
+		scrollTop = $(window).scrollTop();
+		
+		if (GLOBAL_VAR.NOW_PAGE_TYPE == "MOBILE") {
+			return;
+		}
+		
+		if ( scrollTop > _fixHeaderY + 50  ) {
+			if(!isFix){
+				$("#wrap").addClass('fixed');
+				isFix = true;
+			}
+		} else {
+			if(isFix){
+				$("#wrap").removeClass('fixed');
+				isFix = false;
+			}
+		}
+	});
+	
+	
+	GLOBAL_VAR.IS_PC_TABLET_INIT = true;
+}
+
+// PC 에서만 사용하는 공통 영역 관련 이벤트
+function fnCommPcInit() {
+
+	if (GLOBAL_VAR.IS_PC_INIT) {
+		return;
+	}
+
+	$('head').append('<link rel="stylesheet" href="'+ GLOBAL_CSS_URL +'es_hover.css" type="text/css" />');
+
+	var w_header = $("#w_header");
+
+	w_header.find(".btn_lang").on("click",function(){
+		$(this).toggleClass("on");
+		if ($(this).hasClass('on')) {
+			w_header.find(".lang_select").show()
+		} else{
+			w_header.find(".lang_select").hide()
+		}
+	});
+
+	w_header.find(".menu a").on("mouseenter",function(){
+		$(this).parents(".menu").addClass("on");
+		if($(this).parent(".menu").find('div').hasClass("detph2")){
+			w_header.find('.nav_box').show();
+		}
+	});
+
+	w_header.find(".menu").on("mouseleave",function(){
+		$(this).removeClass("on");
+		w_header.find('.nav_box').hide();
+	});
+
+	
+	GLOBAL_VAR.IS_PC_INIT = true;
+}
+
+// Tablet 에서만 사용하는 공통 영역 관련 이벤트
+function fnCommTabletInit() {
+	
+	if (GLOBAL_VAR.IS_TABLET_INIT) {
+		return;
+	}	
+	
+	GLOBAL_VAR.IS_TABLET_INIT = true;
+}
+
+// Mobile 에서만 사용하는 공통 영역 관련 이벤트
+function fnCommMobileInit() {
+	
+	if (GLOBAL_VAR.IS_MOBILE_INIT) {
+		return;
+	}
+	
+	GLOBAL_VAR.IS_MOBILE_INIT = true;
+}
+
+GLOBAL_VAR.NOW_PAGE_TYPE = GET_WINDOW_WIDTH_TYPE();
+
+function FN_CHG_PAGE_TYPE() {
+}
+
+
+$(function() {
+	
+	FN_COMM_CHG_PAGE_TYPE(GLOBAL_VAR.NOW_PAGE_TYPE);
+	
+	$( window ).on( 'resize' ,function() {
+		$winW = $(window).width();
+		
+		var page_type = GET_WINDOW_WIDTH_TYPE();
+		
+		if (page_type != GLOBAL_VAR.NOW_PAGE_TYPE) {
+			GLOBAL_VAR.NOW_PAGE_TYPE = page_type;
+			
+			if (FN_CHG_PAGE_TYPE != undefined) {
+				FN_CHG_PAGE_TYPE(page_type);
+			}
+			
+			FN_COMM_CHG_PAGE_TYPE(page_type);
+		}
+	});
+});
+
+
+

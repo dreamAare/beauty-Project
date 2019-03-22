@@ -1,0 +1,117 @@
+
+
+<link rel="stylesheet" href="/css/mypage_shoppingCar.css">
+<section class="bigContainer">
+    <div class="product_content">
+        <div class="car_top">
+            <div class="car_selectAll">
+                <div class="circle">
+                </div>
+                <div class="circle_span">
+                    <span>
+                    全选
+                </span>
+                    (<span class="top_select">0</span>/<span class="all_products">4</span>)
+                </div>
+                <div class="del_car">
+                    <img src="/img/imgMyPage/ico_del.png" alt="">
+                    <span>Delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="car_content">
+            <table class="table">
+                <thead>
+                <tr class="table_tr">
+                    <th></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th style="padding-left: 40px">数量</th>
+                    <th>总计</th>
+                </tr>
+                </thead>
+                <tbody class="myTbody">
+                <%if(data.length>0){%>
+                <%for(var i = 0 ; i < data.length;i++){%>
+                    <tr>
+                        <td>
+                            <div class="select_circle" data-select="false" car_id="<%=data[i].car_id%>" user_id="<%=data[i].user_id%>" product_id="<%=data[i].product_id%>" color_id="<%=data[i].color_id%>">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="pro_pic">
+                                <img src="/<%=data[i].pic_path%>" alt="" class="checkImg">
+                            </div>
+                            <div class="product_information">
+                                <p class="checkName"><%=data[i].product_name%></p>
+                                <div class="color_li_box">
+                                    <li class="color_pic" data-n="0">
+                                        <span class="checkColorVal" style="background-color: <%=data[i].color_value%>"></span>
+                                        <span class="checkColorName"><%=data[i].color_name%></span>
+                                    </li>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="money">
+                            <span>$</span><span class="pay_money checkPrice"><%=data[i].price%></span>
+                        </td>
+                        <td>
+                            <ul class="pro_quantity">
+                                <li class="reduce"> <button></button></li>
+                                <li class="number"><span class="checkNum"><%=data[i].quantity%></span></li>
+                                <li class="add"><button></button></li>
+                            </ul>
+                        </td>
+                        <td class="span_money">
+                            <span class="doller">$</span>
+                            <span class="total_money"><%=data[i].price*data[i].quantity%></span>
+                        </td>
+                    </tr>
+                <%}}%>
+                </tbody>
+            </table>
+            <div class="car_text" style="height: 200px;">你的购物车还没有商品</div>
+        </div>
+
+    </div>
+    <div class="pay">
+        <div class="pay_list">
+            <ul>
+                <li>
+                    <span>总计</span>
+                    <span class="payAllMoney">
+                    0
+                    </span>
+                    <span>$</span>
+                </li>
+                <li>
+                    <span>折扣</span>
+                    <span>折</span>
+                    <span class="discount">9</span>
+                </li>
+            </ul>
+            <div class="pay_p">
+                <p>
+                    <span>总计</span>
+                    <span class="total">0</span>
+                    <span>$</span>
+                </p>
+                <p>
+                    If you purchase more than $20, shipping is free.
+                </p>
+            </div>
+        </div>
+        <button class="btn1">结账<span>(<span class="total_quantity">0</span>)</span>件</button>
+    </div>
+</section>
+<section class="location">
+</section>
+<section>
+    <div></div>
+    <div></div>
+</section>
+<script src="/comm/jquery/jquery-3.2.1.js">
+</script>
+<script src="/js/myPage_car.js">
+</script>
+

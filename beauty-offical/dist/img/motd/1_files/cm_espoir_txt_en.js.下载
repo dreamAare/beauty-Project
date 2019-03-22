@@ -1,0 +1,11 @@
+var espoir_comm_txt = {};
+ 
+espoir_comm_txt.btn_wish_go = "Wish list";
+espoir_comm_txt.btn_wish_go_cancel = "Check";
+
+espoir_comm_txt.error_choice_option = "상품의 옵션을 선택해주세요.";
+
+espoir_comm_txt.purchage_not_login = "You can use after logging in. Do you want to log in?";
+espoir_comm_txt.purchage_not_login_ok_str = "Login";
+espoir_comm_txt.purchage_not_login_cancel_str = "Cancel";
+

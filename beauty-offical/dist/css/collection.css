@@ -1,0 +1,232 @@
+body,ul,li,dl,dt,dd{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+a,ul,li{
+    color: black;
+}
+/*下拉列表*/
+.item-select{
+    width: 12%;
+    margin: 0 auto;
+    text-align: center;
+    height: 50px;
+    position: relative;
+    background-color: white;
+    z-index: 5;
+}
+.item-select-ul>ul{
+    list-style: none;
+    margin: 0 ;
+    padding: 0;
+}
+.item-select-ul>ul>li{
+    height: 35px;
+    line-height: 35px;
+}
+.item-select>div:first-child{
+    height: 60px;
+    line-height: 60px;
+}
+#icon-angleUp{
+    transition: all 0.3s linear;
+}
+.item-select-ul{
+    padding:0 5px;
+    width: 100%;
+    /*outline: 1px solid #dadada;*/
+    position: absolute;
+    transition: height 0.3s linear;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+}
+.item-select-ul>ul{
+    /*overflow:scroll;*/
+    height: 220px;
+}
+.item-select-ul>ul>li:hover a{
+    color: rgba(255, 44, 40, 0.94);
+    border-bottom: 1px solid rgba(255, 44, 40, 0.94);
+}
+.item-select a{
+    text-decoration: none;
+    font-size: 14px;
+    color: grey;
+}
+.item-select>div:first-child a{
+    font-size: 16px;
+    color: black;
+}
+
+/*新标题*/
+.new-title{
+    text-align: center;
+}
+.new-title .title-one{
+    font-size: 22px;
+}
+dd{
+    color: darkgrey;
+}
+/*图片板块一*/
+.banner{
+    background: url("../img/collection/IMG1542KET871189615.jpg") no-repeat  ;
+    width: 90.7%;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+
+}
+.b-date{
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top:30px;
+    right: 40px;
+}
+.odd {
+    font-size: 80px;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 100px;
+    max-width: 370px;
+    margin-bottom: 30px;
+    position: absolute;
+    top:30%;
+    left:10%;
+}
+.ex{
+    font-size: 14px;
+    color: #FFF;
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    bottom:33%;
+    left: 10%;
+    vertical-align: middle;
+}
+/*图片板块二*/
+.clearfix1{
+    position: relative;
+    height: 1828px;
+    display: block;
+}
+.list-box{
+    width: 100%;
+}
+.list-gird{
+    float: left;
+    position:absolute;
+    left: 10%;
+    top: 0;
+    padding-top: 30%;
+}
+
+.boxImage>.c-date,
+.boxImage>.d-date{
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top:20%;
+    right: 5%;
+}
+.boxImage>.text-t{
+    font-size: 60px;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 100px;
+    max-width: 370px;
+    margin-bottom: 30px;
+    position: absolute;
+    bottom:15%;
+    left:10%;
+
+}
+.text-t .ex1{
+     height: 21px;
+    font-size: 14px;
+    color: #FFF;
+    position:absolute ;
+    bottom:5%;
+    left: 5%;
+    border-bottom: 1px solid #fff;
+    vertical-align: middle;
+
+}
+/*lip展示*/
+.image-buttom {
+    border: 1px solid #e0e0e0;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width:480px;
+    height: 100px;
+    padding: 0 0 0 100px;
+}
+.lip-image{
+    line-height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100px;
+}
+.lip-image img{
+    width: 50px;
+    height: 75px;
+}
+.pd-info{
+    font-size: 16px;
+    color: #000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    max-width: 170px;
+    width: 100%;
+}
+.lock{
+    color: darkgrey;
+}
+.pay-right{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 100px;
+    width: 100px;
+    text-align: center;
+    font-size: 16px
+}
+.price{
+    color: black;
+}
+/*图片板块三*/
+.list-gird2{
+    float: right;
+    position:absolute;
+    right: 10%;
+    top: 0;
+    padding-top: 10%;
+}
+
+/*图片板块4*/
+.list-gird3{
+    float: right;
+    position:absolute;
+    right: 10%;
+    top: 35%;
+    padding-top: 40%;
+}

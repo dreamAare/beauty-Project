@@ -1,0 +1,444 @@
+/*公共样式*/
+
+body, ul, li, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol, dl dt dd {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+dt dd p{
+    color: #fff;
+}
+
+/* 清除浮动的影响 */
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+img{
+    border: 0;
+    /*vertical-align: top;*/
+}
+.item {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 822px;
+    background-color:#000;
+    transition: all .5s;
+}
+
+/*隐藏横向滚动条*/
+
+
+#content::-webkit-scrollbar{
+    width: 3px;
+    height: 3px;
+}
+
+#content::-webkit-scrollbar-button{
+    display: none;
+}
+#content::-webkit-scrollbar-track{
+    display: none;
+}
+#content::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+#content::-webkit-scrollbar-thumb{
+    background-color: #B6C1CE;
+    border-radius: 2px;
+}
+#content::-webkit-scrollbar-corner{
+    display: none;
+}
+
+
+
+
+/*轮播内容*/
+#content {
+    width: 100%;
+
+}
+.carousel-inner {
+    width:8000px;
+    background: #000;
+}
+
+.carousel-inner > .item {
+    float: left;
+    width: 1400px;
+}
+.clearfix{
+    display: block;
+    min-height: 1px;
+}
+
+/*项目*/
+
+
+
+.bandUi{
+    background: #000 url("../img/studio/jr_li3.jpg") no-repeat center bottom;
+    background-attachment: fixed;
+}
+   /*第一块*/
+     /*视频区域*/
+.vd-layer{
+    position: relative;
+}
+.vd-layer .vd-area{
+    position: absolute;
+    left: 225px;
+    right: 115px;
+    top: 72px;
+    bottom: 45px;
+}
+.vd_layer .vd_area video {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: baseline;
+    object-fit: contain;
+
+}
+
+.top-bar {
+    position: absolute;
+    left: 80px;
+    top: 50px;
+    padding: 0 60px
+}
+
+.clearfix {
+    display: block;
+    min-height: 1px;
+}
+/*顶部条brand-studio-info*/
+.top-bar ul li {
+    float: left;
+}
+
+.bd {
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+.top-bar ul li.bd a {
+    color: #ff463a;
+    font-weight: bold;
+}
+
+.m-line {
+    width: 60px;
+    height: 1px;
+    background: #383838;
+    position: relative;
+}
+
+.linr-bar {
+    width: 14px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.st {
+    position: absolute;
+    right: -2px;
+    top: -10px;
+}
+
+.st > a {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+}
+
+.intro {
+    position: absolute;
+    right: 150px;
+    top: 40px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+}
+
+/*左边题目*/
+.box-li {
+    position: absolute;
+    left: 80px;
+    bottom: 163px;
+    opacity: 1;
+}
+
+.box-li dt {
+    font-size: 40px;
+    letter-spacing: 0.16em;
+    color: #fff
+}
+.box-li dd {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 39px;
+    color: #fff
+}
+
+/*左下箭头图标*/
+.gr-row {
+    position: absolute;
+    left: 80px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+    bottom: 90px;
+    line-height: 40px;
+    padding-left: 58px;
+    color: #fff;
+}
+
+.gr-row span {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    margin-top: -10px;
+    width: 42px;
+    height: 42px;
+    background: url("../img/brandinfo/btn_jh.jpg");
+}
+
+.gr-row span img {
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/*第二块*/
+
+.box-l6{
+    min-width: 1450px;
+    height: 100%;
+    position: relative;
+}
+.box-l6 .img-loaded-con6{
+    position: absolute;
+    top: 139px;
+    left: -35px;
+}
+.box-l6 .img-loaded-con7{
+    position: absolute;
+    bottom: 40px;
+    left: 175px;
+}
+.box-l6 dl{
+    position: absolute;
+    top: 172px;
+    right: 35px;
+}
+.box-l6 dl.act {
+    right: 35px;
+    top: 172px;
+    opacity: 1;
+    color: #fff;
+}
+.box-l6 dt {
+    font-size: 30px;
+    line-height: 1.7;
+    margin-bottom: 65px;
+}
+
+.box-l6 dd{
+    position: relative;
+}
+.box-l6 dd li {
+    float: left;
+    width: 347px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-right: 20px;
+}
+/*第三块*/
+.box-l7{
+    min-width: 1450px;
+    height: 100%;
+    position: relative;
+}
+.box-l7 .img-loaded-con8{
+    position: absolute;
+    top: 157px;
+    left: 713px;
+    z-index: 1;
+}
+.box-l7 dl{
+    position: absolute;
+    bottom: 113px;
+    left: 125px;
+    z-index: 1;
+}
+.box-l7 dt{
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 0.16em;
+    color: #fff;
+}
+.box-l7 dd{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+}
+
+.box-l7 p{
+    position: absolute;
+    bottom: 140px;
+    right: 95px;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 1.7;
+    vertical-align: middle;
+    color: #fff;
+}
+
+/*第四块*/
+.box-l8{
+    min-width: 2300px;
+    height: 100%;
+    position: relative;
+}
+.box-l8 .img-loaded-con9{
+    position: absolute;
+    left: 380px;
+    top: 0;
+}
+.box-l8 .img-loaded-con10{
+    position: absolute;
+    right: 655px;
+    bottom: 40px;
+}
+.box-l8-1{
+    position: absolute;
+    left: 172px;
+    bottom: 327px;
+    opacity: 1;
+    text-align: right;
+}
+.box-l8-1 dt{
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    line-height: 1.25;
+    color: #fff;
+}
+.box-l8-1 dd{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 19px;
+    z-index: 2;
+    color: #fff;
+}
+.box-l8-2{
+    position: absolute;
+    left: 22px;
+    bottom: 127px;
+    opacity: 1;
+}
+.box-l8-2 li,
+.box-l8-4 li{
+    font-size: 14px;
+    margin-top: 19px;
+    line-height: 1.9;
+    padding-left: 20px;
+    background: url("../img/studio/jr_bl.jpg") no-repeat left 10px;
+    z-index: 2;
+    color: #fff;
+}
+.box-l8-3{
+    position: absolute;
+    right: 417px;
+    bottom: 242px;
+    opacity: 1;
+    z-index: 2;
+}
+.box-l8-3 dt{
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    line-height: 1.25;
+    color: #fff;
+}
+.box-l8-3 dd{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 19px;
+    z-index: 2;
+    color: #fff;
+}
+.box-l8-4{
+    position: absolute;
+    right: 224px;
+    bottom: 83px;
+    opacity: 1;
+    z-index: 2;
+}
+
+/*第五块*/
+.box-l9{
+    min-width: 1240px;
+    height: 100%;
+    position: relative;
+}
+.box-l9 ul{
+    width: 840px;
+    margin: 110px auto 0;
+}
+.box-l9 ul li{
+    width: 180px;
+    float: left;
+    margin: 0 50px;
+    height: 345px;
+}
+.box-l9 dl{
+    margin-top: 23px;
+}
+.box-l9 dt{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+.box-l9 dd{
+    font-size: 13px;
+    margin-top: 2px;
+    line-height: 1.9;
+    color: #fff;
+}

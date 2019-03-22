@@ -1,0 +1,311 @@
+ul,li,body,b{
+    margin: 0;
+    padding: 0;
+}
+
+b{
+    font-size: 48px;
+}
+h1{
+    font-size: 48px;!important;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 23px;
+}
+p{
+    font-size: 16px;!important;
+}
+a{
+
+    color: #FFFFFF;
+}
+a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.section1{
+    overflow: hidden;
+    background-image: url("./../img/private/rv_mv_n1.jpg");
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 720px;
+    background-size: 100%;
+    text-align: center;
+    margin: auto;
+}
+.b1{
+    text-align: left;
+    font-size: 5em;
+    color: #FFFFFF;
+    display: block;
+    padding-left: 2em;
+    padding-top: 3em;
+}
+.section2{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section2 p{
+    width: 40%;
+    margin: auto;
+    color: #000;
+}
+.section3{
+    margin-bottom: 100px;
+}
+
+.section3 h1{
+    color: #000;
+}
+
+.section3 dt{
+    color: #000;
+    padding: 3px 0;
+}
+
+.section3 dd{
+    color: #666;
+    padding: 3px 0;
+}
+
+.section3 ul{
+
+    width: 90%;
+    height: 0;
+    margin: auto;
+    padding-bottom: 1045px;
+    position: relative;
+}
+.section3 li{
+    list-style: none;
+}
+.first-li{
+    width: 50%;
+    position: absolute;
+    left: 155px;
+    z-index: 998;
+}
+.first-li>div{
+    position: relative;
+}
+.first-li>div>div:nth-child(2){
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+.first-li>div>div:nth-child(3){
+   position: absolute;
+    left: 27px;
+    top: 580px;
+}
+.two-li{
+    width: 50%;
+    position: absolute;
+    top: 183px;
+    left: 628px;
+}
+.two-li>div{
+    position: relative;
+}
+.two-li>div>div:nth-child(2){
+    position: absolute;
+    left: 30px;
+    top: 0;
+}
+
+.two-li>div>div:nth-child(3){
+   position: absolute;
+    left: 27px;
+    top: 580px;
+}
+.section4{
+    margin-bottom: 100px;
+}
+.section4>div{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.section4 >div>ul>li{
+    width: 40%;
+    height: 200px;
+    padding-top: 80px;
+    position: relative;
+    border-top: 1px gray solid;
+    float: left;
+    margin-left: 80px;
+    list-style: none;
+}
+.section4 p{
+    width: 70%;
+    color: #000;
+}
+.section4 li img{
+    position: absolute;
+    top: 80px ;
+    right: 0px;
+}
+
+.section4 ul{
+    padding-top: 30px;
+}
+
+.section4 >div>ul>li:last-child{
+    padding: 20px;
+}
+
+.section5-ul{
+    width: 94%;
+margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.section5-ul li{
+    width: 49%;
+    list-style: none;
+float: left;
+    margin-left: 2%;
+
+
+}
+.section5-ul>li:first-child{
+    background-image: url("./../img/private/rv_mv_n8.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 0;
+}
+.section5-ul li div{
+    display: table;
+    width: 100%;
+    height: 297px;
+    text-align: center;
+    vertical-align: middle;
+}
+.section5-ul dl{
+    display: table-cell;
+    vertical-align: middle;
+}
+.section5-ul dt{
+    margin-left: auto;
+    margin-right: auto;
+}
+.section5-ul>li:last-child{
+    background-image: url("./../img/private/rv_mv_n6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: table;
+}
+@media screen and (max-width: 768px){
+    .section1{
+        width: 100%;
+        height: 270px;
+    }
+    .b1{
+        font-size: 3em;
+        padding-top: 1em  ;
+    }
+    .section2{
+
+        margin-bottom: 60px;
+    }
+    .section2 p{
+        width: 100%;
+    }
+    .section3 ul{
+        width: 100%;
+        height: 520px;
+        overflow: hidden;
+    }
+    .first-li{
+        width: 100%;
+        left: 0;
+    }
+    .first-li>div{
+        position: relative;
+    }
+    .first-li>div>div:nth-child(2){
+        position: absolute;
+        left: 10px;
+    }
+    .first-li>div>div:nth-child(3){
+        position: absolute;
+        left: 27px;
+        top: 280px;
+    }
+    .two-li>div>div:nth-child(3){
+        position: absolute;
+        left: 27px;
+        top: 500px;
+    }
+    .two-li{
+        width: 100%;
+        left: 0;
+        top: 800px;
+    }
+    .two-li>div{
+        position: relative;
+    }
+    .two-li>div>div:nth-child(2){
+        position: absolute;
+        left: 10px;
+    }
+    .two-li>div>div:nth-child(3){
+        position: absolute;
+        left: 10px;
+        top: 280px;
+    }
+    .section3{
+        margin-bottom: 0;
+    }
+    .section4>div{
+        width: 100%;
+        overflow: hidden;
+    }
+    .section4 >div>ul>li{
+        width: 100%;
+        height: 100px;
+        position: relative;
+        border-top: 1px gray solid;
+        float: left;
+        list-style: none;
+        margin: 0;
+    }
+    .section4 p{
+        width: 70%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .section4 li img{
+        position: absolute;
+        top: 40px ;
+        left: 0px;
+    }
+    .section4 >div>ul>li:last-child{
+        padding: 20px;
+    }
+    .section2{
+        overflow: hidden;
+    }
+    .section5-ul{
+        width: 100%;
+    }
+    .section5-ul li{
+        width: 100%;
+        list-style: none;
+    }
+    .section5-ul li div{
+        display: table;
+        width: 100%;
+        height: 200px;
+    }
+    .section5-ul>li:last-child{
+        margin: 0;
+    }
+}
+dd{
+    margin: 0;!important;
+}

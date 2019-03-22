@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/mypage_wish.css">
+<section class="content">
+    <div class="wish_list">
+        <p>
+            愿望清单
+        </p>
+    </div>
+    <div class="container1">
+        <%if(data.length>0){%>
+        <%for(var i=0;i < data[0].length ; i++){%>
+        <div class="shop-item">
+            <div class="itemImg-box">
+                <i class="fa fa-heart-o icon-heart"></i>
+                <a href="/shop/shopshow?productId=<%=data[0][i].product_id%>">
+                    <img src="/<%=data[0][i].pic_path%>" alt="">
+                </a>
+
+            </div>
+            <p class="shopName"><%=data[0][i].product_name%></p>
+            <p class="shopMark"><%=data[0][i].English_name%></p>
+            <p class="type-color">
+                <%for(var j =0 ;j<data[1].length ;j++ ){%>
+                <%if(data[0][i].product_id==data[1][j].product_id){%>
+                <span style="background-color: <%=data[1][j].color_value%>"></span>
+                <%}%>
+                <%}%>
+            </p>
+            <p class="shop-priceBox"><span class="price">$<%=data[0][i].price%></span><span><i class="fa fa-shopping-basket"></i></span></p>
+        </div>
+        <%}%>
+        <%}%>
+        <div class="wish_text">
+            你的愿望清单是空的
+        </div>
+    </div>
+    <div style="height: 100px;">
+        <!--占位-->
+    </div>
+</section>

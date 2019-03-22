@@ -1,0 +1,72 @@
+.content{
+    width: 80%;
+    height: 7540px;
+    margin: auto;
+}
+
+.content img{
+    width: 100%;
+}
+
+.content-head{
+    position: relative;
+    width: 80%;
+    margin: auto auto 60px auto;
+    height: 110px;
+}
+
+.content-head span{
+    color: #ff463a;
+    font-size: 18px;
+}
+
+.content-head h3{
+    font-size: 44px;
+}
+
+.notice{
+    width: 100%;
+    margin: auto;
+    height: 70px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.notice_content div{
+    color: #000;
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+}
+
+.content-bottom{
+    padding: 3% 0;
+    width: 80%;
+    margin: auto;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+
+}
+
+.content-bottom p{
+    text-align: right;
+    font-size: 18px;
+}
+
+.content-bottom p>a{
+    /*float: right;*/
+    font-size: 21px;
+    color: #000000;
+}
+
+.img-box{
+    position: absolute;
+    right: 10px;
+    top:20px;
+    background: url("../img/imgEvent/evetlogo.png");
+    width: 64px;
+    height: 79px;
+    color: #ffffff;
+    line-height: 79px;
+    text-align: center;
+}

@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/shopShow.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Title</title>
+    <style>
+        @media screen and (max-width: 1366px) {
+            .head_bottom_inner{
+                font-size: 12px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.5%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -21.9%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -35.1%;
+            }
+        }
+
+        @media screen and (min-width: 1367px) {
+            .head_bottom_inner{
+                font-size: 16px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.5%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -18.55%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -28%;
+            }
+        }
+        body,html,ol,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: darkgray;
+        }
+        h1,h2,h3,h4{
+            color: white;
+        }
+        a{
+            color: darkgray;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        input{
+            border: none;
+            padding: 6px;
+            transform: translateY(-2px);
+        }
+        .head_top{
+            background-color: #0f0f0f;
+            padding: 10px 10%;
+        }
+        .head_top:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .head_top>.clearfix{
+            float: right;
+        }
+        .head_top>.clearfix>.menu{
+            float: left;
+            font-size: 12px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .head_top>.clearfix>.menu>a:hover{
+            color: white;
+        }
+
+        .head_bottom{
+            height: 90px;
+        }
+        .head_bottom_inner{
+            padding: 20px 10%;
+            width: 100%;
+            line-height: 47px;
+            background-color: white;
+            height: 75px;
+            position: relative;
+            z-index: 999;
+        }
+        .head_bottom_inner>.clearfix{
+            float: left;
+            width: 40%;
+        }
+        .head_bottom_inner>.clearfix>.menu{
+            float: left;
+            padding: 0 20px;
+            font-weight: bold;
+            /*position: relative;*/
+        }
+        .head_bottom_inner>.clearfix>.menu>a:hover{
+            color: red;
+        }
+        .head_bottom_inner>.clearfix>.menu>a{
+            color: black;
+        }
+        .head_bottom_inner>.clearfix>i{
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+        .head_bottom_inner:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+
+        .first:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .second:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .four:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .myUl{
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            font-size: 20px;
+            background-color: white;
+            display: none;
+            padding: 0 11%;
+            padding-top: 20px;
+
+        }
+        .myUl>li{
+            float: left;
+            padding: 30px 22px;
+        }
+        .myUl>li>a{
+            color: black;
+        }
+        .myUl>li>a:hover{
+            color: red;
+        }
+        .footer{
+            padding: 2% 10%;
+            background-color: black;
+            font-size: 10px;
+        }
+        .footer a{
+            color: white;
+        }
+        .footer>.div1:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .footer>.div1>.div1_item{
+            float: left;
+            width: 35%;
+        }
+        .footer>.div2>.div2_item a{
+            margin-right: 10px;
+        }
+        .footer>.div2>.div2_item a:hover{
+            text-decoration: underline;
+        }
+        .myi>i{
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        .indexmodal{
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }
+        .indexmodal_content{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0px;
+        }
+        .mybody{
+            height: 80%;
+            /*background-color: deeppink;*/
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 0px;
+        }
+        .mybody>.body_head{
+            padding-bottom: 2%;
+            font-size: 18px;
+            color: black;
+        }
+        .mybody>.body_body{
+            overflow-y: auto;
+            /*text-align: center;*/
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid black;
+            height: 82%;
+            font-size: 22px;
+            position: relative;
+            color: black;
+        }
+        .body_body::-webkit-scrollbar {
+            width: 4px;
+            cursor: pointer;
+        }
+
+        .body_body::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: darkgray;
+        }
+
+        .body_body::-webkit-scrollbar-track {
+            /*background-color:#2f2f2f;*/
+            opacity: 1;
+        }
+        .cell_id{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        .cell_info{
+            font-size: 14px;
+        }
+        .cell_info>div{
+            padding-bottom: 15px;
+        }
+        .symbol{
+            padding: 6px 8px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        #sawProduct{
+            font-size: 14px;
+            color: black;
+            border-bottom: 1px solid black;
+            text-decoration: none;
+        }
+        .myfoot{
+            /*background-color: greenyellow;*/
+            width: 90%;
+            margin: 0 auto;
+            border-top: none;
+            text-align: left;
+            padding: 10px 15px;
+            overflow: hidden;
+        }
+        .buyNow{
+            background-color: #2f2f2f;
+            font-size: 20px;
+            width: 88%;
+            border-radius: 0;
+            margin-right: 1%;
+            border: none;
+            height: 40px;
+            float: left;
+        }
+        .buyNow:hover{
+            background-color: black!important;
+        }
+        .shopBag{
+            float: left;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            color: black;
+            font-size: 26px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="head_top">
+    <ul class="clearfix">
+        <li class="menu"><a href=" myPage.html">mypage</a></li>
+        <li class="menu"><a href=" register.html">login</a></li>
+        <li class="menu"><a href=" login.html">Sign Up</a></li>
+    </ul>
+</div>
+<div class="head_bottom">
+    <div class="head_bottom_inner">
+        <ul class="clearfix">
+            <li class="menu first">
+                <a href="newPro.html">NEW & BEST</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="newPro.html">new product</a></li>
+                    <li><a href=" collection.html">collection</a></li>
+                    <li><a href=" best.html">best</a></li>
+                    <li><a href=" The winners.html">Awards Winner</a></li>
+                    <li><a href=" lookbook.html">Lookbook</a></li>
+                    <li><a href=" MOTD.html">MOTD</a></li>
+                </ul>
+            </li>
+            <li class="menu second">
+                <a href=" shopOfFace.html">SHOP</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" shopOfFace.html">face</a></li>
+                    <li><a href=" shopOfFace.html">Lip</a></li>
+                    <li><a href=" shopOfFace.html">children</a></li>
+                    <li><a href=" shopOfFace.html">Cheek</a></li>
+                    <li><a href=" shopOfFace.html">skin care</a></li>
+                    <li><a href=" shopOfFace.html">Tools</a></li>
+                    <li><a href=" shopOfFace.html">Fragrance / Nail</a></li>
+                </ul>
+            </li>
+            <li class="menu third"><a href=" event.html">EVENT</a></li>
+            <li class="menu four">
+                <a href=" private.html">SERVICE</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" private.html">Private Makeup Lessons</a></li>
+                    <li><a href=" eyebrow.html">Iva Uva</a></li>
+                    <li><a href=" uerCenter.html">Service center</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="logo clearfix" style="text-align: center;margin: 0 2%;width: 16%">
+            <a href=" index.html"><img src="../img/imgIndex/logo.gif" height="36" width="90" style="cursor: pointer;"></a>
+        </div>
+
+        <div class="search clearfix" style="text-align: right;width: 40%">
+            <i class="fa fa-search" ></i>
+            <input type="text" placeholder="SEARCH" style="height: 30px">
+            <i class="fa fa-close"></i>
+            <i class="fa fa-shopping-bag btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin: 0 0 6px 50px"></i>
+        </div>
+    </div>
+</div>
+<section class="Buy-head">
+    <div class="Buy-headLeft">
+        <div class="shop-head-mark">
+            #longlastingfoundation #silkyfoundation
+        </div>
+        <div class="shop-head-name">
+            PRO TAILOR FOUNDATION BE SILK SPF34 PA++
+        </div>
+        <div class="shop-price">$ 41.36</div>
+        <div class="shop-start"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i
+                class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+        <div class="icon-heartAndShare">
+            <i class="fa fa-heart-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+                class="fa fa-share-square-o"></i>
+        </div>
+    </div>
+    <div class="Buy-headCenter">
+        <img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533neF833189674.png" alt="">
+    </div>
+    <div class="Buy-headRight">
+        <div class="Right-label">
+            CHOOSE YOUR OPTIONS
+        </div>
+        <div class="shop-option-num">10 Colors / 30ml</div>
+        <div class="shop-color-items">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="shop-addSelect">
+            <div class="item-select">
+                <div><a href="javascript:void(0);" class="item-select-btn"><span>脸</span><i
+                        class="fa fa-angle-down icon-angleUp"
+                        id='icon-angleUp'></i></a>
+                </div>
+                <div class="item-select-ul">
+                    <ul>
+                        <li><a href="javascript:void(0);">脸</a></li>
+                        <li><a href="javascript:void(0);">唇</a></li>
+                        <li><a href="javascript:void(0);">眼睛</a></li>
+                        <li><a href="javascript:void(0);">脸颊</a></li>
+                        <li><a href="javascript:void(0);">皮肤护理</a></li>
+                        <li><a href="javascript:void(0);">工具</a></li>
+                        <li><a href="javascript:void(0);">美甲/香水</a></li>
+                        <li><a href="javascript:void(0);">线上</a></li>
+                        <li><a href="javascript:void(0);">Specialset</a></li>
+                        <li><a href="javascript:void(0);">最后的机会</a></li>
+                    </ul>
+                </div>
+            </div>
+            <span class="shop-addBtn"></span>
+        </div>
+        <div class="buy-checked">
+            <div class="buy-checked-box">
+                <div class="checked-head">
+                    <span><i></i> IVORY WARM</span><span>&times;</span>
+                </div>
+                <div class="checked-body">
+                    <span class="num-reduce"></span>
+                    <span class="checkedNum">1</span>
+                    <span class="num-add"></span>
+                    <span class="total-price">$38.09</span>
+                </div>
+            </div>
+        </div>
+        <div class="shop-total">
+            <span>TOTAL</span>
+            <span>$38.09</span>
+        </div>
+        <div class="buy-btn-box">
+            <span>BUY NOW</span>
+            <span class="fa fa-shopping-basket"></span>
+        </div>
+    </div>
+</section>
+<section class="what-it-is">
+    <div class="btn-changeModu1">
+        <span>WHAT IT IS</span>
+        <span>REVIEWS</span>
+    </div>
+    <div class="shop-name">
+        UHD NUDE LIQUID POWDER SPF34 PA++
+    </div>
+    <div class="shop-character">
+        Long-lasting foundation that needs no powder
+    </div>
+    <div class="shop-introduce">
+        The advanced formula containing micro UHD powder provides a smooth,<br>
+        matte finish as it changes to soft powder upon contact with skin.<br>
+        Fine powder particles provide a long-lasting matte finish by effectively controlling oil as they thinly adhere
+        to skin.
+    </div>
+    <div class="shop-mark-img">
+        <div class="mark-imgBox">
+            <div><img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1534bKW768999273.png"
+                      alt=""></div>
+            <div>long lasting</div>
+        </div>
+        <div class="win-imgBox">
+            <div><img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1535NDB103503762.png"
+                      alt=""></div>
+            <div>2017 Powderroom Hit item</div>
+        </div>
+    </div>
+    <div class="shop-bigImg">
+        <div><img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1535Kss277596345.png"
+                  alt=""></div>
+        <div><img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1538rcH212422623.jpg"
+                  alt=""></div>
+    </div>
+    <div class="shop-infoImg">
+        <img src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1538DGu389455302.jpg" alt="">
+    </div>
+</section>
+<section class="shop-info">
+    <div class="shop-infoBox">
+        <span>Product information/<br>Ingredient info</span>
+        <span class="fa fa-angle-down" id="info-icon1"></span>
+        <span>This product information is put together in accordance with [the notification on the provision of product information such as e-commerce of the fair trade committee].</span>
+
+    </div>
+    <div class="shop-infoBox-hidden container">
+        <div class="row">
+            <div class="col-lg-2">Product Name</div>
+            <div class="col-lg-8 col-lg-offset-2">PRO TAILOR FOUNDATION BE SILK SPF34 PA++</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Volume</div>
+            <div class="col-lg-8 col-lg-offset-2">30ml</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Major product spec
+                [skin type, color(no.) etc.]
+            </div>
+            <div class="col-lg-8 col-lg-offset-2">ALL SKIN TYPES</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Expiration Date</div>
+            <div class="col-lg-8 col-lg-offset-2">12 months after release</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">How to Use</div>
+            <div class="col-lg-8 col-lg-offset-2">Fully shake the container up and down before use. Take an appropriate
+                amount and gently apply on the face in the direction of skin texture. With the additional brush or
+                Skinny Fix Blender, express more even and smooth skin.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Manufacturer/Manufacturing
+                Country/Distributor
+            </div>
+            <div class="col-lg-8 col-lg-offset-2">코스비전 / 한국 / ㈜에스쁘아</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Main ingredients</div>
+            <div class="col-lg-8 col-lg-offset-2">All ingredients</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Precautions</div>
+            <div class="col-lg-8 col-lg-offset-2">details</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">Quality assurance standards</div>
+            <div class="col-lg-8 col-lg-offset-2">If the product has any defects, you will be indemnified as set forth
+                by the Korea Fair Trade Commission.
+            </div>
+        </div>
+    </div>
+
+    <div class="transport-cost">
+        <span>Estimate your shipping rates</span>
+        <span class="fa fa-angle-right"></span>
+    </div>
+    <div class="return-info">
+        <span>Shipment/Exchange/<br>Refund information</span>
+        <span class="fa fa-angle-down" id="info-icon2"></span>
+    </div>
+    <div class="return-info-hidden">
+        <div class="ul-head">Shipping info</div>
+        <ul>
+            <li>Once shipping begins, order information and invoice number will be sent via e-mail. You can also track
+                your order in [My Page > Order History].
+            </li>
+            <li>Your choice of delivery agency (DHL/EMS/K-packet) may be restricted depending on your order / shipping
+                location.
+            </li>
+        </ul>
+        <div class="ul-head2">International Shipping Rates</div>
+        <ul>
+            <li>Shipping rates are automatically calculated based on package weight, shipping location and delivery
+                agency. You can choose a delivery agency, and check it at the check-out page.
+            </li>
+        </ul>
+        <div class="ul-head2">Duties & Taxes</div>
+        <ul>
+            <li>All costs occurred during the Clearance process including import customs, needs to be paid by the
+                customer.
+            </li>
+            <li>The tax rate applied depends on your ship-to destination. These charges are separate from shipping
+                charges and you will be billed directly.
+            </li>
+        </ul>
+        <div class="ul-head2">Order status</div>
+        <ul>
+            <li>Order goes through five stages. You can cancel your order when it is in Order Complete and Order
+                Confirmation.
+            </li>
+            <li>In other cases, you must contact the customer service center, or you can get a refund only.</li>
+        </ul>
+        <div class="ul-head2">Cancellation</div>
+        <ul>
+            <li>You can cancel your order when it is in Order Complete and Order Confirmation</li>
+            <li>You can cancel your order in whole, but not in parts. To cancel an individual order, cancel the order in
+                whole and place an order again
+            </li>
+            <li>Shipping rates will not be returned though you cancel parts of the order.</li>
+        </ul>
+        <div class="ul-head2">Returns</div>
+        <ul>
+            <li>You can return your order in whole and in parts. Go to Contact Us for return.</li>
+            <li>For goods returned because of your fault and/or changing your mind, you are responsible for return
+                shipping rates.
+            </li>
+            <li>You must cover the return shipping rates though you have received your package using free shipping
+                code.
+            </li>
+            <li>You must also return samples and free gifts together.</li>
+        </ul>
+        <div class="ul-head2">* No returns allowed</div>
+        <ul>
+            <li>If the return deadline has passed</li>
+            <li>If you are responsible for damaged/missing goods (not if you opened only the package to see goods
+                inside)
+            </li>
+            <li>If you opened the package and as a result, goods went down in value.</li>
+            <li>If you have used goods in whole or in parts and as a results, their value went down.</li>
+        </ul>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal-cost">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">EST. SHIPPING RATES</h4>
+                </div>
+                <div class="modal-body">
+                    <p>To calculate the international shipping rates, please select a shipping location.</p>
+                    <p>International shipping rates are calculated based on a number of factors, including desired
+                        service level (EMS/K-Packet/DHL/SAGAWA), number of items you are purchasing, the weight of the
+                        item, and the destination country/region.</p>
+                    <div class="row select-box">
+                        <div class="col-lg-6">
+                            <select name="userAddress" id="userAddress">
+                                <option value="0">Taiwan</option>
+                                <option value="1">HongKong</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <select name="transportType" id="transportType">
+                                <option value="0">EMS</option>
+                                <option value="1">顺风</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row cost-showBox">
+                        <div class="col-lg-6">
+                            Weight of<br>
+                            Packages(kg)
+                        </div>
+                        <div class="col-lg-6">
+                            Est. Shipping<br>
+                            Rates
+                        </div>
+                    </div>
+                    <div class="row cost-box">
+                        <div class="col-lg-6">~0.5kg</div>
+                        <div class="col-lg-6">USD 15.73</div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="banner">
+</section>
+<section>
+    <div class="btn-changeModu2">
+        <span>WHAT IT IS</span>
+        <span>REVIEWS</span>
+    </div>
+    <div class="reviews-head">
+        <h1>REVIEWS</h1>
+        <p><span class="review-star-box">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                class="fa fa-star"></i>
+        </span><span>5(224Review)</span></p>
+        <div class="write-review">
+            <button>Write</button>
+        </div>
+    </div>
+    <div class="reviews-box">
+        <div class="reviews-box-head clearfix">
+            <ul>
+                <li><i class="fa fa-commenting-o"></i></li>
+                <li><i class="fa fa-camera"></i></li>
+                <li>
+                    <div class="dropdown choseColorBox">
+                        <button id="choseColor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span><img src="../img/iconlogo/ico_mclose2.png" alt="" class="colorImg"></span>
+                            <span class="colorType">All Color <i class="fa fa-angle-down"></i></span>
+                        </button>
+                        <ul class="dropdown-menu" id="Color" aria-labelledby="choseOrder">
+                            <li><a href="javacript:void(0);"><span><img src="../img/iconlogo/ico_mclose2.png" alt=""
+                                                                        class="colorImg"></span><span class="colorType">Latest order</span></a>
+                            </li>
+                            <li><a href="javacript:void(0);">Score order</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown choseOrderBox">
+                        <button id="choseOrder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Latest order</span>
+                            <span class="fa fa-angle-down"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="Order" aria-labelledby="choseOrder">
+                            <li><a href="javacript:void(0);">Latest order</a></li>
+                            <li><a href="javacript:void(0);">Score order</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="reviews-box-body">
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+            <div class="review-item">
+                <p>PETALY&nbsp;&nbsp;<span class="userReview-color"></span></p>
+                <p>명성대로</p>
+                <p>밀착력, 커버력 다 좋은데 얇게 발리기까지 하다니.. 이 값에 나올 수 없는 퀄리티라고 생각이 듭니다. 모공 커버력도 비교적 우수해요. 단점을 꼽자면 겨울에는 건조한감이 있어
+                    스킨케어에 신경 써야 한다는 것 정도? 아 저는 복합성이라 코주면하고 이마만 유분기가 많습니다. </p>
+                <p><a href="javascript:void(0);">more</a></p>
+                <p class="userReview-img"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533AqR833194934.png"
+                        alt=""></p>
+                <p class="userReview-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </p>
+                <p class="user-Name">
+                    ghgtjdal0***
+                </p>
+                <p>2018.12.23</p>
+            </div>
+        </div>
+        <div class="more-reviews">
+            <div></div>
+            <div>To view more <span class="reviews-page">2/30</span></div>
+        </div>
+    </div>
+</section>
+<section class="Motd">
+    <div class="Motd-head">
+        <h2>MOTD</h2>
+        <p>MAKEUP OF THR DAY</p>
+    </div>
+    <div class="motd-item">
+        <div class="motd-item-info">
+            <p>Be Silk vs. Be <br>Glow</p>
+            <p>Pro Tailor Foundation Be Silk makes skin look smooth by providing a non-sticky, matte finish on the
+                outside of skin while moisturizing the inside of skin</p>
+            <p><a href="javascript:void(0);">
+                more
+            </a></p>
+        </div>
+    </div>
+</section>
+<section class="buyNow-box-fixed">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 clearfix">
+                <div class="buyNow-imgBox"><img
+                        src="../img/shopShow/PRO%20TAILOR%20FOUNDATION%20BE%20SILK%20SPF34%20PA++/IMG1533pJD833194667.png"
+                        alt=""></div>
+                <div class="buyNow-info">
+                    <p class="buyNow-shopName">PRO TAILOR FOUNDATION BE SILK SPF34 PA++</p>
+                    <p class="buyNow-price">
+                        <span class="original-price"><del>$41.27</del></span>
+                        <span class="discount">
+                            (30%)
+                        </span>
+                        <span class="price-now">$28.87</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 buyNow-rightBox">
+                <span class="num-ofType">
+                    2&nbsp;units
+                </span>
+                <span>$57.74</span>
+                <span class="add-cart fa fa-shopping-cart">
+
+                </span>
+                <span class="btn-buy-now">BUY NOW
+                <div class="buyNow-show-type">
+                        <div><i class="fa fa-angle-up " id="btnShow"></i></div>
+                        <div>
+                            <div class="show-type-info">
+                                <p>PORCELAIN Y</p>
+                                <p><span class="type-count">1 units</span><span
+                                        class="price">&nbsp;&nbsp;&nbsp;$57.74</span></p>
+                            </div>
+                            <div class="showType-color"><span></span></div>
+                        </div>
+                    </div>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="writeReivew">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="review-form" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Review Registration</h5>
+                </div>
+                <div class="modal-body reviewModal-body">
+                    <p class="shopName">
+                        PRO TAILOR FOUNDATION BE SILK SPF34 PA++
+                    </p>
+                    <div style="visibility: hidden"><input type="text" hidden name="color" id="getColor" value=""></div>
+                    <div class="select-shopColor">
+                        <div class="selecter-color">
+                            <span></span>
+                            <span>HONEY</span>
+                            <span class="fa fa-angle-down" id="select-shopcolorIcon"></span>
+                        </div>
+                        <div class="select-colors-box">
+                            <div class="select-colors">
+                                <span class="selecter-color-span"></span>
+                                <span class="selecter-color-name">HONEY</span>
+                            </div>
+                            <div class="select-colors">
+                                <span class="selecter-color-span"></span>
+                                <span class="selecter-color-name">HONEY</span>
+                            </div>
+                            <div class="select-colors">
+                                <span class="selecter-color-span" style="background-color: #c72330"></span>
+                                <span class="selecter-color-name">哈哈</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="giveStar">
+                        <div class="giveStar-head">
+                            <span></span><span>Satisfaction</span>
+                        </div>
+                        <input type="text" style="visibility: hidden" hidden id="getStar" value="5" name="star">
+                        <div class="stars">
+                            <i class="fa fa-star" data-id="1"></i>
+                            <i class="fa fa-star" data-id="2"></i>
+                            <i class="fa fa-star" data-id="3"></i>
+                            <i class="fa fa-star" data-id="4"></i>
+                            <i class="fa fa-star" data-id="5"></i>
+                        </div>
+                    </div>
+                    <div class="review-title">
+                        <span></span>
+                        <input type="text" placeholder="TITLE" name="title">
+                    </div>
+                    <div class="review-content">
+                        <span></span>
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="REVIEW"></textarea>
+                    </div>
+                    <div class="reivew-photo">
+                        <div class="photo-head">PHOTO ATTACHMENT</div>
+                        <div class="photoUpload">
+                            <input type="file" name="photo">
+                        </div>
+                        <div class="photo-remind">
+                           <ul>
+                               <li> You can attach up to 4 photos less than 5MB in size<br>
+                                   (file extension: JPG, PNG, GIF)</li>
+                           </ul>
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <p>Please read it when registering a review.</p>
+                        <ul class="photo-remind">
+                            <li> Postings that violate other people's rights, such as copyrights, or not related to the board may be deleted arbitrarily.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer reviewModal-foot">
+                   <div><button class="cancle btn btn-default" data-dismiss="modal" id="cancel">CANCLE</button>
+                       <button class="SubmitReview btn btn-default" id="SubmitReview">REGISTRATION</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+        <div class="modal-content indexmodal_content">
+            <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+                <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body mybody">
+                <div class="body_head">
+                    <span>1</span>个产品
+                </div>
+                <div class="body_body">
+                    <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+                    <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+                    <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+                    <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+                    <!--</div>-->
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+                    <span style="float:left;font-size: 14px">TOTAL</span>
+                    <span style="float: right;font-size: 22px;font-weight: bold">₩<span class="sum2">38,000</span></span>
+                </div>
+            </div>
+            <div class="modal-footer myfoot">
+                <button type="button" class="btn btn-primary buyNow">现在购买</button>
+                <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="div1">
+        <div class="div1_item">
+            <h6 style="padding-bottom: 30px"><a href="#">MAKEUP</a></h6>
+            <h4><a href="#">ARTIST LIVECHAT</a></h4>
+            <p>Talk to the <br>artist about makeup troubles with live chat!</p>
+        </div>
+        <div class="div1_item" style="width: 45%">
+            <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">Service center</a></h6>
+            <h4><a href="#">080 619 8888</a></h4>
+            <p>Consulation time 09:00~18:00<br>(Mon-Fri except holidays)</p>
+        </div>
+        <div class="div1_item" style="text-align: right;width: 19.5%">
+            <h1 style="padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">Find a store</a><br> <a href=" brand.html">Brand introduction</a> <br><a href="#">membership</a><br><a href=" uerCenter">site map</a> </h1>
+            <h6><a href="#">login</a>&nbsp;&nbsp;&nbsp; <a href="#">Sign Up</a></h6>
+        </div>
+    </div>
+    <div class="div2" style="overflow: hidden;padding-top: 15px">
+        <div class="div2_item" style="float: left">
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#" style="font-weight: bold">Privacy policy</a>
+                <a href="#">Video Equipment Management Policy</a>
+                <a href="#">Confirm carrier information</a>
+                <a href="#">Unauthorized collection of e-mail</a>
+                <a href="#">Electronic notice</a>
+            </div>
+            <div>
+                <p>Esuga CEO: Lim Jung Sik &nbsp;&nbsp;&nbsp; Headquarters: Han River Boulevard 100, Yongsan-gu, Seoul (Han River 2-ga) 6th floor</p>
+                <p>Contact Us | Privacy Policy | &nbsp;&nbsp;&nbsp; Terms of &nbsp;&nbsp;&nbsp; <a href=" private.html">Service |</a></p>
+                <p>Personal Information Protection Officer: Kim Sung Hee Customer Service: 080-619-8888 &nbsp;&nbsp;&nbsp;E-mail: espoirmall@espoir.com &nbsp;&nbsp;&nbsp;Hosting Provider:</p>
+                <p>
+                    Our malls are applied to the purchase escrow INIPAY safety services ㈜KG Inicis
+                    for payment transactions for your safety mutongjang trading &nbsp;&nbsp;&nbsp;
+                    <a href=" myPage.html">services Order Status</a>
+                </p>
+                <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-camera"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-wechat"></i>
+            <i class="fa fa-weibo"></i>
+            <i class="fa fa-info"></i>
+        </div>
+    </div>
+</div>
+<script src="../js/less.min.js"></script>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/shopShow.js"></script>
+<script>
+    window.onscroll = function () {
+        // console.log(scrollY);
+        if (scrollY>=30){
+            $('.head_bottom_inner').css({
+                'position' : 'fixed',
+                'top' : '0px',
+                'line-height' : '52px',
+                'padding' : '1px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '55px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(0.7)',
+                'transition' : 'all 0.3s'
+            });
+        }else {
+            $('.head_bottom_inner').css({
+                'position' : 'relative',
+                'line-height' : '47px',
+                'padding' : '20px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '75px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(1)',
+                'transition' : 'all 0.3s'
+            })
+        }
+    }
+
+    //将数字转换成 科学计数法
+    var reg = /(?=(\B)(\d{3})+$)/g;
+
+    //计算购物车内所有的商品总价
+    function countSum2(){
+
+        let sum2 = 0;
+        let osum2 = $('.sum1')
+
+        for (let i=0;i<osum2.length;i++){
+            let temp = osum2.eq(i).text();
+            temp = temp.replace(/,/g,'')
+            temp = parseInt(temp)
+            sum2 += temp;
+            // console.log(temp);
+        }
+        sum2 = sum2.toString();
+        sum2 = sum2.replace(reg,',')
+        $('.sum2').text(sum2);
+
+        // console.log(sum2)
+    }
+
+    //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-plus',myplus)
+    function myplus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num++;
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+    //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-minus',myminus)
+    function myminus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num--;
+        if (num==0){
+            num=1;
+        }
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+
+    //删除当前商品
+    $('.body_body').on('click','.fa-trash',delCell)
+    function delCell() {
+        $(this).parent().parent().remove();
+        countSum2()
+    }
+
+    //文档加载时，检查是否登陆过
+    window.onload = function () {
+        $.ajax({
+            url : '/user/checkLogin',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    }
+
+    //点击logout把session清空，再重新渲染页面
+    $('.head_top').on('click','#logout',function () {
+        $.ajax({
+            url : '/user/logout',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    })
+</script>
+</body>
+</html>

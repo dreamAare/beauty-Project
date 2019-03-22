@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <title>Title</title>
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        @media screen and (max-width: 1366px) {
+            .head_bottom_inner{
+                font-size: 12px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.5%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -20%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -31.45%;
+            }
+        }
+
+        @media screen and (min-width: 1367px) {
+            .head_bottom_inner{
+                font-size: 16px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.05%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -18.35%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -27.65%;
+            }
+        }
+        body,html,ol,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: darkgray;
+        }
+        h1,h2,h3,h4{
+            color: white;
+        }
+        a{
+            color: darkgray;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        input{
+            border: none;
+            padding: 6px;
+            transform: translateY(-2px);
+        }
+        .head_top{
+            background-color: #0f0f0f;
+            padding: 10px 10%;
+        }
+        .head_top:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .head_top>.clearfix{
+            float: right;
+        }
+        .head_top>.clearfix>.menu{
+            float: left;
+            font-size: 12px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .head_top>.clearfix>.menu>a:hover{
+            color: white;
+        }
+
+        .head_bottom{
+            height: 90px;
+        }
+        .head_bottom_inner{
+            padding: 20px 10%;
+            width: 100%;
+            line-height: 47px;
+            background-color: white;
+            height: 75px;
+            position: relative;
+            z-index: 999;
+        }
+        .head_bottom_inner>.clearfix{
+            float: left;
+            width: 40%;
+        }
+        .head_bottom_inner>.clearfix>.menu{
+            float: left;
+            padding: 0 20px;
+            font-weight: bold;
+            /*position: relative;*/
+        }
+        .head_bottom_inner>.clearfix>.menu>a:hover{
+            color: red;
+        }
+        .head_bottom_inner>.clearfix>.menu>a{
+            color: black;
+        }
+        .head_bottom_inner>.clearfix>i{
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+        .head_bottom_inner:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+
+        .first:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .second:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .four:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .myUl{
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            font-size: 20px;
+            background-color: white;
+            display: none;
+            padding: 0 11%;
+            padding-top: 20px;
+
+        }
+        .myUl>li{
+            float: left;
+            padding: 30px 22px;
+        }
+        .myUl>li>a{
+            color: black;
+        }
+        .myUl>li>a:hover{
+            color: red;
+        }
+        .footer{
+            padding: 2% 10%;
+            background-color: black;
+            font-size: 10px;
+        }
+        .footer a{
+            color: white;
+        }
+        .footer>.div1:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .footer>.div1>.div1_item{
+            float: left;
+            width: 35%;
+        }
+        .footer>.div2>.div2_item a{
+            margin-right: 10px;
+        }
+        .footer>.div2>.div2_item a:hover{
+            text-decoration: underline;
+        }
+        .myi>i{
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        .indexmodal{
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }
+        .indexmodal_content{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0px;
+        }
+        .mybody{
+            height: 80%;
+            /*background-color: deeppink;*/
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 0px;
+        }
+        .mybody>.body_head{
+            padding-bottom: 2%;
+            font-size: 18px;
+            color: black;
+        }
+        .mybody>.body_body{
+            overflow-y: auto;
+            /*text-align: center;*/
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid black;
+            height: 82%;
+            font-size: 22px;
+            position: relative;
+            color: black;
+        }
+        .body_body::-webkit-scrollbar {
+            width: 4px;
+            cursor: pointer;
+        }
+
+        .body_body::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: darkgray;
+        }
+
+        .body_body::-webkit-scrollbar-track {
+            /*background-color:#2f2f2f;*/
+            opacity: 1;
+        }
+        .cell_id{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        .cell_info{
+            font-size: 14px;
+        }
+        .cell_info>div{
+            padding-bottom: 15px;
+        }
+        .symbol{
+            padding: 6px 8px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        #sawProduct{
+            font-size: 14px;
+            color: black;
+            border-bottom: 1px solid black;
+            text-decoration: none;
+        }
+        .myfoot{
+            /*background-color: greenyellow;*/
+            width: 90%;
+            margin: 0 auto;
+            border-top: none;
+            text-align: left;
+            padding: 10px 15px;
+            overflow: hidden;
+        }
+        .buyNow{
+            background-color: #2f2f2f;
+            font-size: 20px;
+            width: 88%;
+            border-radius: 0;
+            margin-right: 1%;
+            border: none;
+            height: 40px;
+            float: left;
+        }
+        .buyNow:hover{
+            background-color: black!important;
+        }
+        .shopBag{
+            float: left;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            color: black;
+            font-size: 26px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="head_top">
+    <ul class="clearfix">
+        <li class="menu"><a href="myPage.html">mypage</a></li>
+        <li class="menu"><a href="register.html">login</a></li>
+    </ul>
+</div>
+<div class="head_bottom">
+    <div class="head_bottom_inner">
+        <ul class="clearfix">
+            <li class="menu first">
+                <a href="/newAndBest/newPro">NEW & BEST</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="/newAndBest/newPro">new product</a></li>
+                    <li><a href="/newAndBest/collection">collection</a></li>
+                    <li><a href="/newAndBest/best">best</a></li>
+                    <li><a href="/newAndBest/winner">Awards Winner</a></li>
+                    <li><a href="/newAndBest/lookbook">Lookbook</a></li>
+                    <li><a href="/newAndBest/MOTD">MOTD</a></li>
+                </ul>
+            </li>
+            <li class="menu second">
+                <a href="/shop/1">SHOP</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="/shop/1">face</a></li>
+                    <li><a href="/shop/2">Lip</a></li>
+                    <li><a href="/shop/3">children</a></li>
+                    <li><a href="/shop/4">Cheek</a></li>
+                    <li><a href="/shop/4">skin care</a></li>
+                    <li><a href="/shop/6">Tools</a></li>
+                    <li><a href="/shop/7">Fragrance / Nail</a></li>
+                </ul>
+            </li>
+            <li class="menu third"><a href="/event/event_main">EVENT</a></li>
+            <li class="menu four">
+                <a href="/service/private">SERVICE</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="/service/private">Private Makeup Lessons</a></li>
+                    <li><a href="/service/eyebrowBar">eyebrow Bar</a></li>
+                    <li><a href="/service/userCenter">Service center</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="logo clearfix" style="text-align: center;margin: 0 2%;width: 16%">
+            <a href="/html/index.html"><img src="../img/imgIndex/logo.gif" height="36" width="90" style="cursor: pointer;"></a>
+        </div>
+        <div class="search clearfix" style="text-align: right;width: 40%">
+            <i class="fa fa-search" ></i>
+            <input type="text" placeholder="SEARCH" style="height: 30px">
+            <i class="fa fa-close"></i>
+            <i class="fa fa-shopping-bag btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin: 0 0 6px 50px"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+        <div class="modal-content indexmodal_content">
+            <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+                <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body mybody">
+                <div class="body_head">
+                    <span>0</span>个产品
+                </div>
+                <div class="body_body">
+                    <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+                    <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+                    <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+                    <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+                    <!--</div>-->
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+                    <span style="float:left;font-size: 14px">TOTAL</span>
+                    <span style="float: right;font-size: 22px;font-weight: bold">$<span class="sum2">0</span></span>
+                </div>
+            </div>
+            <div class="modal-footer myfoot">
+                <button type="button" class="btn btn-primary buyNow">现在购买</button>
+                <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="content banner1" style="">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+            <!-- Indicators -->
+            <ol class="carousel-indicators mylistbox">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active">1</li>
+                <li data-target="#carousel-example-generic" data-slide-to="1">2</li>
+                <li data-target="#carousel-example-generic" data-slide-to="2">3</li>
+                <li data-target="#carousel-example-generic" data-slide-to="3">4</li>
+                <li data-target="#carousel-example-generic" data-slide-to="4">5</li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="background-color: white;padding-bottom: 260px">
+                <div class="item active">
+                    <img src="http://192.168.3.243:3100/img/imgIndex/banner2.jpg" width="120%">
+                    <div class="carousel-caption mycontent">
+                        <h1 class="myh1">2018 <br>BEST LIP <br> AWARDS</h1>
+                        <p class="myp1">introducing the best lip color of Esufa that has been loved for a long time</p>
+                        <h4 class="myh4"><a href="#">GO EVENT</a></h4>
+                        <div class="myabsolute">
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/1.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Couture Lip Fluid V---</h3>
+                                    <p style="color: gray;font-size: 24px">#MLBB lip</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/2.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color Cornic Velvet</h3>
+                                    <p style="color: gray;font-size: 24px">#Velvet mat</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/3.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color-conic tinted...</h3>
+                                    <p style="color: gray;font-size: 24px">#Water Tinting</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/imgIndex/banner2.jpg" width="120%">
+                    <div class="carousel-caption mycontent">
+                        <h1 class="myh1">2019 <br> ODD <br>SKOOL</h1>
+                        <p class="myp1">2018 HOLIDAY COLLECTION <BR>ODD SKOOL</p>
+                        <h4 class="myh4"><a href="#">GO SHOP</a></h4>
+                        <div class="myabsolute">
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/4.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Couture Lip Fluid V---</h3>
+                                    <p style="color: gray;font-size: 24px">#MLBB lip</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/5.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color Cornic Velvet</h3>
+                                    <p style="color: gray;font-size: 24px">#Velvet mat</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/6.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color-conic tinted...</h3>
+                                    <p style="color: gray;font-size: 24px">#Water Tinting</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/imgIndex/banner3.jpg" width="120%">
+                    <div class="carousel-caption mycontent">
+                        <h1 class="myh1" style="color: black">2019 <br> Moist <br>makeup</h1>
+                        <p class="myp1">when you purchase foundation ,you get GET!</p>
+                        <h4 class="myh4"><a href="#" style="color: black;border-bottom: 2px solid black">GO EVENT</a></h4>
+                        <div class="myabsolute">
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/7.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Couture Lip Fluid V---</h3>
+                                    <p style="color: gray;font-size: 24px">#MLBB lip</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/8.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color Cornic Velvet</h3>
+                                    <p style="color: gray;font-size: 24px">#Velvet mat</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/9.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color-conic tinted...</h3>
+                                    <p style="color: gray;font-size: 24px">#Water Tinting</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/imgIndex/banner4.jpg" width="120%">
+                    <div class="carousel-caption mycontent">
+                        <h1 class="myh1">YOUTH VIBE <br>PRO TAILER<br>CUSHION</h1>
+                        <p class="myp1">Online exclusive cushion launching</p>
+                        <h4 class="myh4"><a href="#">GO EVENT</a></h4>
+                        <div class="myabsolute">
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/10.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Couture Lip Fluid V---</h3>
+                                    <p style="color: gray;font-size: 24px">#MLBB lip</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/11.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color Cornic Velvet</h3>
+                                    <p style="color: gray;font-size: 24px">#Velvet mat</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/imgIndex/banner5.jpg" width="120%">
+                    <div class="carousel-caption mycontent">
+                        <h1 class="myh1" style="color: black">WEEKLY <br>HOT <br>TREND</h1>
+                        <p class="myp1">One weeks hottest color</p>
+                        <h4 class="myh4"><a href="#" style="color: black;border-bottom: 2px solid black">GO EVENT</a></h4>
+                        <div class="myabsolute">
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/12.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Couture Lip Fluid V---</h3>
+                                    <p style="color: gray;font-size: 24px">#MLBB lip</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="items">
+                                    <div>
+                                        <img src="../img/imgIndex/2.png" width="62%">
+                                    </div>
+                                    <h3 style="color: black">Color Cornic Velvet</h3>
+                                    <p style="color: gray;font-size: 24px">#Velvet mat</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"
+            style="top: 35%;bottom: 45%;width: 5%">
+                <span class="fa fa-angle-left myangel" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"
+               style="top: 35%;bottom: 45%;width: 5%">
+                <span class="fa fa-angle-right myangel" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="content banner2">
+        <div class="banner2_title">
+            <h1 style="color: black;font-size: 58px">TOP 3 COLOR</h1>
+            <p style="font-size: 26px">The best color now</p>
+        </div>
+        <div class="accColor" style="margin-top: 50px">
+            <div class="act" style="background-color: #dc5c5d">
+                <h4 style="float:left;padding-top: 20px">HIDDEN SENSUAL</h4>
+                <h1 style="float: right;font-size: 38px;cursor: pointer" class="spread">—</h1>
+                <div style="padding-top: 30px;width: 30%;margin: 0 auto">
+                    <a href="#" class="slideImg2">
+                        <img src="../img/imgIndex/color1.png" width="100%">
+                        <h5>Lipstick NoWare Power Mat <br>$ 20,000</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="" style="background-color: #ff9799">
+                <h4 style="float:left;padding-top: 20px">TREASURE</h4>
+                <h1 style="float: right;font-size: 38px;cursor: pointer" class="spread">+</h1>
+                <div style="padding-top: 30px;width: 30%;margin: 0 auto">
+                    <a href="#" class="slideImg2">
+                        <img src="../img/imgIndex/color2.png" width="100%">
+                        <h5>Lipstick NoWare Power Mat <br>$ 20,000</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="" style="background-color: #a93136">
+                <h4 style="float:left;padding-top: 20px">ROSY BOOP</h4>
+                <h1 style="float: right;font-size: 38px;cursor: pointer" class="spread">+</h1>
+                <div style="padding-top: 30px;width: 30%;margin: 0 auto">
+                    <a href="#" class="slideImg2">
+                        <img src="../img/imgIndex/color3.png" width="100%">
+                        <h5>Lipstick NoWare Power Mat <br>$ 20,000</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content banner3" style="">
+        <div class="banner3_title">
+            <h1 style="color: black;font-size: 58px">BEST ITEM</h1>
+            <p style="font-size: 26px;color: black">Best loved items</p>
+        </div>
+        <div class="myScroll" style="position: relative;padding-top: 40px">
+            <div class="description">
+                <div class="mystar">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div style="font-style: italic;padding: 30px 0" class="mydes1">
+                    I bought <br>
+                    it from <br>
+                    INSTA and bought it, but it <br>
+                    is really a taste snip.
+                </div>
+                <div style="" class="mydes2">Lipstick NoWare Power Mat</div>
+                <div style="font-weight: bold" class="mydes2">₩20,000</div>
+
+                <!--<div style="font-size: 22px">-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                <!--</div>-->
+                <!--<div style="font-size: 36px;font-style: italic;padding: 30px 0">-->
+                    <!--I<br>-->
+                    <!--was a faded nomad because <br>-->
+                    <!--of the sensitive skin , but <br>-->
+                    <!--I found the right fade.-->
+                <!--</div>-->
+                <!--<div style="font-size: 24px">Pro Taylor Foundation Beagle SPF25 PA ++</div>-->
+                <!--<div style="font-size: 24px;font-weight: bold">₩38,000</div>-->
+
+                <!--<div style="font-size: 22px">-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                    <!--<i class="fa fa-star"></i>-->
+                <!--</div>-->
+                <!--<div style="font-size: 36px;font-style: italic;padding: 30px 0">-->
+                    <!--I bought five of them and I <br>-->
+                    <!--like it <br>-->
+                    <!--so much!<br>-->
+                <!--</div>-->
+                <!--<div style="font-size: 24px">Color Cornic Velvet Tinted Lacquer</div>-->
+                <!--<div style="font-size: 24px;font-weight: bold">₩13,300</div>-->
+            </div>
+            <div class="mySlides">
+                <div class="width300" style="width: 300%">
+                    <a href="#">
+                        <div class="myitem">
+                            <img src="../img/imgIndex/c.png" alt="" width="72%">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem" style="">
+                            <img src="../img/imgIndex/a.png" alt="" width="72%">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem" style="">
+                            <img src="../img/imgIndex/b.png" alt="" width="72%">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem" style="">
+                            <img src="../img/imgIndex/c.png" alt="" width="72%">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem" style="">
+                            <img src="../img/imgIndex/a.png" alt="" width="72%">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem" style="">
+                            <img src="../img/imgIndex/b.png" alt="" width="72%">
+                        </div>
+                    </a>
+                </div>
+                <div style="position: absolute;opacity: 0.7;top: 0;bottom: 0;left: 50%;right: 0;background-color: white"></div>
+            </div>
+            <div class="myControl">
+                <div class="mypre"><i class="fa fa-angle-left"></i></div>
+                <div class="mynext"><i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content banner4">
+        <div class="banner4_title" style="padding-bottom: 80px">
+            <h1 style="color: black;font-size: 58px">LOOK BOOK</h1>
+            <p style="font-size: 26px;color: black">F / W LOOK BOOK</p>
+            <a href=" lookbook.html" style="font-size: 18px;color: red">VIEW MORE &nbsp;<i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="mymodel">
+            <div class="model1 mode">
+                <div class="add" style="top: 44%;left: 30%;">
+                    <span>+</span>
+                    <a href="#">
+                        <div style="left: 40%;top: 30%;">
+                            <img src="../img/imgIndex/mode11.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="add" style="top: 32%;left: 56%;">
+                    <span>+</span>
+                    <a href="#">
+                        <div style="left: 40%;top: 30%;">
+                            <img src="../img/imgIndex/mode12.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+                <h1 style="font-size: 46px;margin-top: 150%">CARAMEL BROWN</h1>
+                <p style="font-size: 23px">#brown shade eyes</p>
+            </div>
+            <div class="model2 mode">
+                <h1 style="font-size: 36px;margin-top: 120%">AUTUMN ROSE</h1>
+                <p style="font-size: 23px">#sensual rosy eyes</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content banner5" style="padding: 0 5% 200px">
+        <div class="banner4_title" style="padding-bottom: 80px">
+            <h1 style="color: black;font-size: 58px">MOTD</h1>
+            <p style="font-size: 26px;color: black">Today's makeup</p>
+            <a href="#" style="font-size: 18px;color: red">VIEW MORE &nbsp;<i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="myScroll2">
+            <div class="mySlides2">
+                <div class="width700">
+                    <a href="#">
+                        <div class="myitem2" data-id="20">
+                            <img src="../img/imgIndex/scroll3.jpg" alt="">
+                            <h1 style="">EOTD<br>ending with<br>one glitter</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="30">
+                            <img src="../img/imgIndex/scroll5.jpg" alt="">
+                            <h1 style="">What color<br>is my<br>foundation<br>color?</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2 myactive" data-id="0">
+                            <img src="../img/imgIndex/scroll1.jpg" alt="">
+                            <h1 style="">Holiday <br>Glitter</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="1">
+                            <img src="../img/imgIndex/scroll4.jpg" alt="">
+                            <h1 style="">Color<br>developme<br>nt A+,<br>usability A +</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="2">
+                            <img src="../img/imgIndex/scroll3.jpg" alt="">
+                            <h1 style="">EOTD<br>ending with<br>one glitter</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="3">
+                            <img src="../img/imgIndex/scroll5.jpg" alt="">
+                            <h1 style="">What color<br>is my<br>foundation<br>color?</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="100">
+                            <img src="../img/imgIndex/scroll1.jpg" alt="">
+                            <h1 style="">Holiday <br>Glitter</h1>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myitem2" data-id="10">
+                            <img src="../img/imgIndex/scroll4.jpg" alt="">
+                            <h1 style="">Color<br>developme<br>nt A+,<br>usability A +</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mycontrol2">
+                <div class="mypre2" style="top: 45%;left: 20%"><i class="fa fa-angle-left"></i></div>
+                <div class="mynext2" style="top: 45%;left: 78%"><i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    <div class="div1">
+        <div class="div1_item">
+            <h6 style="padding-bottom: 30px"><a href="#">MAKEUP</a></h6>
+            <h4><a href="#">ARTIST LIVECHAT</a></h4>
+            <p>Talk to the <br>artist about makeup troubles with live chat!</p>
+        </div>
+        <div class="div1_item" style="width: 45%">
+            <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">Service center</a></h6>
+            <h4><a href="#">080 619 8888</a></h4>
+            <p>Consulation time 09:00~18:00<br>(Mon-Fri except holidays)</p>
+        </div>
+        <div class="div1_item" style="text-align: right;width: 19.5%">
+            <h1 style="padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">Find a store</a><br> <a href=" brand.html">Brand introduction</a> <br><a href="#">membership</a><br><a href=" uerCenter.html">site map</a> </h1>
+            <h6><a href="#">login</a>&nbsp;&nbsp;&nbsp; <a href="#">Sign Up</a></h6>
+        </div>
+    </div>
+    <div class="div2" style="overflow: hidden;padding-top: 15px">
+        <div class="div2_item" style="float: left">
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#" style="font-weight: bold">Privacy policy</a>
+                <a href="#">Video Equipment Management Policy</a>
+                <a href="#">Confirm carrier information</a>
+                <a href="#">Unauthorized collection of e-mail</a>
+                <a href="#">Electronic notice</a>
+            </div>
+            <div>
+                <p>Esuga CEO: Lim Jung Sik &nbsp;&nbsp;&nbsp; Headquarters: Han River Boulevard 100, Yongsan-gu, Seoul (Han River 2-ga) 6th floor</p>
+                <p>Contact Us | Privacy Policy | &nbsp;&nbsp;&nbsp; Terms of &nbsp;&nbsp;&nbsp; <a href=" private.html">Service |</a></p>
+                <p>Personal Information Protection Officer: Kim Sung Hee Customer Service: 080-619-8888 &nbsp;&nbsp;&nbsp;E-mail: espoirmall@espoir.com &nbsp;&nbsp;&nbsp;Hosting Provider:</p>
+                <p>
+                    Our malls are applied to the purchase escrow INIPAY safety services ㈜KG Inicis
+                    for payment transactions for your safety mutongjang trading &nbsp;&nbsp;&nbsp;
+                    <a href=" myPage.html">services Order Status</a>
+                </p>
+                <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-camera"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-wechat"></i>
+            <i class="fa fa-weibo"></i>
+            <i class="fa fa-info"></i>
+        </div>
+    </div>
+</div>
+    <script src="../comm/jquery/jquery-3.2.1.js"></script>
+    <script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        window.onscroll = function () {
+            // console.log(scrollY);
+            if (scrollY>=30){
+                $('.head_bottom_inner').css({
+                    'position' : 'fixed',
+                    'top' : '0px',
+                    'line-height' : '52px',
+                    'padding' : '1px 10%',
+                    'transition' : 'all 0.3s',
+                    'z-index' : '999',
+                    'height' : '55px'
+                });
+                $('.logo').find('img').css({
+                    'transform' : 'scale(0.7)',
+                    'transition' : 'all 0.3s'
+                });
+            }else {
+                $('.head_bottom_inner').css({
+                    'position' : 'relative',
+                    'line-height' : '47px',
+                    'padding' : '20px 10%',
+                    'transition' : 'all 0.3s',
+                    'z-index' : '999',
+                    'height' : '75px'
+                });
+                $('.logo').find('img').css({
+                    'transform' : 'scale(1)',
+                    'transition' : 'all 0.3s'
+                })
+            }
+
+        }
+
+        //将数字转换成 科学计数法
+        // var reg = /(?=(\B)(\d{3})+$)/g;
+
+        //计算购物车内所有的商品总价
+        function countSum2(){
+
+            let sum2 = 0;
+            let osum2 = $('.sum1')
+
+            for (let i=0;i<osum2.length;i++){
+                let temp = osum2.eq(i).text();
+                temp = parseFloat(temp)
+                sum2 += temp;
+                // console.log(temp);
+            }
+            sum2 = sum2.toFixed(2)
+            $('.sum2').text(sum2);
+
+            // console.log(sum2)
+        }
+
+        //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+        $('.body_body').on('click','.fa-plus',myplus)
+        function myplus() {
+            var mystr = $(this).parent().find('.number').text();
+            var num = parseInt(mystr);
+            num++;
+            $(this).parent().find('.number').text(num);
+
+            //将单价拿到，并转化成number，再与数量想乘
+            var price = $(this).parent().parent().find('.price').text();
+            price = parseFloat(price);
+            var sum1 = num*price;
+            // console.log(sum1)
+
+            //将number类型的sum1转化成money的格式（string）
+            // console.log(strSum1)
+            sum1 = sum1.toFixed(2)
+            $(this).parent().find('.sum1').text(sum1);
+
+            countSum2()
+
+        }
+        //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+        $('.body_body').on('click','.fa-minus',myminus)
+        function myminus() {
+            var mystr = $(this).parent().find('.number').text();
+            var num = parseInt(mystr);
+            num--;
+            if (num==0){
+                num=1;
+            }
+            $(this).parent().find('.number').text(num);
+
+            //将单价拿到，并转化成number，再与数量想乘
+            var price = $(this).parent().parent().find('.price').text();
+            price = parseFloat(price);
+            var sum1 = num*price;
+            // console.log(sum1)
+
+            //将number类型的sum1转化成money的格式（string）
+            // console.log(strSum1)
+            sum1 = sum1.toFixed(2)
+            $(this).parent().find('.sum1').text(sum1);
+
+            countSum2()
+
+        }
+
+        //删除当前商品
+        $('.body_body').on('click','.fa-trash',delCell)
+        function delCell() {
+            var carId = $(this).parent().parent().attr('car_id')
+            var reqDataArr = [carId];
+            // console.log(reqDataArr)
+            var that =this;
+            $.ajax({
+                url : '/cart/delete',
+                type : 'post',
+                data : {reqDataArr},
+                traditional:true,
+                success :function (data) {
+                    console.log(data)
+                    if (data.result==200){
+                        // console.log('ok')
+                        $(that).parent().parent().remove();
+                        countSum2()
+                        countCell()
+                    }
+
+                },
+                error : function (err) {
+                    console.log(err)
+                }
+            })
+
+        }
+
+        //文档加载时，检查是否登陆过
+        //并从购物车表拿数据，如果登录过，则根据登录ID拿数据，如果没有登录过，则显示没有商品
+
+
+        var slideImg = $('.carousel-inner>.item>img')  //index1 的图片
+        var slideImg2 = $('.slideImg2>img')  //index2的图片
+        var slideImg3 = $('.mode')
+
+        window.onload = function () {
+            $.ajax({
+                url : '/user/checkLogin',
+                type : 'post',
+                data : {},
+                success : function (data) {
+                    console.log(data.session,data.msg)
+                    if (data.session){
+                        //如果登录过，将login改成loginout,并将购物车表拿数据渲染到页面
+                        $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                            '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+
+                        var userId = data.session.user_id
+                        $.ajax({
+                            url : '/cart/modalCarList',
+                            type : 'post',
+                            data : {userId},
+                            success : function (data) {
+                                console.log(data)
+                                var str ='';
+                                var num =0;
+                                for (let i=0;i<data.data.length;i++){
+                                    str += '<div class="cell_id" user_id="'+data.data[i].user_id+'" car_id="'+data.data[i].car_id+'" product_id="'+data.data[i].product_id+'" color_id="'+data.data[i].color_id+'">\n' +
+                                        '                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>\n' +
+                                        '                        <div class="cell_img" style="float: left;margin-right: 5%">\n' +
+                                        '                            <img class="checkImg" src="../'+data.data[i].pic_path+'" width="80">\n' +
+                                        '                        </div>\n' +
+                                        '                        <div class="cell_info" style="float: left">\n' +
+                                        '                            <div class="checkName">'+data.data[i].product_name+'</div>\n' +
+                                        '                            <div>\n' +
+                                        '                                <span class="checkColorVal" style="width: 10px;height: 10px;border-radius: 50%;background-color: '+data.data[i].color_value+';display: inline-block"></span> &nbsp;&nbsp; <span class="checkColorName">'+data.data[i].color_name+'</span>\n' +
+                                        '                            </div>\n' +
+                                        '                            <div style="font-size: 16px">$<span class="price checkPrice">'+data.data[i].price+'</span></div>\n' +
+                                        '                            <div style="position: relative">\n' +
+                                        '                                <i class="fa fa-minus symbol"></i>\n' +
+                                        '                                <span style="margin: 0 5%" class="number checkNum">'+data.data[i].quantity+'</span>\n' +
+                                        '                                <i class="fa fa-plus symbol"></i>\n' +
+                                        '                                <div style="position: absolute;left: 80%;bottom: 30%;font-size: 20px">$<span class="sum1">'+data.data[i].price*data.data[i].quantity+'</span> </div>\n' +
+                                        '                            </div>\n' +
+                                        '                        </div>\n' +
+                                        '                    </div>'
+
+                                    num += data.data[i].price*data.data[i].quantity;
+                                }
+                                $('.body_body').html(str);
+
+                                $('.body_foot').find('.sum2').html(num)
+                            }
+                        })
+                    } else {
+                        $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                            '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+
+                        $('.body_body').html('             <div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">\n' +
+                            '                    <div class="fa fa-shopping-cart" style="font-size: 42px"></div>\n' +
+                            '                    <div style="padding:25px 0px 15px 0px">你的购物车是空的</div>\n' +
+                            '                    <div><a href="#" id="sawProduct">查看产品</a></div>\n' +
+                            '                    </div>')
+                    }
+
+                },
+                error : function (err) {
+                    console.log(err)
+                }
+            })
+
+            //首页三个模块的轮播图，资源在三阶段服务器上面
+            $.ajax({
+                url: '/index/slideImg',
+                type: 'get',
+                success : data => {
+                    // console.log(data)
+                    var imgArr = data[0]
+                    var imgArr2 = data[1]
+                    var imgArr3 = data[2]
+                    for (let i=0;i<slideImg.length;i++){
+                        slideImg.eq(i).attr('src',imgArr[i].si_src)
+                    }
+
+                    for (let i=0;i<slideImg2.length;i++){
+                        slideImg2.eq(i).attr('src',imgArr2[i].si_src)
+                    }
+
+                    for (let i=0;i<slideImg3.length;i++){
+                        slideImg3.eq(i).css
+                        ('background', `url(${imgArr3[i].si_src}) repeat scroll 0% 0% / cover padding-box border-box`)
+                    }
+                },
+                error: err => {
+                    console.log(err)
+                }
+            })
+        }
+
+        //点击购物袋弹出模态框之后再将商品的数量渲染出来
+        $('#modalCar').on('click',countCell)
+        function countCell() {
+            var cellNum = $('.cell_id').length;
+            $('.body_head').find('span').html(cellNum)
+        }
+
+        //点击logout把session清空，再重新渲染页面
+        $('.head_top').on('click','#logout',function () {
+            $.ajax({
+                url : '/user/logout',
+                type : 'post',
+                data : {},
+                success : function (data) {
+                    // console.log(data.session,data.msg)
+                    if (data.session){
+                        $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                            '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                    } else {
+                        $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                            '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                    }
+
+                },
+                error : function (err) {
+                    console.log(err)
+                }
+            })
+        })
+
+        //点击现在购买，向check(支付页面)插入新数据
+        $('.buyNow').on('click',modalToCheck)
+        function modalToCheck() {
+            var cell = $('.cell_id')
+            var myreqDataArr = [];
+            for (var i=0;i<cell.length;i++){
+                var car_id = cell.eq(i).attr('car_id');
+                var user_id = cell.eq(i).attr('user_id');
+                var img = cell.eq(i).find('.checkImg').attr('src');
+                img = img.slice(2);
+                var name = cell.eq(i).find('.checkName').text()
+                var colorVal = cell.eq(i).find('.checkColorVal').css('background-color')
+                var count = cell.eq(i).find('.checkNum').text()
+                var price = cell.eq(i).find('.checkPrice').text()
+                var colorName =cell.eq(i).find('.checkColorName').text()
+                var product_id = cell.eq(i).attr('product_id');
+                var color_id = cell.eq(i).attr('color_id');
+                myreqDataArr.push(car_id,img,name,colorVal,count,price,user_id,colorName,product_id,color_id);
+            }
+            if (cell.length>0){
+                // console.log(img)
+                $.ajax({
+                    url : '/cart/addcheck',
+                    type: 'post',
+                    data: {myreqDataArr},
+                    traditional : true,
+                    success : function (data) {
+                        if (data.result==200){
+                            // console.log('ok')
+                            location.href='/myPage/list/12';
+                        } else {
+                            console.log('客户端错误')
+                        }
+                    }
+                })
+            }
+        }
+
+    </script>
+</body>
+<./html>

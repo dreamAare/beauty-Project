@@ -1,0 +1,201 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+
+h1,h2,h3{
+    color: #000;
+}
+
+h1{
+    text-align: center;
+    font-size: 42px;
+}
+
+.margin-90{
+    margin-bottom: 90px;
+}
+
+.margin-30{
+    margin-bottom: 30px;
+}
+
+.content{
+    width: 90%;
+    margin: auto;
+}
+/*****导航******/
+.navi ul>li{
+    float: left;
+    list-style: none;
+    padding: 20px 25px;
+    font-size: 16px;
+}
+
+.navi ul>li>a{
+    color: #888;
+}
+
+.navi>ul>li>a:hover{
+    color: #888;
+}
+
+
+
+.navi ul{
+    padding:0 0 0 18%;
+}
+
+.navi{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.find-store{
+    border-bottom: 2px solid black;
+
+}
+
+.navi .find-store>a{
+    color: #000;
+}
+
+/**中间内容***************/
+.findStore-content{
+    margin-top: 90px;
+    padding-bottom: 90px;
+    color: #000;
+}
+
+
+
+.findStore-content h1{
+   color: #000000;
+    text-align: center;
+}
+
+.findStore-content p{
+    font-size: 17px;
+    text-align: center;
+}
+
+.findStore-content ul{
+    width: 60%;
+    margin-left: 30%;
+    padding: 0;
+    height: 30px;
+}
+
+.findStore-content ul>li{
+    padding: 0 30px;
+    list-style: none;
+    font-size: 16px;
+    float: left;
+    margin: 0;
+    color: #000;
+}
+
+.findStore-content ul>li>a:focus{
+    color: #ff463a;
+    text-decoration: none;
+}
+
+.findStore-content ul>li>a:hover{
+    color: #888;
+    text-decoration: none;
+}
+
+/****商店1**********/
+.store1-holder{
+    width: 100%;
+    height: 2000px;
+   /* background: pink;*/
+    margin-top: 60px;
+}
+
+.photo{
+    position: relative;
+    width: 100%;
+    height: 700px;
+     background-size: cover;
+}
+
+.src1{
+    background: url("../img/imgUserCenter/store1-bg.jpg");
+}
+
+.src2{
+    background: url("../img/imgUserCenter/store2-bg.jpg");
+}
+
+.src3{
+    background: url("../img/imgUserCenter/store3-bg.jpg");
+}
+
+.src4{
+    background: url("../img/imgUserCenter/store4-bg.jpg");
+}
+
+.store1-info{
+    position: absolute;
+    width: 30%;
+    height: 500px;
+    background: #fff;
+    right: 5%;
+    top: 10%;
+    padding: 5% 2%;
+}
+
+
+.store1-info a{
+    display: block;
+}
+
+.store1-info p{
+    text-align: left;
+}
+
+.store-title{
+    font-size: 42px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+/***服务**********/
+.service{
+    width: 100%;
+    /*background: #5bc0de;*/
+    padding-bottom: 90px;
+}
+
+.service p{
+    font-size: 14px;
+    text-align: left;
+}
+
+.service-left{
+    float: left;
+    width: 46%;
+    margin-top: 20%;
+}
+
+.service-left img{
+    width: 100%;
+}
+
+.service-right{
+    float: right;
+    width: 46%;
+}
+
+.service-right img{
+    width: 100%;
+}
+
+/***商店2**********/
+.store2-holder,.store3-holder,.store4-holder{
+    display: none;
+    margin-top: 60px;
+}

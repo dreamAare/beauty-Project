@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/css/mypage_history.css">
+<section class="distribute">
+    <div>我的购买历史</div>
+    <div class="information">
+        <div class="order_list">
+            <ul>
+                <li><a href="javascript:void(0)">所有</a></li>
+                <li><a href="javascript:void(0)">线上</a></li>
+            </ul>
+        </div>
+        <div class="order_time">
+            <ul class="order_ul">
+                <li id="li_one"><a href="javascript:void(0)">1周</a></li>
+                <li><a href="javascript:void(0)">1个月</a></li>
+                <li><a href="javascript:void(0)">3个月</a></li>
+                <li><a href="javascript:void(0)">6个月</a></li>
+                <li><a href="javascript:void(0)">12个月</a></li>
+            </ul>
+        </div>
+        <div class="date_input">
+            <div class="date_pic">
+                <input id="date1" class="inputOne" type="date" placeholder="">
+            </div>
+            <div class="date_shoot">
+                <img src="/img/imgMyPage/ico_dfk2.png" alt="">
+            </div>
+            <div class="date_pic distance_date">
+                <input id="date2" class="inputOne" type="date" placeholder="">
+            </div>
+            <div class="expore_btn">
+                <button type="button" id="check">查询</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="transportation">
+    <div>
+        <div></div>
+    </div>
+</section>
+<section class="banner">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>类型</th>
+                <th>购买方式</th>
+                <th class="products">物品</th>
+                <th>购买日期</th>
+                <th>数量</th>
+            </tr>
+            </thead>
+            <tbody class="myTbody">
+            <%if(data.length>0){%>
+            <%for(var i = 0 ;i < data.length ; i++){%>
+            <tr>
+                <td ><%=data[i].category_name%></td>
+                <td>线上</td>
+                <td class="td_products">
+                    <div><a href="/shop/shopshow?productId=<%=data[i].product_id%>"><img src="/<%=data[i].pic_path%>" alt=""></a></div>
+                    <div>
+                        <div class="product_name"><%=data[i].product_name%></div>
+                        <div class="color_name">
+                            <div class="product_color" style="background-color: <%=data[i].color_value%>">
+
+                            </div>
+                            <span><%=data[i].color_name%></span>
+                        </div>
+                    </div>
+                </td>
+                <td><%=data[i].pay_time%></td>
+                <td><%=data[i].quantity%></td>
+            </tr>
+            <%}%>
+            <%}%>
+            </tbody>
+        </table>
+        <h2 class="haveHistory">没有购买历史</h2>
+    </div>
+</section>
+<script src="/comm/jquery/jquery-3.2.1.js">
+</script>
+<script src="/js/mypage_history.js"></script>

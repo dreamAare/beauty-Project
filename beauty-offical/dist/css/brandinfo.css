@@ -1,0 +1,455 @@
+/*公共样式*/
+
+body, ul, li, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol, dl dt dd {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+/* 清除浮动的影响 */
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+img{
+    border: 0;
+    vertical-align: top;
+}
+
+/*隐藏横向滚动条*/
+
+
+#content::-webkit-scrollbar{
+    width: 3px;
+    height: 3px;
+}
+
+#content::-webkit-scrollbar-button{
+    display: none;
+}
+#content::-webkit-scrollbar-track{
+    display: none;
+}
+#content::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+#content::-webkit-scrollbar-thumb{
+    background-color: #B6C1CE;
+    border-radius: 2px;
+}
+#content::-webkit-scrollbar-corner{
+    display: none;
+}
+
+
+/*内容*/
+#content {
+    width: 100%;
+
+}
+
+.carousel-inner {
+    width:7800px;
+    background: #000;
+}
+
+.carousel-inner > .item {
+    float: left;
+    width: 1200px;
+}
+
+/*轮播项目*/
+
+.item {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 822px;
+    background-color:#000;
+}
+
+.top-bar {
+    position: absolute;
+    left: 80px;
+    top: 50px;
+    padding: 0 60px
+}
+
+.clearfix {
+    display: block;
+    min-height: 1px;
+}
+
+/*顶部条brand-studio-info*/
+.top-bar ul li {
+    float: left;
+}
+
+.bd {
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+.top-bar ul li.bd a {
+    color: #ff463a;
+    font-weight: bold;
+}
+
+.m-line {
+    width: 60px;
+    height: 1px;
+    background: #383838;
+    position: relative;
+}
+
+.linr-bar {
+    width: 14px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.st {
+    position: absolute;
+    right: -2px;
+    top: -10px;
+}
+
+.st > a {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+}
+
+.intro {
+    position: absolute;
+    right: 80px;
+    top: 40px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+}
+
+/*左边题目*/
+.box-li {
+    position: absolute;
+    left: 80px;
+    bottom: 163px;
+    opacity: 1;
+}
+
+.box-li dt {
+    font-size: 40px;
+    letter-spacing: 0.16em;
+    color: #fff
+}
+
+/*左下箭头图标*/
+.gr-row {
+    position: absolute;
+    left: 80px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+    bottom: 90px;
+    line-height: 40px;
+    padding-left: 58px;
+    color: #fff;
+}
+
+.gr-row span {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    margin-top: -10px;
+    width: 42px;
+    height: 42px;
+    background: url("../img/brandinfo/btn_jh.jpg");
+}
+
+.gr-row span img {
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/*第二块*/
+
+.eff {
+    opacity: 1;
+    /*background: none;*/
+}
+
+.eff img {
+    /*visibility: hidden;*/
+    border: 0;
+    vertical-align: top;
+}
+
+.box-l2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 163px;
+    opacity: 1;
+    text-align: center;
+    z-index: 1;
+}
+
+.text-area {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.box-l2 dt {
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: #ff463a;
+}
+
+.box-l2 dd {
+    font-size: 48px;
+    letter-spacing: 0.15em;
+    line-height: 1.35;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+/*第三块*/
+.box-l3{
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    padding-left: 140px;
+}
+.box-l3>.img-loaded-con1{
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.box-l3>.img-loaded-con2{
+    position: absolute;
+    left: 350px;
+    bottom: 150px;
+}
+.box-l3>.img-loaded-con3{
+    position: absolute;
+    left: 895px;
+    bottom: 85px;
+    opacity: 1;
+    transition: all .5s;
+}
+.box-l3 .con3 dt {
+    font-size: 30px;
+    margin-bottom: 80px;
+    line-height: 1.7;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    bottom: 50%;
+}
+
+.box-l3 .con3 dd{
+    font-size: 15px;
+    padding-left: 80px;
+    color: #fff;
+}
+.box-l3 .con3 dd ul{
+    display: block;
+    min-height: 1px;
+}
+
+.box-l3 .con3 dd ul li {
+    float: left;
+    margin-left: 60px;
+    line-height: 1.9;
+    width: 270px;
+}
+.part-one{
+    position: absolute;
+    right: 30%;
+    bottom: 0;
+}
+.part-two {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+}
+/*第四块*/
+
+.img-loaded-con3{
+    float: left;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+ .img-loaded-con4 {
+     float: left;
+     position: absolute;
+     top: 170px;
+     right: -10%;
+ }
+.box-l4{
+    position: absolute;
+    left: 0;
+    top: 170px;
+    text-align: right;
+    transition: all .5s;
+    color: #fff;
+    opacity: 1;
+}
+.box-l4 dt{
+    font-size: 65px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    line-height: 1.23;
+}
+.box-l4 dd{
+    font-size: 16px;
+    margin-top: 55px;
+    line-height: 1.7;
+}
+/*------------------------------------------------------------*/
+/*第五块*/
+.box-l5{
+    margin-left: 15%;
+    min-width: 2200px;
+    height: 100%;
+    position: relative;
+    background-color: #000;
+}.box-l5-1{
+     position: absolute;
+     left: 0;
+     bottom: 57px;
+ }
+.box-l5 dt{
+    font-size: 32px;
+    letter-spacing: 0.16em;
+    margin-bottom: 23px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #fff;
+}
+.box-l5 dd{
+    font-size: 15px;
+    line-height: 1.9;
+    color:#fff
+    }
+
+.box-l5-2{
+    position: absolute;
+    left: 400px;
+    bottom: 120px;
+}
+.box-l5-2 img{
+    float: left;
+    max-width: 100%;
+}
+.box-l5-3{
+   position: absolute;
+    bottom: 3%;
+    left: 40%;
+}
+.box-l5-4{
+    position: absolute;
+    left: 920px;
+    top: 85px;
+}
+.box-l5-5{
+    position: absolute;
+    right:10%;
+    bottom: 20%;
+    width: 10%;
+    height: 18%;
+    z-index: 1;
+}
+.box-l5-6{
+    position: absolute;
+    right: 20%;
+    bottom: 20%;
+}
+
+
+
+
+/*轮播进度条*/
+/*.plan {*/
+    /*position: absolute;*/
+    /*bottom: 10%;*/
+    /*min-width: 30px;*/
+    /*display: block;*/
+    /*width: 190px;*/
+    /*max-width: 1339px;*/
+    /*left: 543px;*/
+/*}*/
+
+/*.bar {*/
+    /*width: 100%;*/
+    /*height: 2px;*/
+    /*margin: 7px auto;*/
+    /*background-color: #9dacbd;*/
+    /*opacity: 0.75;*/
+/*}*/
+
+/*.planRail {*/
+    /*width: 100%;*/
+    /*height: 2px;*/
+    /*margin: 7% 0;*/
+    /*opacity: 0.4;*/
+    /*border-radius: 16px;*/
+/*}*/
+
+/*.content{*/
+/*width: 100%;*/
+/*}*/
+/*.width9999{*/
+/*width:1000%;*/
+/*}*/
+/*.width9999 div{*/
+/*float: left;*/
+/*width: 10%;*/
+/*height: 800px;*/
+/*}*/

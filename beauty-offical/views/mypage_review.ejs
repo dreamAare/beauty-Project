@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/css/mypage_review.css">
+<!--评论-->
+<section class="content">
+    <div class="wish_list">
+        <p>
+            我的评论
+        </p>
+    </div>
+    <div class="container1">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>日期</th>
+                <th>产品信息</th>
+                <th>评论内容</th>
+            </tr>
+            </thead>
+            <tbody id="tbody3">
+            <%if(data.length>0){%>
+            <%for(var i = 0 ; i < data.length ; i++){%>
+            <tr>
+                <td id="time"><%=data[i].review_time%></td>
+                <td class="td_products">
+                    <div><a href="/shop/shopshow?productId=<%=data[i].product_id%>"><img src="/<%=data[i].pic_path%>" alt=""></a></div>
+                    <div>
+                        <div class="product_name"><%=data[i].product_name%></div>
+                        <div class="color_name">
+                            <div style="background-color: <%=data[i].color_value%>">
+
+                            </div>
+                            <span><%=data[i].color_name%></span>
+                        </div>
+                    </div>
+                </td>
+                <td><%=data[i].review_content%></td>
+            </tr>
+            <%}%>
+            <%}%>
+            </tbody>
+        </table>
+        <div class="review_content">
+            没有产品评论记录。
+        </div>
+    </div>
+</section>
+<script>
+    var content=document.getElementsByClassName('review_content')[0];
+    var tbody=document.getElementById('tbody3').childNodes;
+    if(tbody.length==0){
+        content.style.display='block'
+    }else{
+        content.style.display='none'
+    }
+</script>

@@ -1,0 +1,465 @@
+body ,ul,li{
+    padding: 0;
+    margin: 0;
+}
+ul,li,ol{
+    list-style: none;
+}
+
+#myPage_banner{
+    width: 100%;
+    height:200px;
+    /*outline: red 1px solid;*/
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+}
+#myPage_banner>span{
+    font-size: 42px;
+}
+
+.container_nav{
+    margin-left: 5%;
+    width: 90%;
+    height: 50px;
+    border-bottom: 1px solid #EFEFEF;
+}
+.container_nav>ul{
+    width: 100%;
+    height: 100%;
+}
+.container_nav>ul>li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.container_nav>ul>li>a:hover{
+    color: #000;
+}
+@media screen and (max-width:759px ) {
+    .container_nav>ul>li{
+        float: left;
+        width: 12%;
+        margin-left: 0.5%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        color: #888888;
+    }
+    .distribute>div:first-child{
+        font-size: 16px;
+    }
+    .order_ul>li{
+        width: 30px;
+        height: 20px;
+        line-height: 10px;
+        float: left;
+        margin-left: 30px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        color: #A0A0A8;
+    }
+    .date_input>div{
+        width: 80px;
+        height: 20px;
+        margin-left: 10px;
+    }
+    .inputOne{
+        width: 80px;
+        height: 20px;
+    }
+}
+@media screen and (min-width: 760px){
+    /*>=760px*/
+    .container_nav>ul>li{
+        float: left;
+        width: 11%;
+        margin-left: 1.5%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        color: #888888;
+    }
+    .distribute>div:first-child{
+        font-size: 20px;
+    }
+    .order_ul>li{
+        width: 60px;
+        height: 30px;
+        line-height: 20px;
+        float: left;
+        margin-left: 30px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        color: #A0A0A8;
+    }
+    .date_input>div{
+        width: 120px;
+        height: 25px;
+        margin-left: 15px;
+    }
+    .inputOne{
+        width: 120px;
+        height: 25px;
+    }
+}
+
+@media screen and (min-width: 990px){
+    /*>=990px*/
+    .container_nav>ul>li{
+        float: left;
+        width: 10.5%;
+        margin-left: 2%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        color: #888888;
+    }
+    .distribute>div:first-child{
+        font-size: 24px;
+    }
+    .order_ul>li{
+        width: 70px;
+        height: 40px;
+        line-height: 30px;
+        float: left;
+        margin-left:30px;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        color: #A0A0A8;
+    }
+    .date_input>div{
+        width: 140px;
+        height: 30px;
+        margin-left: 20px;
+    }
+    .inputOne{
+        width: 130px;
+        height: 30px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /*>=1200px*/
+    .container_nav>ul>li{
+        float: left;
+        width: 10%;
+        margin-left: 2.5%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        color: #888888;
+    }
+
+    .distribute>div:first-child{
+        font-size: 28px;
+    }
+    .order_ul>li{
+        width: 90px;
+        height: 50px;
+        line-height: 40px;
+        float: left;
+        margin-left: 40px;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+
+    }
+
+    .date_input>div{
+        width: 170px;
+        height: 40px;
+        margin-left: 30px;
+    }
+    .inputOne{
+        width: 170px;
+        height: 40px;
+    }
+}
+
+.container_nav>ul>li:hover{
+    border-bottom: 2px solid black;
+    color: rgba(8, 3, 2, 0.98);
+}
+.container_nav>ul>li:nth-child(2){
+    border-bottom: 2px solid black;
+}
+
+.distribute{
+    margin-left: 5%;
+    width: 90%;
+    height: 230px;
+    margin-top: 120px;
+    /*outline: red 1px solid;*/
+}
+.distribute>div{
+    float: left;
+    height: 230px;
+}
+.distribute>div:first-child{
+    height: 100%;
+    width: 25%;
+}
+.distribute>div:last-child{
+    padding-left: 7%;
+    height: 100%;
+    width: 75%;
+    background-color: #FAFAFA;
+    /*outline: red 1px solid;*/
+    overflow: hidden;
+
+}
+.myTbody>tr:nth-child(n+1){
+    height: 170px;
+}
+
+.order_list{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+.selectBox{
+    margin-left: 42%;
+    width: 150px;
+    height: 40px;
+    position: relative;
+}
+.selectBox>select{
+    text-align: center;
+    border: none;
+    width: 150px;
+    height: 40px;
+    outline: none;
+    background-color: #FAFAFA;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
+    /*//隐藏select的下拉图标*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+}
+.selectBox>i{
+    width: 20px;
+    height: 18px;
+    position: absolute;
+    right:0;
+    top: 30%;
+    font-size: 20px;
+    pointer-events: none;
+}
+/*选择时间查询订单*/
+.order_time{
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    /*outline: red 1px solid;*/
+}
+.order_ul>li>a{
+    color: #A0A0A8;
+    text-decoration: none;
+}
+.order_ul{
+    width: 90%;
+    height: 70px;
+    line-height: 70px;
+}
+
+.order_ul>li:hover{
+    background-color: white;
+}
+.order_ul>li>a:hover{
+    color: black;
+}
+.date_input{
+    width: 100%;
+    height: 50px;
+}
+.date_input>div{
+    float: left;
+    position: relative;
+}
+.inputOne{
+    border: none;
+    outline: none;
+    background-color:#FAFAFA;
+}
+input[type=date]::-webkit-inner-spin-button {
+    visibility: hidden;
+
+}
+input[type=date]::-webkit-calendar-picker-indicator{
+    opacity: 0;
+    width: 40px;
+    height: 100%;
+}
+input[type=date]::-webkit-datetime-edit-fields-wrapper{
+    font-size: 16px;
+}
+.date_pic:after{
+    content: '';
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url("./../img/imgMyPage/ico_dfk.png")no-repeat center;
+    pointer-events: none;
+    background-size: 25px  70%;
+    cursor: pointer;
+}
+.date_shoot{
+    margin-top: 10px;
+    width:40px;
+    height:15px;
+}
+.date_shoot>img{
+    width: 40px;
+    height:15px;
+}
+.distance_date{
+    margin-left: -90px!important;
+}
+.expore_btn>button{
+    width: 120px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border: none;
+}
+.location{
+    height: 60px;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.transportation{
+    height:60px;
+    width:90%;
+    margin-left: 5%;
+}
+.transportation>div{
+    height: 60px;
+    width: 75%;
+    float: right;
+    border-bottom: 2px solid black;
+}
+.banner{
+    clear: both;
+    margin-top: 10px;
+    margin-left: 5%;
+    width: 90%;
+    overflow: hidden;
+}
+.banner>div{
+    float:right;
+    height: 100%;
+    width: 75%;
+
+    /*outline: red 1px solid;*/
+}
+.colorBlack{
+    color: black!important;
+}
+
+/*表格内的数据*/
+td{
+    font-size: 16px;
+    vertical-align: middle!important;
+}
+.products{
+    padding-left: 30px!important;
+    width: 45%;
+}
+.totalPay{
+    text-align: center;
+    width:50px!important;
+}
+.myTbody>tr>td:nth-child(5){
+    text-align: center;
+}
+.td_products>div:first-child{
+    float: left;
+    max-height: 130px;
+    max-width: 80px ;
+}
+.product_name{
+    height: 40px;
+}
+.td_products>div:last-child{
+    margin-top:15px;
+    width: 70%;
+    float: left;
+    margin-left: 8%;
+}
+.td_products>div>a>img{
+    max-height: 130px;
+    max-width: 80px ;
+}
+.color_name{
+    margin-top: 10%;
+    width: auto;
+}
+.color_name>span{
+    margin-top: -3%;
+    margin-left: 7%;
+    float: left;
+    font-size: 18px;
+}
+.color_name>div{
+    float: left;
+    height: 15px;
+    width:15px;
+    background-color: red;
+    border-radius: 50%;
+}
+.myTbody>tr>th:last-child{
+    text-align: center;
+}
+.myTbody>tr>td:last-child{
+    text-align: center;
+}
+.container_nav li a{
+    color:#888;
+}
+
+.haveOrder{
+    display: none;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.selectPage{
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.selectPage>button{
+    width: 80px;
+    height: 35px;
+    border: none;
+    background-color: #b85b06;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 80px;
+}
+.selectPage>button:first-child{
+    margin-left: -50px;
+}

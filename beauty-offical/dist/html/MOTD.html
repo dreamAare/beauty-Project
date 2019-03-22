@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/MOTD.css">
+    <link rel="stylesheet" href="../css/shopOfFace.css">
+</head>
+<body>
+<div class="head_top">
+    <ul class="clearfix">
+        <li class="menu"><a href=" myPage.html">mypage</a></li>
+        <li class="menu"><a href=" register.html">login</a></li>
+        <li class="menu"><a href=" login.html">Sign Up</a></li>
+    </ul>
+</div>
+<div class="head_bottom">
+    <div class="head_bottom_inner">
+        <ul class="clearfix">
+            <li class="menu first">
+                <a href="newPro.html">NEW & BEST</a>
+                <ul class="myUl">
+                    <li><a href="/newAndBest/newPro">new product</a></li>
+                    <li><a href=" /newAndBest/collection">collection</a></li>
+                    <li><a href=" /newAndBest/best">best</a></li>
+                    <li><a href=" /newAndBest/winner">Awards Winner</a></li>
+                    <li><a href=" /newAndBest/lookbook">Lookbook</a></li>
+                    <li><a href=" /newAndBest/MOTD">MOTD</a></li>
+                </ul>
+            </li>
+            <li class="menu second">
+                <a href=" shopOfFace.html">SHOP</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" shopOfFace.html">face</a></li>
+                    <li><a href=" shopOfFace.html">Lip</a></li>
+                    <li><a href=" shopOfFace.html">children</a></li>
+                    <li><a href=" shopOfFace.html">Cheek</a></li>
+                    <li><a href=" shopOfFace.html">skin care</a></li>
+                    <li><a href=" shopOfFace.html">Tools</a></li>
+                    <li><a href=" shopOfFace.html">Fragrance / Nail</a></li>
+                </ul>
+            </li>
+            <li class="menu third"><a href=" event.html">EVENT</a></li>
+            <li class="menu four">
+                <a href=" private.html">SERVICE</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" private.html">Private Makeup Lessons</a></li>
+                    <li><a href=" eyebrow.html">Iva Uva</a></li>
+                    <li><a href=" uerCenter.html">Service center</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="logo clearfix" style="text-align: center;margin: 0 2%;width: 16%">
+            <a href=" index.html"><img src="../img/imgIndex/logo.gif" height="36" width="90" style="cursor: pointer;"></a>
+        </div>
+
+        <div class="search clearfix" style="text-align: right;width: 40%">
+            <i class="fa fa-search" ></i>
+            <input type="text" placeholder="SEARCH" style="height: 30px">
+            <i class="fa fa-close"></i>
+            <i class="fa fa-shopping-bag btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin: 0 0 6px 50px"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+        <div class="modal-content indexmodal_content">
+            <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+                <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body mybody">
+                <div class="body_head">
+                    <span>1</span>个产品
+                </div>
+                <div class="body_body">
+                    <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+                    <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+                    <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+                    <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+                    <!--</div>-->
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+                    <span style="float:left;font-size: 14px">TOTAL</span>
+                    <span style="float: right;font-size: 22px;font-weight: bold">₩<span class="sum2">38,000</span></span>
+                </div>
+            </div>
+            <div class="modal-footer myfoot">
+                <button type="button" class="btn btn-primary buyNow">现在购买</button>
+                <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="width: 80%">
+    <div class="item-select">
+        <div><a href="javascript:void(0);" class="item-select-btn">MOTD<i class="fa fa-angle-down"></i></a>
+            <i class="iconfont icon-xiangxia" id="icon"></i>
+        </div>
+        <div class="item-select-ul">
+            <ul>
+                <li><a href="javascript:void(0);">Just Arrived</a></li>
+                <li><a href="javascript:void(0);">Collection</a></li>
+                <li><a href="javascript:void(0);">Best</a></li>
+                <li><a href="javascript:void(0);">AwardWinner</a></li>
+                <li><a href="javascript:void(0);">Lookbook</a></li>
+                <li><a href="javascript:void(0);">MDTO</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h1 style="color: black;text-align: center">MOTD</h1>
+<p style="text-align: center">MAKEUP OF THE DAY</p>
+<!--下方图片展示-->
+
+<div class="content1">
+    <img src="../img/motd/motd1.jpg" alt="">
+    <div class="content1-box">
+        <h1>派对闪光妆尖</h1>
+        <p>Bling-bling闪光是假日化妆必不可少的。</p>
+        <a class="explore down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content1-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/product1/IMG1542uoS352353612_320.png" alt="">
+        </div>
+        <p class="shopName">METALIC EYE GLITTER</p>
+        <p class="shopMark">#Brilliant glitter#Sparkling</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$19.57</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box up">×</div>
+</div>
+
+<div class="content3">
+    <img src="../img/motd/img1.jpg" alt="">
+    <div class="content3-box">
+        <h1>我坚定的基础的颜色？</h1>
+        <p>仍然没有找到适合你皮肤的紧密粘合粉底？Pro Tailor Foundation BeGlow产品使许多粉底用户能够使用各种颜色，这些颜色非常适合亚洲肤色，并具有自然发光的光泽。</p>
+        <a class="explore3 down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content3-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/product1/IMG1533dzM833235154_320.png" alt="">
+        </div>
+        <p class="shopName">PRO TAILOR FOUNDATION BE GLOW SPF25 PA ++</p>
+        <p class="shopMark">#glowfoundation</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$41.637</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box3 up">×</div>
+</div>
+
+
+
+<div class="content2">
+    <img src="../img/motd/IMG1544Uxf426498597.jpg" alt="">
+    <div class="content2-box">
+        <h1>假日闪光</h1>
+        <p>eSpoir最好的眼影亮片可以产生深色，闪亮的眼部彩妆。</p>
+        <a class="explore2 down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content2-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/product1/IMG1542uoS352353612_320.png" alt="">
+        </div>
+        <p class="shopName">METALIC EYE GLITTER</p>
+        <p class="shopMark">#Brilliant glitter#Sparkling</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$19.57</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box2 up">×</div>
+</div>
+
+
+
+<div class="content4">
+    <img src="../img/motd/IMG1544yHR426363618.jpg" alt="">
+    <div class="content4-box">
+        <h1>唇部饱满度在10秒内完成！</h1>
+        <p>如果你想要无皱，柔软，丰盈的嘴唇，尝试唇部丰满药水。</p>
+        <a class="explore4 down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content4-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/motd/lip1.png" alt="">
+        </div>
+        <p class="shopName">LIP PLUMPING POTION</p>
+        <p class="shopMark">#glowfoundation</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$41.637</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box4 up">×</div>
+</div>
+
+
+<div class="content5">
+    <img src="../img/motd/5.jpg" alt="">
+    <div class="content5-box">
+        <h1>保湿干燥的嘴唇</h1>
+        <p>如果你的嘴唇状况不好，即使漂亮的唇膏颜色也不会很漂亮。</p>
+        <a class="explore5 down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content5-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/product1/IMG1542uoS352353612_320.png" alt="">
+        </div>
+        <p class="shopName">METALIC EYE GLITTER</p>
+        <p class="shopMark">#Brilliant glitter#Sparkling</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$19.57</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box5 up">×</div>
+</div>
+
+<div class="content6">
+    <img src="../img/motd/IMG1542Riq020201277.jpg" alt="">
+    <div class="content6-box">
+        <h1>完美的组合，以克服寒冷的天气</h1>
+        <p>我们想介绍一些完美的组合物品，可以保护皮肤免受干燥和片状质地的影响。</p>
+        <a class="explore6 down">EXPLORE</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="content6-pro">
+    <div class="shop-item">
+        <div class="itemImg-box">
+            <i class="fa fa-heart-o icon-heart"></i>
+            <img src="../img/product1/IMG1533dzM833235154_320.png" alt="">
+        </div>
+        <p class="shopName">PRO TAILOR FOUNDATION BE GLOW SPF25 PA ++</p>
+        <p class="shopMark">#glowfoundation</p>
+        <p class="type-color"><span></span><span></span><span></span><span></span>+2</p>
+        <p class="shop-priceBox"><span class="price">$41.637</span><span><i class="fa fa-shopping-basket"></i></span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="close-box6 up">×</div>
+</div>
+
+
+<div class="footer">
+    <div class="div1">
+        <div class="div1_item">
+            <h6 style="padding-bottom: 30px"><a href="#">MAKEUP</a></h6>
+            <h4><a href="#">ARTIST LIVECHAT</a></h4>
+            <p>Talk to the <br>artist about makeup troubles with live chat!</p>
+        </div>
+        <div class="div1_item" style="width: 45%">
+            <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">Service center</a></h6>
+            <h4><a href="#">080 619 8888</a></h4>
+            <p>Consulation time 09:00~18:00<br>(Mon-Fri except holidays)</p>
+        </div>
+        <div class="div1_item" style="text-align: right;width: 19.5%">
+            <h1 style="padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">Find a store</a><br> <a href=" brand.html">Brand introduction</a> <br><a href="#">membership</a><br><a href=" uerCenter">site map</a> </h1>
+            <h6><a href="#">login</a>&nbsp;&nbsp;&nbsp; <a href="#">Sign Up</a></h6>
+        </div>
+    </div>
+    <div class="div2" style="overflow: hidden;padding-top: 15px">
+        <div class="div2_item" style="float: left">
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#" style="font-weight: bold">Privacy policy</a>
+                <a href="#">Video Equipment Management Policy</a>
+                <a href="#">Confirm carrier information</a>
+                <a href="#">Unauthorized collection of e-mail</a>
+                <a href="#">Electronic notice</a>
+            </div>
+            <div>
+                <p>Esuga CEO: Lim Jung Sik &nbsp;&nbsp;&nbsp; Headquarters: Han River Boulevard 100, Yongsan-gu, Seoul (Han River 2-ga) 6th floor</p>
+                <p>Contact Us | Privacy Policy | &nbsp;&nbsp;&nbsp; Terms of &nbsp;&nbsp;&nbsp; <a href=" private.html">Service |</a></p>
+                <p>Personal Information Protection Officer: Kim Sung Hee Customer Service: 080-619-8888 &nbsp;&nbsp;&nbsp;E-mail: espoirmall@espoir.com &nbsp;&nbsp;&nbsp;Hosting Provider:</p>
+                <p>
+                    Our malls are applied to the purchase escrow INIPAY safety services ㈜KG Inicis
+                    for payment transactions for your safety mutongjang trading &nbsp;&nbsp;&nbsp;
+                    <a href=" myPage.html">services Order Status</a>
+                </p>
+                <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-camera"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-wechat"></i>
+            <i class="fa fa-weibo"></i>
+            <i class="fa fa-info"></i>
+        </div>
+    </div>
+</div>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/MOTD.js"></script>
+<script>
+    window.onscroll = function () {
+        // console.log(scrollY);
+        if (scrollY>=30){
+            $('.head_bottom_inner').css({
+                'position' : 'fixed',
+                'top' : '0px',
+                'line-height' : '52px',
+                'padding' : '1px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '55px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(0.7)',
+                'transition' : 'all 0.3s'
+            });
+        }else {
+            $('.head_bottom_inner').css({
+                'position' : 'relative',
+                'line-height' : '47px',
+                'padding' : '20px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '75px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(1)',
+                'transition' : 'all 0.3s'
+            })
+        }
+    }
+
+    //将数字转换成 科学计数法
+    var reg = /(?=(\B)(\d{3})+$)/g;
+
+    //计算购物车内所有的商品总价
+    function countSum2(){
+
+        let sum2 = 0;
+        let osum2 = $('.sum1')
+
+        for (let i=0;i<osum2.length;i++){
+            let temp = osum2.eq(i).text();
+            temp = temp.replace(/,/g,'')
+            temp = parseInt(temp)
+            sum2 += temp;
+            // console.log(temp);
+        }
+        sum2 = sum2.toString();
+        sum2 = sum2.replace(reg,',')
+        $('.sum2').text(sum2);
+
+        // console.log(sum2)
+    }
+
+    //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-plus',myplus)
+    function myplus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num++;
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+    //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-minus',myminus)
+    function myminus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num--;
+        if (num==0){
+            num=1;
+        }
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+
+    //删除当前商品
+    $('.body_body').on('click','.fa-trash',delCell)
+    function delCell() {
+        $(this).parent().parent().remove();
+        countSum2()
+    }
+
+    //文档加载时，检查是否登陆过
+    window.onload = function () {
+        $.ajax({
+            url : '/user/checkLogin',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    }
+
+    //点击logout把session清空，再重新渲染页面
+    $('.head_top').on('click','#logout',function () {
+        $.ajax({
+            url : '/user/logout',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>

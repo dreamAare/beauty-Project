@@ -1,0 +1,586 @@
+ul,li,body,b{
+    margin: 0;
+    padding: 0;
+}
+
+b{
+    font-size: 48px;
+}
+h1{
+    font-size: 42px;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 23px;
+}
+p{
+    font-size: 16px;
+}
+a{
+
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color:black;
+}
+li{
+    list-style: none;
+}
+header{
+    text-align: center;
+    margin: 50px 0px;
+}
+.section1{
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+}
+.section1 h3{
+    display: block;
+    padding: 40px 0;
+
+}
+.section1 a>span{
+    margin-right: 30px;
+}
+.section1 table{
+    width: 100%;
+    border-top: 2px solid black;
+}
+#myPage_banner{
+    width: 100%;
+    height:180px;
+    /*outline: red 1px solid;*/
+    position: relative;
+    text-align: center;
+    line-height: 180px;
+}
+#myPage_banner>span{
+    font-size: 42px;
+}
+
+li>h3{
+    border-bottom: 1px solid #EFEFEF;
+    cursor: pointer;
+}
+ol>li>div{
+    display: none;
+}
+.section1>div:first-child{
+    width: 75%;
+    float: left;
+    height: auto;
+}.section1 div:first-child>ol>li>div{
+    background-color: #FCFCFC;
+ }
+.thead1>tr>th:first-child{
+padding: 25px 0 25px 50px;
+    width: 50%;
+}
+.thead1>tr>th:nth-child(2){
+    width: 10%;
+    text-align: center;
+}
+.thead1>tr>th:nth-child(3){
+    width: 10%;
+    text-align: center;
+}
+.thead1>tr>th:nth-child(4){
+    width: 15%;
+    text-align: center;
+}
+.thead1>tr>th:nth-child(5){
+    width: 15%;
+    text-align: center;
+}
+.tbody1>tr>td{
+    padding: 25px 0 25px 35px;
+}
+
+.tbody1>tr>td:nth-child(n+2){
+    text-align: center;
+    padding-left: 0;
+    font-size: 18px;
+}
+.imgBox{
+    width: 90px;
+    height: 125px;
+    float: left;
+    max-width: 120px;
+    max-height: 125px;
+}
+.imgBox>img{
+    width: 90px;
+    max-width: 120px;
+    max-height: 125px;
+    height: 125px;
+}
+
+/*...*/
+.Account{
+    padding-left: 6%;
+    background-color: #FCFCFC;
+}
+.colorBox{
+    overflow: hidden;
+    float: left;
+    margin-left: 20px;
+    margin-top: 4%;
+    max-width: 300px;
+}
+.colorBox>span{
+    display: block;
+}
+.colorBox>span:first-child{
+    font-size: 18px;
+}
+.color{
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    border-radius: 50%;
+    float: left;
+    margin-top: 47px;
+}
+#address{
+    width: 100%;
+    position: relative;
+}
+#address>select{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    width: 94%;
+    height: 50px;
+}
+.selectTwo{
+    height: 50px;
+    width: 100%;
+    margin-top: 40px ;
+    position: relative;
+}
+.selectTwo>div{
+    width: 42%;
+    float: left;
+    height: 50px;
+    position: relative;
+}
+.selectTwo>div:last-child{
+    margin-left: 10%;
+}
+.selectTwo>div>select{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+#address input{
+    cursor: pointer;
+}
+
+.icons{
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    right:8%;
+    top: 15%;
+    font-size: 18px;
+}
+.icons2{
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    right:5%;
+    top: 45%;
+    font-size: 18px;
+}
+select{
+    font-size: 16px;
+    background-color: rgba(0,0,0,0);
+    padding-left: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-height: 300px;
+}
+select>option{
+    height: 40px;
+}
+select>option:hover{
+    cursor: pointer;
+  background-color:rgb(247,245,245) ;
+}
+.details_address{
+    margin-top: 40px;
+    width: 94%;
+    height: 50px;
+}
+.details_address>input{
+    font-size: 18px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+}
+.user_name{
+    margin-top: 40px;
+    width: 94%;
+    height: 50px;
+}
+.user_name>input{
+    font-size: 18px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+}
+.user_tell{
+    margin-top: 40px;
+    width: 94%;
+    height: 50px;
+}
+.user_tell>input{
+    font-size: 18px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+}
+.email{
+    width: 94%;
+    margin-top: 40px;
+    height: 50px;
+}
+.email>input{
+    font-size: 18px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+}
+.user_detail{
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+}
+input::-webkit-input-placeholder{
+    font-size: 18px;
+}
+.myHint{
+    display: none;
+}
+.user_detail>input:last-child{
+    margin-left: 10%;
+}
+.saveAddress{
+    width: 100%;
+    margin-top: 30px;
+    height: 40px;
+    line-height: 40px;
+}
+.saveAddress>div{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    float: left;
+    cursor: pointer;
+}
+.saveAddress>span{
+    float: left;
+    margin-left: 10px;
+    color: #000;
+    font-size: 16px;
+    margin-top: -8px;
+}
+.save{
+    background-image: url("./../img/imgMyPage/ico_chk_on.png");
+}
+.agreement{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
+.agreement>p{
+    font-size: 14px;
+}
+.agree_text{
+    padding-left: 20px;
+}
+.agree_text>li{
+    color: #A0A0A0;
+    list-style: circle;
+    font-size: 14px;
+}
+.agree{
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+}
+.agree>div{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    float: left;
+    cursor: pointer;
+}
+.agree>span{
+    float: left;
+    margin-left: 10px;
+    color: #000;
+    font-size: 16px;
+    margin-top: -8px;
+}
+/*物流选择*/
+.delivery{
+    overflow: hidden;
+}
+.delivery>div{
+    width: 100%;
+    margin-top: 30px;
+}
+.delivery{
+    height: auto;
+}
+.delivery_select{
+    height: 70px!important;
+}
+.delivery_select>div{
+    float: left;
+}
+.delivery_select>div:first-child{
+    height: 100%;
+    width: 5%;
+}
+.delivery_select>div:last-child{
+    height: 100%;
+    width: 90%;
+}
+.delivery_logo{
+    width: 23px;
+    height: 23px;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.delivery__span{
+    height: 23px;
+    line-height: 23px;
+}
+.delivery__span>span:nth-child(1){
+    float: left;
+    font-size: 18px;
+}
+.delivery__span>span:nth-child(n+2){
+    margin-right: 10px;
+    float: right;
+    font-size: 18px;
+}
+.delivery__span>span:nth-child(3){
+    margin-right: 3px!important;
+}
+.delivery_text>div:last-child{
+    margin-top: 20px;
+    font-size: 14px;
+    color:#A0A0A0;
+}
+
+/*优惠券*/
+
+.discount-div{
+    height: 100px;
+    background-color: #FCFCFC;
+    position: relative;
+    padding: 50px 0;
+}
+.discount-div>button{
+    position: absolute;
+    right:10%;
+    bottom: 35px;
+    min-width: 70px;
+    width: 15%;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-size: 14px;
+}
+.discount-div>input{
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+
+ol>li{
+    position: relative;
+}
+ol>li>h3>i{
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+.fa-angle-up{
+    display: none;
+}
+/*购物车*/
+.pay{
+    top: 25%;
+    right: 2%;
+    position: fixed;
+    float: left;
+    height: 390px;
+    width: 25%;
+    padding: 1%;
+}
+.pay_list{
+    border: 1px solid #E5E5E5;
+    margin: 0 auto;
+    width: 90%;
+    height: 80%;
+}
+.pay_list>ul{
+    margin: 0 auto;
+    width:90%;
+    height: 50%;
+    border-bottom: 1px solid #4D4D4D;
+}
+.pay_list>ul>li{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    padding: 0 20px;
+    line-height: 40px;
+}
+.pay_list>ul>li>span:first-child{
+    float: left;
+    font-size: 18px;
+}
+.pay_list>ul>li>span:nth-child(2){
+    float: right;
+    font-size: 18px;
+}
+.pay_list>ul>li>span:last-child{
+
+    float: right;
+    font-size: 18px;
+}
+.pay_p{
+    margin: 0 auto;
+    height: 40%;
+    width: 90%;
+    padding-top: 20px;
+}
+.pay_p>p:first-child{
+    width: 100%;
+    height: 25px;
+    margin: 0;
+    line-height: 25px;
+    padding: 0 20px;
+}
+
+.pay_p>p:last-child{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0 20px;
+    color: #A0A0A0;
+}
+.pay_p>p>span:first-child{
+    float: left;
+    font-size: 16px;
+}
+.pay_p>p>span:last-child{
+    font-size: 24px;
+    float: right;
+}
+.total{
+    float: right;
+    font-size: 24px;
+}
+.pay>button{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+    height: 45px;
+    margin-top:8px;
+    width: 90%;
+}
+.btn1{
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    outline: none;
+}
+.pay>button:last-child{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    outline: none;
+}
+
+input[type="text"]:focus{
+    border-bottom:1px solid black;
+}
+
+.bgBlack{
+    background-color: black;
+}
+
+.pay-li{
+    width: 100%;
+    height: 400px;
+}
+.pay-div>div{
+    width: 93%;
+    padding-left: 7%;
+    height: 200px;
+    line-height: 200px;
+    position: relative;
+}
+.pay_choose{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #f0661b;
+    left: 0%;
+    top: 45%;
+    cursor: pointer;
+}
+.payContainer>img{
+    width: 220px;
+    height: 100px;
+}
+.pay_name{
+    position: absolute;
+    left: 40%;
+    top: -13%;
+    font-size: 18px;
+}
+.pay_desc{
+    position: absolute;
+    left: 40%;
+    top: 13%;
+    font-size: 18px;
+}
+
+.bgred{
+    background-color: red;
+}

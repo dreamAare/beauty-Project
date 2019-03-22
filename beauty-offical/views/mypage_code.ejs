@@ -1,0 +1,46 @@
+<!--会员修密码-->
+<link rel="stylesheet" href="/css/mypage_code.css">
+<section class="content">
+    <div class="wish_list">
+        <p>
+            会员信息修改
+        </p>
+    </div>
+    <div class="container1">
+        <div class="user">
+            <p>
+                密码修改
+            </p>
+            <p>
+                <span><%=data[0].username%></span>,
+                请检查你的密码以保护你的个人信息
+            </p>
+        </div>
+        <div class="spanthree">
+          <!--  <span class="span1"></span>
+            <span class="span2">两次密码输入不相等</span>-->
+            <span class="span1">与原密码不符</span>
+        </div>
+        <input class="oldPassword" type="password" placeholder="原密码">
+
+        <input class="newPassword" type="password" placeholder="新密码（8-16位由英文，数字，特殊符号组成）">
+        <span class="span2">
+            密码格式不正确
+        </span>
+        <input class="ensurePassword" type="password" placeholder="确认密码">
+        <span class="span3">两次密码输入不相符</span>
+        <button type="button" id="update" >
+            修改
+        </button>
+    </div>
+    <p class="success_p">修改密码成功 <i class="fa fa-check"></i></p>
+    <p class="success_p2"><span class="num">3</span>秒之后自动到个人中心</p>
+    <!-- Small modal -->
+
+</section>
+
+
+
+<script src="/comm/jquery/jquery-3.2.1.js">
+</script>
+<script src="/js/mypage_code.js"></script>

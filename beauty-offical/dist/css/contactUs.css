@@ -1,0 +1,128 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+
+h1{
+    text-align: center;
+    font-size: 42px;
+}
+
+.margin-90{
+    margin-bottom: 90px;
+}
+
+.content{
+    width: 90%;
+    margin: auto;
+}
+/*****导航******/
+.navi ul>li{
+    float: left;
+    list-style: none;
+    padding: 20px 25px;
+    font-size: 16px;
+}
+
+.navi ul>li>a{
+    color: #888;
+}
+
+.navi>ul>li>a:hover{
+    color: #888;
+}
+
+
+
+.navi ul{
+    padding:0 0 0 18%;
+}
+
+.navi{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.art-chart{
+    border-bottom: 2px solid black;
+
+}
+
+.navi .art-chart>a{
+    color: #000;
+}
+
+/****类容*******/
+.contact-us{
+    margin-top: 90px;
+}
+
+
+/***左边****/
+.left{
+    width: 30%;
+    float: left;
+}
+
+.right{
+    width: 70%;
+    /* background: pink;*/
+    float: right;
+    padding-bottom: 90px;
+}
+
+
+/***右边*********/
+.top-area {
+    width: 80%;
+    height: 170px;
+    color: #000;
+}
+
+.top-area div{
+    float: left;
+    width: 50%;
+    font-size: 16px;
+}
+
+.top-area img{
+    float: right;
+}
+
+/***表单*****/
+.contact-form{
+    width: 80%;
+   /* background: pink;*/
+}
+
+.contact-form input,textarea{
+    width: 95%;
+    height: 60px;
+    margin-bottom: 60px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact-form textarea:focus{
+    border-bottom: 1px solid #000;
+}
+
+
+
+.contact-form textarea{
+    width: 95%;
+    height: 250px;
+}
+
+.contact-form button{
+    width: 180px;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+}
+

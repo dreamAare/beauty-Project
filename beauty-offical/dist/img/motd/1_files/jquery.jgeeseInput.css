@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.jgeeseInput.radio_box{position:relative;display: inline-block;min-width:17px;vertical-align:top;color:#444;box-sizing:border-box;line-height:1;}
+.jgeeseInput.radio_box.focus{border:1px solid #3c9f9a \9;}
+.jgeeseInput.radio_box label{display: inline-block;padding:0 0 0 23px;min-height:17px;font-size:14px;line-height:1.6;background:url(../images/common/bg_radio.png) no-repeat 0 2px;cursor:pointer;color:#000}
+.jgeeseInput.radio_box .radio_disabled{background-position:0 -421px;}
+.jgeeseInput.radio_box .radio_checked {background-position:0 -273px;}
+.jgeeseInput.radio_box .radio_chk_disabled {background-position:0 -145px;}
+.jgeeseInput.radio_box input{position:absolute;left:0;top:0px;width:0;height:0;z-index:-1;border:0px;opacity:0}
+
+.jgeeseInput.checkbox_box{position:relative;display: inline-block;min-width:24px;vertical-align:top;box-sizing:border-box;line-height:1;overflow:hidden;}
+.jgeeseInput.checkbox_box.focus{border:1px solid #3c9f9a \9;}
+.jgeeseInput.checkbox_box label{display: inline-block;padding:0 0 0px 30px;min-height:24px;font-size:14px;line-height:1.6;background:url(../images/common/bg_check.png) no-repeat 0 0;cursor:pointer; background-color:transparent;color:#000}
+.jgeeseInput.checkbox_box .checkbox_disabled {background-position:0 -424px;}
+.jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -276px;}
+.jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -148px}
+.jgeeseInput.checkbox_box input{position:absolute;left:0;top:0;width:0;height:0;-webkit-appearance: inherit;z-index:-1;box-shadow: 0px inset;left:-9999px \9; border:0px;}
+.jgeeseInput.checkbox_box input:focus{outline:none}
+
+
+.chk_black .jgeeseInput.checkbox_box{position:relative;display: inline-block;min-width:24px;vertical-align:top;box-sizing:border-box;line-height:1;overflow:hidden;}
+.chk_black .jgeeseInput.checkbox_box.focus{border:1px solid #3c9f9a \9;}
+.chk_black .jgeeseInput.checkbox_box label{display: inline-block;padding:0 0 0px 30px;min-height:24px;font-size:14px;line-height:1.6;background:url(../images/common/bg_check_bk.png) no-repeat 0 0;cursor:pointer; background-color:transparent;color:#000}
+.chk_black .jgeeseInput.checkbox_box .checkbox_disabled {background-position:0 -424px;}
+.chk_black .jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -276px;}
+.chk_black .jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -148px}
+.chk_black .jgeeseInput.checkbox_box input{position:absolute;left:0;top:0;width:0;height:0;-webkit-appearance: inherit;z-index:-1;box-shadow: 0px inset;left:-9999px \9; border:0px;}
+.chk_black .jgeeseInput.checkbox_box input:focus{outline:none}
+
+
+
+.mh_input .jgeeseInput.radio_box{min-width:23px}
+.mh_input .jgeeseInput.radio_box label{padding:0 0 0 25px;min-height:22px;font-size:14px;background: url(../images/common/bg_radio.png) no-repeat 0 3px;cursor:pointer;color:#000;font-family:'yoon';line-height: 1.5;}
+.mh_input .jgeeseInput.radio_box .radio_checked {background-position: 0 -272px;}
+.mh_input .jgeeseInput.radio_box .radio_disabled{background-position: 0 -422px;}
+.mh_input .jgeeseInput.radio_box .radio_chk_disabled {background-position:0 -146px;}
+.mh_input .jgeeseInput.radio_box input{left:0;top:0px;width:0;height:0}
+
+.mh_input .jgeeseInput.checkbox_box{min-width:23px}
+.mh_input .jgeeseInput.checkbox_box label{padding:0 0 0 25px;min-height:22px;font-size:14px;background:url(../images/common/bg_radio.png) no-repeat 0 3px;cursor:pointer;color:#000;font-family:'yoon';line-height: 1.5;}
+.mh_input .jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -272px;}
+.mh_input .jgeeseInput.checkbox_box .checkbox_disabled{background-position:0 -422px;}
+.mh_input .jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -146px;}
+.mh_input .jgeeseInput.checkbox_box input{left:0;top:0px;width:0;height:0}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+	.jgeeseInput.radio_box input,
+	.jgeeseInput.checkbox_box input {
+		filter: alpha(opacity=0);
+		font-size: 100%;
+		height: 100%;
+	}
+}
+
+@media only all and (max-width:768px){
+.jgeeseInput.radio_box input,.jgeeseInput.checkbox_box input{opacity:0}
+.jgeeseInput.radio_box label{display: inline-block;padding:0 0 0 20px;min-height:24px;font-size:12px;background:url(../images/common/bg_radioX2.png) no-repeat 0 0;background-size:20px auto;cursor:pointer;}
+.jgeeseInput.radio_box .radio_disabled{background-position:0 -249px;}
+.jgeeseInput.radio_box .radio_checked {background-position:0 -166px;}
+.jgeeseInput.radio_box .radio_chk_disabled {background-position:0 -82px;}
+
+.jgeeseInput.checkbox_box label{display: inline-block;padding:2px 0 0 25px;min-height:24px;font-size:12px;background:url(../images/common/bg_checkX2.png) no-repeat 0 0;background-size:20px auto;cursor:pointer; background-color:transparent;}
+.jgeeseInput.checkbox_box .checkbox_disabled{background-position:0 -250px;}
+.jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -168px;}
+.jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -84px;}
+
+.chk_black .jgeeseInput.checkbox_box label{display: inline-block;min-height:20px;padding:0 0 0 25px;font-size:12px;background:url(../images/common/bg_checkX2_bk.png) no-repeat 0 0;background-size:20px auto;cursor:pointer; background-color:transparent;}
+.chk_black .jgeeseInput.checkbox_box .checkbox_disabled{background-position:0 -252px;}
+.chk_black .jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -168px;}
+.chk_black .jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -84px;}
+
+
+.mh_input .jgeeseInput.radio_box{min-width:23px}
+.mh_input .jgeeseInput.radio_box label{padding:0 0 0 23px;min-height:18px;font-size:12px;background:url(../images/common/bg_radioX2.png) no-repeat 0 2px;background-size:20px auto;cursor:pointer;color:#000}
+.mh_input .jgeeseInput.radio_box .radio_checked {background-position:0 -166px;}
+.mh_input .jgeeseInput.radio_box .radio_disabled{background-position:0 -250px;}
+.mh_input .jgeeseInput.radio_box .radio_chk_disabled {background-position:0 -82px;}
+
+.mh_input .jgeeseInput.checkbox_box{min-width:23px}
+.mh_input .jgeeseInput.checkbox_box label{padding:0 0 0 23px;min-height:18px;font-size:12px;background:url(../images/common/bg_radioX2.png) no-repeat 0 2px;background-size:20px auto;cursor:pointer;color:#000}
+.mh_input .jgeeseInput.checkbox_box .checkbox_checked {background-position:0 -166px;}
+.mh_input .jgeeseInput.checkbox_box .checkbox_disabled{background-position:0 -250px;}
+.mh_input .jgeeseInput.checkbox_box .checkbox_chk_disabled {background-position:0 -84px;}
+
+}

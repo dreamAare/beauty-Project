@@ -1,0 +1,122 @@
+var IncRecomItemTopSearch = {
+	name : "IncRecomItemTopSearch",
+	
+	/*** INIT ***/
+	init : function() {
+		// incPrdList.js 의 중복 주입 방지
+		if(typeof IncPrdList == 'undefined') {	
+			// include 하기
+			cmAjax({
+				url : GLOBAL_WEB_ROOT + "search/get_search_include_ajax.do"
+				, type : "POST"
+				, data : {}
+				, dataType : "html"
+				, success : function (html) {
+
+					$("#container").append(html);
+					
+					setTimeout(function(){
+						IncRecomItemTopSearch.fn.setRecomItem("SEARCH", "");
+					}, 300);
+				}
+			});
+		} else {
+			IncRecomItemTopSearch.fn.setRecomItem("SEARCH", "");
+		}
+	}, 
+	
+	/*** FN ***/
+	fn : {
+		setRecomItem : function(recotype, keyword) {
+			cmAjax({
+				  url  : GLOBAL_WEB_ROOT + "shop/get_recom_item_ajax.do"
+				, type : "POST"
+				, data : {i_sCategorycd : recotype, i_sKeyword : encodeURIComponent(keyword)}
+				, dataType : "json"
+				, isModal : false
+				, isModalEnd : false
+				, success : function (data) {
+					if (data.status == "succ") {
+						var obj = data.object;
+						IncRecomItemTopSearch.fn.setRecomListTypeTopSearch(obj, recotype);
+					}
+				}
+			});
+		}, 
+		
+		setRecomListTypeTopSearch : function(data, recotype) {
+			var list = data.recomList;
+			var recomMode = data.recomMode;
+			var len = list != undefined ? list.length : 0;
+			var title = page_message.recom_top_search;
+			var arrHtml = [];
+
+			if(len > 0) {
+				var s_exchangerate = $("#s_exchangerate").val();
+				var s_currencycd = $("#s_currencycd").val();
+				var s_currency_symbol = $("#s_currency_symbol").val();
+
+				for(var i=0; i<len; i++) {
+					var obj = list[i];
+					obj.prdTagList = IncPrdList.fn.getTagList(obj.v_prd_tag, 2);
+					obj.hashTagList = IncPrdList.fn.getHashTagList(obj.v_hashtag, 2);
+					
+					obj.n_exc_list_price = getDisplayExchangeRate(obj.n_list_price, s_exchangerate, s_currencycd, '');
+					obj.n_exc_price = getDisplayExchangeRate(obj.n_price, s_exchangerate, s_currencycd, '');
+					obj.s_currency_symbol = s_currency_symbol;
+					
+					obj.colorOptHtml = getColorHtmlTagForList (obj.v_opt_info, 'COLOR'); 
+
+					var pagefn = doT.template(document.getElementById('dot_recom_top_search_ul').text, undefined, undefined);
+					arrHtml.push(pagefn(obj));
+				}
+				
+				$("#top_search_recom_ul").html(arrHtml.join(""));
+				
+				if (data.flag_mobile != "Y") { //PC만 적용
+					$(".mCSb_x").mCustomScrollbar({
+					      axis:"x",
+					      advanced:{
+					      	updateOnBrowserResize:true,
+							updateOnContentResize:true,
+							zIndexBoost:false,
+							autoExpandHorizontalScroll:true }
+					});
+				}
+				
+				$("#top_search_recom_title").html(title);
+				$("#top_search_recom_item_area").show();
+			}
+		},
+		
+		getPrdView_IncRecomItem : function(currencycd, productcd, productnm, ctg_nm, ctg_cd, typecd) {
+			var setProductcd = "";
+				
+			if(typecd == "0003"){
+				setProductcd = productcd;
+			}else{
+				setProductcd = "X";
+			}
+			
+			dataLayer.push({
+				'event': 'Click',
+				'ecommerce': {
+					'currencyCode': 'KRW',
+					'click': {
+						'actionField': {'list': '추천상품'}, // 제품 목록 이름
+						'products': [{
+							'id': productcd, // 상품 코드
+							'name': productnm, // 상품명
+							'brand': 'ESPOIR', // 브랜드
+							'category': fnReplaceAll(ctg_nm,">","/"), // 상품 카테고리
+							'dimension32': fnReplaceAll(ctg_cd,">","/"), // 제품 카테고리 코드
+							'dimension50': setProductcd // 세트코드
+						}]
+					}
+				}
+			});
+			
+			WebBodyStart.getPrdView(productcd);
+		}
+	}//fn
+};

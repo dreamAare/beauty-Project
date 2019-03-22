@@ -1,0 +1,361 @@
+var IncPopupPack = {
+	name : "IncPopupPack",
+	
+	/*** INIT ***/
+	init : function() {
+		
+		
+	}, 
+	
+	/*** FN ***/
+	fn : {
+		//*********modal_store 매장별 재고 확인**********S//
+		getStoreStock : function() {
+			if(IS_LOGIN) {
+				var optioncd = $("#modal_soldOut_optcd").val();
+				var productcd = $("#modal_soldOut_prdcd").val();
+				
+				cmAjax({
+					  url  : GLOBAL_WEB_ROOT + "shop/get_store_stock_ajax.do"
+					, type : "POST"
+					, data : {i_sOptioncd : optioncd, i_sProductcd : productcd}
+					, dataType : "json"
+					, isModal : false
+					, isModalEnd : false
+					, success : function (data) {
+						if (data.status == "succ") {
+							var obj = data.object;
+							IncPopupPack.fn.setStoreStockInfo(obj);
+						}
+					}
+				});
+			} else {
+				showConfirmBox({
+					message : page_message.select_login_confirm
+					, ok_func : function() {
+						modalPopupClose("#modal_soldOut");
+						var returnUrl = $("#i_sReturnUrl").val()+"?"+$("#i_sReturnParam").val();
+						WebBodyStart.goLogin(returnUrl);
+					}
+				});
+			}
+		}, 
+		
+		setStoreStockInfo : function(obj) {
+			var arrHtml = [];
+			var s_exchangerate = $("#s_exchangerate").val();
+			var s_currencycd = $("#s_currencycd").val();
+			
+			obj.price = getDisplayExchangeRate(obj.info.n_price, s_exchangerate, s_currencycd, '');
+			
+			var pagefn = doT.template(document.getElementById('dot_modal_store').text, undefined, undefined);
+			arrHtml.push(pagefn(obj));
+			$("#modal_store").html(arrHtml.join(""));
+			
+			IncPopupPack.fn.setFormJgeeseInput($("#modal_store"));
+			
+			modalPopupClose("#modal_soldOut");
+			modalPopup("#modal_store");
+		},
+		
+		openDoordrop : function() {
+			
+			if(GLOBAL_FLAG_BIG_SALE){
+				showMessageBox({
+					message : "세일기간 중에는 도어드랍 서비스가 운영되지 않습니다."
+				});
+			}else{
+				var storcd = $("#modal_store").find("input[name='store']:checked").val();
+				
+				$("#modal_door_store_cd").text(storcd);
+				$("#modal_door_store_nm").text($("#store_nm_"+storcd).val());
+				$("#modal_door_store_tel").text($("#store_tel_no_"+storcd).val());
+				$("#modal_door_price").text($("#modal_store_opt_price").val());
+				$("#modal_door_img > img").attr('src', $("#modal_store_img").val())
+				$("#modal_door_prdnm").text($("#modal_store_prdnm").val());
+				$("#modal_door_optnm").text($("#modal_store_optnm").val());
+				
+				modalPopupClose("#modal_store");
+				modalPopup("#modal_door");
+			}
+		},
+		//*********modal_store 매장별 재고 확인**********E//
+		
+		//*********modal_door 도어드랍 서비스 신청**********S//
+		//숫자만 입력
+		showKeyCode : function(event) {
+			event = event || window.event;
+			var keyID = (event.which) ? event.which : event.keyCode;
+			if( ( keyID >=48 && keyID <= 57 ) || ( keyID >=96 && keyID <= 105 ) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 )
+			{
+				return;
+			}
+			else
+			{
+				return false;
+			}
+		},
+		
+		//옵션증감
+		btnPlus : function(flag) {
+			var cnt = $("#modal_door_selectedCnt").val();
+			
+			if(flag == 'Plus') {
+				cnt++;
+			} else { //'Minus'
+				if(cnt > 1) cnt--;
+			}
+			
+			$("#modal_door_selectedCnt").val(cnt);
+			
+			this.calculate(cnt);
+		},
+		
+		//금액계산
+		calculate : function(cnt) {
+			var storcd = $("#modal_store").find("input[name='store']:checked").val();
+			var stockqty = $("#store_qty_"+storcd).val();
+			if (stockqty != undefined && stockqty != '') {
+				stockqty = parseInt(stockqty);
+			}
+			if (cnt > stockqty) {
+				showMessageBox({
+					message : page_message.select_maximum //구매 가능 수량을 초과 했습니다.
+				});
+				cnt = stockqty;
+				$("#modal_door_selectedCnt").val(cnt);
+			} else if (cnt < 1) {
+				showMessageBox({
+					message : page_message.select_minimum //최소 구매 수량은 1개 입니다.
+				});
+				cnt = 1;
+				$("#modal_door_selectedCnt").val(cnt);
+			}
+			
+			var price = $("#modal_store_opt_price").val();
+			price = SetNum(price);
+			price = cnt * parseInt(price);
+			price = SetNumComma(price);
+			
+			$("#modal_door_price").text(price);
+		},
+		
+		setReqDoordrop : function() {
+				var optioncd = $("#modal_soldOut_optcd").val();
+				var productcd = $("#modal_soldOut_prdcd").val();
+					
+				var list = [];
+				
+				list.push({
+					productcd : productcd
+					, optioncd : optioncd
+					, cnt : $("#modal_door_selectedCnt").val()
+					, typecd : "EAK02"
+					, compProductcd01 : ''
+					, compOptioncd01 : ''
+					, compProductcd02 : ''
+					, compOptioncd02 : ''
+					, compProductcd03 : ''
+					, compOptioncd03 : ''
+					, compProductcd04 : ''
+					, compOptioncd04 : ''
+					, compProductcd05 : ''
+					, compOptioncd05 : ''
+					, storeCd : $("#modal_door_store_cd").text()
+				});	
+				
+				WebBodyStart.immediatelyPurchage({list:list});
+			
+		},
+		//*********modal_door 도어드랍 서비스 신청**********E//
+
+		//*********modal_notic 입고알림 서비스**********S//
+		getReqNotice : function() {
+			if(IS_LOGIN) {
+				var productcd = $("#modal_soldOut_prdcd").val();
+				
+				cmAjax({
+					  url  : GLOBAL_WEB_ROOT + "shop/get_req_notice_ajax.do"
+					, type : "POST"
+					, data : {i_sProductcd : productcd}
+					, dataType : "json"
+					, isModal : false
+					, isModalEnd : false
+					, success : function (data) {
+						if (data.status == "succ") {
+							var obj = data.object;
+							IncPopupPack.fn.setReqNoticeInfo(obj);
+						}
+					}
+				});
+
+			} else {
+				showConfirmBox({
+					message : page_message.select_login_confirm
+					, ok_func : function() {
+						modalPopupClose("#modal_soldOut");
+						var returnUrl = $("#i_sReturnUrl").val()+"?"+$("#i_sReturnParam").val();
+						WebBodyStart.goLogin(returnUrl);
+					}
+				});
+			}
+		},
+		
+		setReqNoticeInfo : function(obj) {
+			var userVo = obj.userVo;
+			var list = obj.list;
+			var len = list != undefined ? list.length : 0;
+			$("#modal_notic_prdnm").text(list[0].v_productnm);
+			$("#modal_notic_img > img").attr("src", list[0].v_img_path_100);
+			
+			var arrHtml = [];
+			
+			for (var i = 0; i < len; i++) {
+				if (list[i].v_opt_statuscd == "0001") { continue;}
+				var color = "";
+				if (list[i].v_opt_rgb != undefined) {
+					color = (list[i].v_opt_rgb).split(",");
+				}
+				arrHtml.push("<li><button type='button'><span style=\"background:#"+color[0]+"\" id=\""+list[i].v_optioncd+"\"></span><p>"+list[i].v_optionnm+"</p></button></li>");
+			}
+			
+			$("#modal_notic_mt_list .mCSB_container").html(arrHtml.join(""));
+			$("#modal_notic_mt_btn").html("<button type='button'>"+page_message.espoir_plz_select_colors+"</button>");//컬러를 선택해주세요
+			
+			//var md_option = "<option value='"+userVo.mobileno1+"'>"+userVo.mobileno1+"</option>";
+			//$("#modal_notic_no1").empty().append(md_option);
+			$("#modal_notic_no1").val(userVo.mobileno1).attr("disabled",true);
+			$("#modal_notic_no1").selectric();
+			$("#modal_notic_no2").val(userVo.mobileno2 + userVo.mobileno3);
+			
+			IncPopupPack.fn.setFormJgeeseInput($("#modal_notic"));
+			IncPopupPack.fn.setMtListSelect();
+			
+			modalPopupClose("#modal_soldOut");
+			modalPopup("#modal_notic");
+		},
+		
+		setReqNoticeSave : function() {
+			var productcd = $("#modal_soldOut_prdcd").val();
+			var optioncd = $("#modal_notic_mt_btn").find("span").attr("id");
+			var mobileno = $("#modal_notic_no1 :selected").val() + $("#modal_notic_no2").val();
+			
+			if (optioncd == undefined) {
+				showMessageBox({
+					message : page_message.option_plz //옵션을 선택해주세요. 
+				});
+				return;
+			}  
+
+			if ($("input[name='agree_sms']:checked").val() != 'Y') {
+				showMessageBox({
+					message : page_message.espoir_app_stock_noti_agree_sms //'SMS 수신여부에 동의 하셔야 신청이 가능합니다.' 
+				});
+				return;
+			}
+			
+			cmAjax({
+				  url  : GLOBAL_WEB_ROOT + "shop/set_req_notice_save_ajax.do"
+				, type : "POST"
+				, data : {i_sProductcd : productcd
+							, i_sOptioncd : optioncd
+							, i_sMobileno : mobileno}
+				, dataType : "json"
+				, isModal : false
+				, isModalEnd : false
+				, success : function (data) {
+					if (data.status == "succ") {
+						showMessageBox({
+							message : data.message
+						});
+						modalPopupClose('#modal_notic');
+					}
+				}
+			});
+		},
+		//*********modal_notic 입고알림 서비스**********E//
+		
+		
+		//*********modal_common**********S//
+		refreshFormJgeeseInput : function(box) {
+			
+			if (box.find("input[type='radio']")) {
+				box.find("input[type='radio']").jgeeseInput("refresh");
+				//$("form").find("input[type='checkbox']").jgeeseInput();
+			}
+		},
+		
+		setFormJgeeseInput : function(box) {
+			
+			if (box.find("input[type='radio']")) {
+				box.find("input[type='radio']").jgeeseInput();
+				//$("form").find("input[type='checkbox']").jgeeseInput();
+			}
+		},
+		
+		setMtListSelect : function() {
+			$("#modal_notic_mt_btn button").on('click', function(){
+				if($(this).parents(".mt_select").find(".mt_list").is(":visible")){
+					$(this).parents(".mt_select").find(".mt_list").hide();
+					$(this).parents(".mt_select").removeClass("act");
+				} else{
+					$(".mt_select").removeClass("act");
+					$(".mt_select").find(".mt_list").hide();
+					$(this).parents(".mt_select").find(".mt_list").show();
+					$(this).parents(".mt_select").addClass("act")
+				}
+			});
+			$("#modal_notic_mt_list button").on('click',function(){
+				var this_box = $(this).parents(".mt_select");
+				var select_color = $(this).find('span').css('background-color');
+				var select_text = $(this).text();
+				var	isMt_select = $(this).parents(".mt_select");
+				var select_id = $(this).find('span').attr('id');
+				$(this).addClass("select");
+				if($(this).addClass("select")) {
+					if ($(this).parents(".pd_select").hasClass("noFix")) {
+						isMt_select.find(".mt_list").hide();
+						this_box.removeClass("act");
+					} else{
+						this_box.find(".mt_btn button").html("<span></span><p></p>");
+						var select_view = this_box.find(".mt_btn button").find("span");
+						var select_button = this_box.find(".mt_btn button").find("p");
+						select_view.css('background-color',select_color);
+						select_view.attr('id',select_id);
+						select_button.text(select_text);
+						isMt_select.find(".mt_list").hide();
+						this_box.removeClass("act");
+					}
+				}
+			});
+		},
+		
+		//*********modal_share**********S//
+		shareSNS : function(sns) {
+			
+			var url = $("#i_sReturnUrl").val() + "?" + $("#i_sReturnParam").val();
+			var prdnm = $("#productnm").val();
+			var img_url = $("#sns_img_url").val();
+			url = DEFAULT_WEB_URL + url.substring(1);
+			sendSns(sns, url, prdnm, img_url);
+		},
+		
+		openSharePopup : function() {
+			var url =  $("#i_sReturnUrl").val() + "?" + $("#i_sReturnParam").val();
+			url = DEFAULT_WEB_URL + url.substring(1);
+			$("#url").val(url);
+			modalPopup('#modal_share');
+		},
+		
+		go_ClipBoard : function() {
+			var url =  DEFAULT_WEB_URL + $("#i_sReturnUrl").val() + "?" + $("#i_sReturnParam").val();
+			//window.clipboardData.setData('Text',fnReplaceAll(url,"//","/"));
+			$("#url").select();
+			document.execCommand('copy');
+			
+			showMessageBox({
+				message : page_message.espoir_modal_share_url_copy //'상품 URL이 복사 되었습니다.' 
+			});
+		}
+	}//fn
+};

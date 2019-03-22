@@ -1,0 +1,212 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+
+h1{
+    text-align: center;
+    font-size: 42px;
+}
+
+.margin-90{
+    margin-bottom: 90px;
+}
+
+.content{
+    width: 90%;
+    /*height: 2000px;*/
+    margin: auto;
+}
+/*****导航******/
+.navi ul>li{
+    float: left;
+    list-style: none;
+    padding: 20px 25px;
+    font-size: 16px;
+}
+
+.navi ul>li>a{
+    color: #888;
+}
+
+.navi>ul>li>a:hover{
+    color: #888;
+}
+
+
+
+.navi ul{
+    padding:0 0 0 18%;
+}
+
+.navi{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.guide{
+    border-bottom: 2px solid black;
+
+}
+
+.navi .guide>a{
+    color: #000;
+}
+
+/****类容*******/
+.shopping-guide{
+    margin-top: 90px;
+}
+
+/***左边****/
+.left{
+    width: 30%;
+    float: left;
+}
+
+.right{
+    width: 70%;
+   /* background: pink;*/
+    float: right;
+    color: #000;
+}
+
+.navi2{
+    margin-top: 100px;
+}
+
+.navi2 ul{
+    margin: 0;
+    padding: 0;
+}
+
+.navi2>ul>li{
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.navi2>ul>li>a:focus{
+     color: #000;
+     text-decoration: none;
+ }
+
+
+.navi2>ul>li>a{
+    color: #888;
+    text-decoration: none;
+}
+
+.left h1{
+    text-align: left;
+}
+
+
+
+/****订单和付款中间内容**************/
+
+.order{
+    width: 100%;
+    /*background: #2aabd2;*/
+    padding-bottom: 90px;
+}
+.right ul{
+    padding:3% 0 0 3%;
+}
+
+.right ul>li{
+    list-style: square;
+    font-size: 15px;
+    padding:3px 0 ;
+    color: #000;
+}
+
+.right img{
+    margin-bottom: 90px;
+}
+
+.right ul img{
+    margin: 0;
+}
+
+.right ul img:last-child{
+    height: 40px;
+}
+
+/****运输中间内容**************/
+.transport{
+    display: none;
+}
+.transport h3{
+   /* text-align: center;*/
+}
+.transport .row img{
+    margin: 0;
+}
+
+.transport button{
+    width: 20%;
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    color:#ffffff;
+    background: #000000;
+    margin-top: 8px;
+}
+
+/****退货中间内容**************/
+.back{
+    display: none;
+}
+
+.back h3:nth-child(5){
+    color:#df2c2c ;
+}
+
+/*****通知*****/
+.note{
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+
+.note-middle{
+    text-align: center;
+    width: 35%;
+    float: left;
+}
+
+.note-right{
+    text-align: center;
+    width: 35%;
+    float: left;
+}
+
+.note-right div{
+    margin: auto;
+}
+
+.notice{
+    width: 100%;
+    margin: auto;
+    height: 70px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.content1{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    color: #000;
+}
+
+.content1 div{
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+}
+

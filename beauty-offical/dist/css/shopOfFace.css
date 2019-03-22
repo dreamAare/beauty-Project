@@ -1,0 +1,156 @@
+.shopItem-box{
+    padding: 0 0 0 5%;
+    overflow: hidden;
+}
+.shop-item{
+    float: left;
+    width: 22.2%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    height: 590px;
+}
+.itemImg-box{
+    background-color: #F7F5F5;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    height: 370px;
+    line-height: 370px;
+}
+.itemImg-box>a>img{
+    width:60%;
+}
+.icon-heart{
+    position: absolute;
+    left: 10%;
+    top: 6%;
+    font-size: 20px;
+}
+.icon-heart:hover{
+    color: red;
+}
+.shop-item>p{
+    font-size: 16px;
+}
+.shopName{
+    height: 45px;
+    margin: 15px 0;
+}
+.shopMark{
+    color: grey;
+    height: 50px;
+}
+.color-red{
+    color:red;
+}
+.type-color>span{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(255,223,70,0.66);
+    overflow: hidden;
+    margin: 0 3px;
+}
+.shop-priceBox>span:last-child{
+    float: right;
+    margin-right: 30px;
+}
+
+/*moreBtn*/
+.shop-more{
+    padding: 20px;
+}
+.shop-more>div{
+    width: 10%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.more-icon{
+    position: relative;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+}
+.more-icon>span:before{
+    content: '';
+    height: 36px;
+    width: 2px;
+    display: block;
+    background-color: black;
+    position: absolute;
+    left: 17px;
+    top: 0;
+}
+.more-icon>span:after{
+    content: '';
+    width: 36px;
+    height: 2px;
+    display: block;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 17px;
+}
+
+.text-listMore{
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+}
+.shop-recommend>div>div{
+    width:calc(24.2%*6);
+}
+.shop-recommend>div{
+    overflow:scroll;
+    overflow-y: hidden;
+    margin: 0 5%;
+}
+.shop-recommend{
+    height: 660px;
+    padding: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+.shop-recommend .shop-item{
+    width: calc(14.5%);
+}
+.shop-recommend>div::-webkit-scrollbar{
+    height: 3px;
+}
+.shop-recommend>div::-webkit-scrollbar-button{
+     display: none;
+ }
+.shop-recommend>div::-webkit-scrollbar-track{
+    display: none;
+}
+.shop-recommend>div::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.shop-recommend>div::-webkit-scrollbar-thumb{
+    background-color: #B6C1CE;
+    border-radius: 2px;
+}
+.shop-recommend>div::-webkit-scrollbar-corner{
+    display: none;
+}
+.toTop{
+    height:  120px;
+    overflow: hidden;
+}
+.toTop>span{
+    display: inline-block;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+.footer-btn{
+    width: 80%;
+    margin: 0 auto;
+}
+.footer-btn>span{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}

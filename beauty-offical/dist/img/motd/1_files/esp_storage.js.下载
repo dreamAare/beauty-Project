@@ -1,0 +1,106 @@
+/**
+ * 
+ */
+var esp_storage = {
+	enable : undefined
+	, returnPage : false
+	, getEnable : function () {
+		if (esp_storage.enable == undefined) {
+			var chkRtn = true;
+			
+			if (typeof sessionStorage == "undefined" || sessionStorage == null) {
+				chkRtn = false;
+			}
+			else {
+				try{
+					sessionStorage.setItem("esp_shop.sessionStorage.enabed", "Y");
+					sessionStorage.removeItem("esp_shop.sesionStorage.enabed");
+				} catch(e) {
+					chkRtn = false;
+				}
+			}
+			esp_storage.enable = chkRtn;
+		}
+		return esp_storage.enable;
+	} 
+	, getItem : function(k) { 
+		var rtn = undefined;
+		if (esp_storage.getEnable()) { 
+			rtn = window.sessionStorage.getItem(k);
+		}
+		return rtn;
+	}
+	, setItem : function(k, v){
+		if (esp_storage.getEnable()){
+			rtn = window.sessionStorage.setItem(k, v);
+		}
+	}
+	, removeItem : function(k, v){
+		if (esp_storage.getEnable()){
+			rtn = window.sessionStorage.removeItem(k, v);
+		}
+	}
+	, clear : function(e) {
+		if (esp_storage.getEnable()) {
+			window.sessionStorage.clear();
+		}
+	}
+};
+
+if (esp_storage.getEnable()) {
+	var esp_preUrl = esp_storage.getItem("esp_shop.sessionStorage.preUrl");
+	var preurl = (document.referrer).split("?")[0];
+	var nowurl = (document.location.href).split("?")[0];
+	if (esp_preUrl != undefined && esp_preUrl != "") {
+		if (esp_preUrl == nowurl)
+			esp_storage.returnPage = true;
+	} else {
+		esp_storage.returnPage = false;
+	}
+	window.sessionStorage.setItem("esp_shop.sessionStorage.preUrl", preurl);
+}
+
+var esp_local_storage = {
+	enable : undefined
+	, getEnable : function () {
+		if (esp_local_storage.enable == undefined) {
+			var chkRtn = true;
+			
+			if (typeof localStorage == "undefined" || localStorage == null) {
+				chkRtn = false;
+			}
+			else {
+				try{
+					localStorage.setItem("esp_shop.sessionStorage.enabed", "Y");
+					localStorage.removeItem("esp_shop.sesionStorage.enabed");
+				} catch(e) {
+					chkRtn = false;
+				}
+			}
+			esp_local_storage.enable = chkRtn;
+		}
+		return esp_local_storage.enable;
+	} 
+	, getItem : function(k) { 
+		var rtn = undefined;
+		if (esp_local_storage.getEnable()) { 
+			rtn = window.localStorage.getItem(k);
+		}
+		return rtn;
+	}
+	, setItem : function(k, v){
+		if (esp_local_storage.getEnable()){
+			rtn = window.localStorage.setItem(k, v);
+		}
+	}
+	, removeItem : function(k, v){
+		if (esp_local_storage.getEnable()){
+			rtn = window.localStorage.removeItem(k, v);
+		}
+	}
+	, clear : function(e) {
+		if (esp_local_storage.getEnable()) {
+			window.localStorage.clear();
+		}
+	}
+};

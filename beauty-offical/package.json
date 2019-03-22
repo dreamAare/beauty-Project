@@ -1,0 +1,39 @@
+{
+  "name": "day5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2018": "^1.0.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "fs": "0.0.1-security",
+    "gulp-less": "^4.0.1",
+    "less": "^3.9.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "browser-sync": "^2.26.3",
+    "distpicker": "^2.0.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "gulp": "^4.0.0",
+    "leancloud-storage": "^3.11.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "multiparty": "^4.2.1",
+    "mysql": "^2.16.0",
+    "nodemailer": "^4.7.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.2.0"
+  }
+}

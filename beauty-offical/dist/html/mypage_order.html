@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单和运输查询</title>
+    <link rel="stylesheet" href="../css/mypage_order.css">
+    <link rel="stylesheet" href="./../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./../comm/iconfont/css/font-awesome.css">
+</head>
+<body>
+<section id="myPage_banner">
+    <span>
+        个人中心
+    </span>
+</section>
+<section class="myPage_nav"><!--导航条-->
+    <div class="container_nav">
+        <ul>
+            <li><a href="myPage.html">我的订单信息</a></li>
+            <li><a href="mypage_order.html">订单运输查询</a></li>
+            <li><a href="mypage_history.html">我的购买历史</a></li>
+            <li><a href="mypage_onSale.html">优惠券</a></li>
+            <li><a href="mypage_wish.html">愿望清单</a></li>
+            <li><a href="mypage_recent.html">最近浏览商品</a></li>
+            <li><a href="mypage_review.html">我的评论</a></li>
+            <li><a href="mypage_code.html">我的信息</a></li>
+        </ul>
+    </div>
+</section>
+<section class="distribute">
+    <div>订单和运输查询</div>
+    <div class="information">
+        <div class="order_list">
+            <div class="selectBox">
+                <select name="select" id="mySelect">
+                    <option value="0">订单状态（全部）</option>
+                    <option value="1">订单完成</option>
+                    <option value="2">制备</option>
+                    <option value="3">支付</option>
+                    <option value="4">订单确认</option>
+                    <option value="5">订单已取消</option>
+                </select>
+                <i class="fa fa-angle-down">
+                </i>
+            </div>
+        </div>
+        <div class="order_time">
+            <ul class="order_ul">
+                <li id="li_one"><a href="javascript:void(0)">1周</a></li>
+                <li><a href="javascript:void(0)">1个月</a></li>
+                <li><a href="javascript:void(0)">3个月</a></li>
+                <li><a href="javascript:void(0)">6个月</a></li>
+                <li><a href="javascript:void(0)">12个月</a></li>
+            </ul>
+        </div>
+        <div class="date_input">
+          <div class="date_pic">
+              <input id="date1" class="inputOne" value="" type="date" placeholder="">
+          </div>
+            <div class="date_shoot">
+                <img src="./../img/imgMyPage/ico_dfk2.png" alt="">
+            </div>
+            <div class="date_pic distance_date">
+                <input id="date2" class="inputOne" type="date" placeholder="" value="">
+            </div>
+            <div class="expore_btn">
+                <button type="button">查询</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="transportation">
+    <div>
+        <div></div>
+    </div>
+</section>
+<section class="banner">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>订单号</th>
+                <th>订购日期</th>
+                <th class="products">物品</th>
+                <th>运输状态</th>
+                <th>总付</th>
+                <th>数量</th>
+            </tr>
+            </thead>
+            <tbody class="myTbody">
+            <tr>
+                <td >20180102</td>
+                <td>2018-12-27</td>
+                <td class="td_products">
+                    <div><img src="./../img/imgMyPage/IMG1541mHD121063659_320.png" alt=""></div>
+                  <div>
+                      <div class="product_name">香奈儿</div>
+                      <div class="color_name">
+                          <div class="product_color">
+
+                          </div>
+                          <span>name</span>
+                      </div>
+                  </div>
+                </td>
+                <td>准备中</td>
+                <td>2</td>
+                <td>100</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<script src="./../comm/jquery/jquery-3.2.1.js">
+</script>
+<script src="./../js/mypage_order.js"></script>
+</body>
+</html>

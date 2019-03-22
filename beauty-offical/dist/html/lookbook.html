@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/lookbook.css"/>
+    <link rel="stylesheet" href="../css/dropDown.css"/>
+
+    <style>
+        @media screen and (max-width: 1366px) {
+            .head_bottom_inner{
+                font-size: 12px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.5%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -20%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -31.45%;
+            }
+        }
+
+        @media screen and (min-width: 1367px) {
+            .head_bottom_inner{
+                font-size: 16px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.05%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -18.35%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -27.65%;
+            }
+        }
+        body,html,ol,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: darkgray;
+        }
+        h1,h2,h3,h4{
+            color: white;
+        }
+        a{
+            color: darkgray;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        input{
+            border: none;
+            padding: 6px;
+            transform: translateY(-2px);
+        }
+        .head_top{
+            background-color: #0f0f0f;
+            padding: 10px 10%;
+        }
+        .head_top:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .head_top>.clearfix{
+            float: right;
+        }
+        .head_top>.clearfix>.menu{
+            float: left;
+            font-size: 12px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .head_top>.clearfix>.menu>a:hover{
+            color: white;
+        }
+
+        .head_bottom{
+            height: 90px;
+        }
+        .head_bottom_inner{
+            padding: 20px 10%;
+            width: 100%;
+            line-height: 47px;
+            background-color: white;
+            height: 75px;
+            position: relative;
+            z-index: 999;
+        }
+        .head_bottom_inner>.clearfix{
+            float: left;
+            width: 40%;
+        }
+        .head_bottom_inner>.clearfix>.menu{
+            float: left;
+            padding: 0 20px;
+            font-weight: bold;
+            /*position: relative;*/
+        }
+        .head_bottom_inner>.clearfix>.menu>a:hover{
+            color: red;
+        }
+        .head_bottom_inner>.clearfix>.menu>a{
+            color: black;
+        }
+        .head_bottom_inner>.clearfix>i{
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+        .head_bottom_inner:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+
+        .first:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .second:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .four:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .myUl{
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            font-size: 20px;
+            background-color: white;
+            display: none;
+            padding: 0 11%;
+            padding-top: 20px;
+            z-index: 1050;
+
+        }
+        .myUl>li{
+            float: left;
+            padding: 30px 22px;
+            z-index: 1050;
+        }
+        .myUl>li>a{
+            color: black;
+            z-index: 1050;
+        }
+        .myUl>li>a:hover{
+            color: red;
+        }
+        .footer{
+            padding: 2% 10%;
+            background-color: black;
+            font-size: 10px;
+        }
+        .footer a{
+            color: white;
+        }
+        .footer>.div1:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .footer>.div1>.div1_item{
+            float: left;
+            width: 35%;
+        }
+        .footer>.div2>.div2_item a{
+            margin-right: 10px;
+        }
+        .footer>.div2>.div2_item a:hover{
+            text-decoration: underline;
+        }
+        .myi>i{
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        .indexmodal{
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }
+        .indexmodal_content{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0px;
+        }
+        .mybody{
+            height: 80%;
+            /*background-color: deeppink;*/
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 0px;
+        }
+        .mybody>.body_head{
+            padding-bottom: 2%;
+            font-size: 18px;
+            color: black;
+        }
+        .mybody>.body_body{
+            overflow-y: auto;
+            /*text-align: center;*/
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid black;
+            height: 82%;
+            font-size: 22px;
+            position: relative;
+            color: black;
+        }
+        .body_body::-webkit-scrollbar {
+            width: 4px;
+            cursor: pointer;
+        }
+
+        .body_body::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: darkgray;
+        }
+
+        .body_body::-webkit-scrollbar-track {
+            /*background-color:#2f2f2f;*/
+            opacity: 1;
+        }
+        .cell_id{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        .cell_info{
+            font-size: 14px;
+        }
+        .cell_info>div{
+            padding-bottom: 15px;
+        }
+        .symbol{
+            padding: 6px 8px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        #sawProduct{
+            font-size: 14px;
+            color: black;
+            border-bottom: 1px solid black;
+            text-decoration: none;
+        }
+        .myfoot{
+            /*background-color: greenyellow;*/
+            width: 90%;
+            margin: 0 auto;
+            border-top: none;
+            text-align: left;
+            padding: 10px 15px;
+            overflow: hidden;
+        }
+        .buyNow{
+            background-color: #2f2f2f;
+            font-size: 20px;
+            width: 88%;
+            border-radius: 0;
+            margin-right: 1%;
+            border: none;
+            height: 40px;
+            float: left;
+        }
+        .buyNow:hover{
+            background-color: black!important;
+        }
+        .shopBag{
+            float: left;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            color: black;
+            font-size: 26px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="head_top" class="head_top">
+    <ul class="clearfix">
+        <li class="menu"><a href=" myPage.html">mypage</a></li>
+        <li class="menu"><a href=" register.html">login</a></li>
+        <li class="menu"><a href=" login.html">Sign Up</a></li>
+    </ul>
+</div>
+<div id="head_bottom" class="head_bottom">
+    <div class="head_bottom_inner">
+        <ul class="clearfix">
+            <li class="menu first">
+                <a href="newPro.html">NEW & BEST</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="newPro.html">new product</a></li>
+                    <li><a href=" collection.html">collection</a></li>
+                    <li><a href=" best.html">best</a></li>
+                    <li><a href=" The winners.html">Awards Winner</a></li>
+                    <li><a href=" lookbook.html">Lookbook</a></li>
+                    <li><a href=" MOTD.html">MOTD</a></li>
+                </ul>
+            </li>
+            <li class="menu second">
+                <a href=" shopOfFace.html">SHOP</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" shopOfFace.html">face</a></li>
+                    <li><a href=" shopOfFace.html">Lip</a></li>
+                    <li><a href=" shopOfFace.html">children</a></li>
+                    <li><a href=" shopOfFace.html">Cheek</a></li>
+                    <li><a href=" shopOfFace.html">skin care</a></li>
+                    <li><a href=" shopOfFace.html">Tools</a></li>
+                    <li><a href=" shopOfFace.html">Fragrance / Nail</a></li>
+                </ul>
+            </li>
+            <li class="menu third"><a href=" event.html">EVENT</a></li>
+            <li class="menu four">
+                <a href=" private.html">SERVICE</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" private.html">Private Makeup Lessons</a></li>
+                    <li><a href=" eyebrow.html">Iva Uva</a></li>
+                    <li><a href=" uerCenter.html">Service center</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="logo clearfix" style="text-align: center;margin: 0 2%;width: 16%">
+            <a href=" index.html"><img src="../img/imgIndex/logo.gif" height="36" width="90" style="cursor: pointer;"></a>
+        </div>
+
+        <div class="search clearfix" style="text-align: right;width: 40%">
+            <i class="fa fa-search" ></i>
+            <input type="text" placeholder="SEARCH" style="height: 30px">
+            <i class="fa fa-close"></i>
+            <i class="fa fa-shopping-bag btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin: 0 0 6px 50px"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+        <div class="modal-content indexmodal_content">
+            <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+                <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body mybody">
+                <div class="body_head">
+                    <span>1</span>个产品
+                </div>
+                <div class="body_body">
+                    <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+                    <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+                    <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+                    <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+                    <!--</div>-->
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+                    <span style="float:left;font-size: 14px">TOTAL</span>
+                    <span style="float: right;font-size: 22px;font-weight: bold">₩<span class="sum2">38,000</span></span>
+                </div>
+            </div>
+            <div class="modal-footer myfoot">
+                <button type="button" class="btn btn-primary buyNow">现在购买</button>
+                <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="item-select">
+        <div style="width: 171px"><a href="javascript:void(0);" class="item-select-btn">Lookbook&nbsp;&nbsp;<i class="fa fa-angle-up"
+                                                                                   id='icon-angleUp'></i></a></div>
+        <div class="item-select-ul">
+            <ul>
+                <li><a href="javascript:void(0);">just Arrived</a></li>
+                <li><a href="javascript:void(0);">Collection</a></li>
+                <li><a href="javascript:void(0);">Best</a></li>
+                <li><a href="javascript:void(0);">Award Winner</a></li>
+                <li><a href="javascript:void(0);">Lookbook</a></li>
+                <li><a href="javascript:void(0);">MOTD</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>LOOKBOOK</h2>
+        <span>Meet the makeup artist suggests.</span>
+    </div>
+</header>
+<section>
+    <div>
+        <span>2018 ESPOIR F/W LOOK</span>
+        <h1>F/W LOOK BOOK</h1>
+        <span>F/W trendy color looks with #OOTD concept eye styling book</span>
+    </div>
+    <div class="div2-1">
+        <img class="img-left" src="../img/lookbook/IMG1538eVA124708457.jpg" alt=""/>
+        <img class="img-bottom img-left" src="../img/lookbook/IMG1538yOs124713060.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#brown shade eyes</p>
+        <h2>CARAMEL BROWN</h2>
+        <p>Softly radiant brown shade eye makeup and daily coral lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img class="img-bottom" src="../img/lookbook/IMG1538NQA125221824.jpg" alt=""/>
+        <img class="img-left1" src="../img/lookbook/IMG1538Jra125219182.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#sensual rosy eyes</p>
+        <h2>AUTUMN ROSE</h2>
+        <p>Gradient rosy eye makeup and orange brown mlbb lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+</section>
+<section>
+    <div>
+        <span class="span">2018 ESPOIR F/W LOOK</span>
+        <h1>YOUTH VIBE</h1>
+        <span>YOUTHFUL SKIN AND VIBE COLORS FOR THE YOUTH, 4 YOUTH VIBE LOOKS</span>
+    </div>
+    <div class="div2-1">
+        <img class="img-left" src="../img/lookbook/IMG1535rFQ608685878.jpg" alt=""/>
+        <img class="img-bottom img-left" src="../img/lookbook/IMG1535KcE608687941.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#gradient eyemakeup</p>
+        <h2>MODERN VIBE</h2>
+        <p>Gradient eye makeup with softly radiant shade and rosy coral colored lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div3">
+        <img src="../img/lookbook/IMG1535Tmw719467902.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#mlbb lips</p>
+        <h2>NATURAL VIBE</h2>
+        <p>Moist skin base and natural eyebrows, and dusty rose mlbb lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img class="img-left" style="width: 620px;height: 830px" src="../img/lookbook/IMG1535Zkb719583133.jpg" alt=""/>
+        <img class="img-bottom img-left" src="../img/lookbook/IMG1535oeb719589830.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#youthful skin</p>
+        <h2>CASUAL VIBE</h2>
+        <p>Elastic, radiant, youthful skin and modern red-toned velvety lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img style="width: 470px" class="img-bottom" src="../img/lookbook/IMG1535FWc686569577.jpg" alt=""/>
+        <img style="width: 620px" class="img-left1" src="../img/lookbook/IMG1535EMu686566342.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#bold colors</p>
+        <h2>STREET VIBE</h2>
+        <p>Chic make up with sofe smokey eyes and bold burgundy lips</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img style="width: 580px;margin-left: 25%" src="../img/lookbook/IMG1535PND686572905.jpg" alt=""/>
+    </div>
+</section>
+<section>
+    <div>
+        <span class="span">2018 SPRING</span>
+        <h1>MEET THE NEW NUDE</h1>
+        <span>This spring, try the #New Nude Look with light, fresh color that makes skin look naturally good, instead of an artificial makeup look.</span>
+    </div>
+    <div class="div2-1">
+        <img class="img-left" src="../img/lookbook/IMG1535lsU423948585.jpg" alt=""/>
+        <img class="img-bottom img-left" src="../img/lookbook/IMG1535dUY423951689.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#apricot</p>
+        <h2>INNOCENT IN NUDE</h2>
+        <p>#Innocent Look by intricately applying apricot color over porcelain-smooth skin</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div style="width: 92%" class="div2-1">
+        <img style="margin-bottom: 20%" src="../img/lookbook/IMG1535kOw423800545.jpg" alt=""/>
+        <img style="margin-left: 3%" src="../img/lookbook/IMG1535yAW423806045.jpg" alt=""/>
+    </div>
+    <div class="div2-1" style="overflow: hidden">
+        <div class="div1-1" style="width: 50%;float: left;margin-top: 20%">
+            <p class="p1">#silky face</p>
+            <h2>BLOOMING IN THE NUDE</h2>
+            <p>Chic Blooming Look that looks lovely, resembling a blossoming flower by layering soft pink color over #Be
+                Silk Base that's matte and soft</p>
+            <a href=" rukbuk.html">VIEW MORE</a>
+            <img style="left: 23%" class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+        </div>
+        <img style="float: left" class="img-left" src="../img/lookbook/IMG1535Hrg423815202.jpg" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img style="width: 470px" class="img-bottom" src="../img/lookbook/IMG1535QKy424184444.jpg" alt=""/>
+        <img style="width: 620px" class="img-left1" src="../img/lookbook/IMG1535Bbb424180662.jpg" alt=""/>
+    </div>
+    <div class="div1-1">
+        <p class="p1">#glow face</p>
+        <h2>STUNNING IN THE NUDE</h2>
+        <p>Chic Blooming Look that looks lovely, resembling a blossoming flower by layering soft pink color over #Be
+            Silk Base that's matte and soft</p>
+        <a href=" rukbuk.html">VIEW MORE</a>
+        <img class="img1" src="../img/lookbook/lookTp_btn2.png" alt=""/>
+    </div>
+    <div class="div2-1">
+        <img style="width: 580px;margin-left: 25%" src="../img/lookbook/IMG1535PVT424188472.jpg" alt=""/>
+    </div>
+</section>
+
+<div class="footer">
+    <div class="div1">
+        <div class="div1_item">
+            <h6 style="padding-bottom: 30px"><a href="#">MAKEUP</a></h6>
+            <h4><a href="#">ARTIST LIVECHAT</a></h4>
+            <p>Talk to the <br>artist about makeup troubles with live chat!</p>
+        </div>
+        <div class="div1_item" style="width: 45%">
+            <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">Service center</a></h6>
+            <h4><a href="#">080 619 8888</a></h4>
+            <p>Consulation time 09:00~18:00<br>(Mon-Fri except holidays)</p>
+        </div>
+        <div class="div1_item" style="text-align: right;width: 19.5%">
+            <h1 style="font-weight: normal;padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">Find a store</a><br> <a href=" brand.html">Brand introduction</a> <br><a href="#">membership</a><br><a href=" uerCenter">site map</a> </h1>
+            <h6><a href="#">login</a>&nbsp;&nbsp;&nbsp; <a href="#">Sign Up</a></h6>
+        </div>
+    </div>
+    <div class="div2" style="overflow: hidden;padding-top: 15px">
+        <div class="div2_item" style="float: left">
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#" style="font-weight: bold">Privacy policy</a>
+                <a href="#">Video Equipment Management Policy</a>
+                <a href="#">Confirm carrier information</a>
+                <a href="#">Unauthorized collection of e-mail</a>
+                <a href="#">Electronic notice</a>
+            </div>
+            <div>
+                <p>Esuga CEO: Lim Jung Sik &nbsp;&nbsp;&nbsp; Headquarters: Han River Boulevard 100, Yongsan-gu, Seoul (Han River 2-ga) 6th floor</p>
+                <p>Contact Us | Privacy Policy | &nbsp;&nbsp;&nbsp; Terms of &nbsp;&nbsp;&nbsp; <a href=" private.html">Service |</a></p>
+                <p>Personal Information Protection Officer: Kim Sung Hee Customer Service: 080-619-8888 &nbsp;&nbsp;&nbsp;E-mail: espoirmall@espoir.com &nbsp;&nbsp;&nbsp;Hosting Provider:</p>
+                <p>
+                    Our malls are applied to the purchase escrow INIPAY safety services ㈜KG Inicis
+                    for payment transactions for your safety mutongjang trading &nbsp;&nbsp;&nbsp;
+                    <a href=" myPage.html">services Order Status</a>
+                </p>
+                <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-camera"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-wechat"></i>
+            <i class="fa fa-weibo"></i>
+            <i class="fa fa-info"></i>
+        </div>
+    </div>
+</div>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/dropDown.js"></script>
+<script src="../js/lookbook.js"></script>
+<script>
+    window.onscroll = function () {
+        // console.log(scrollY);
+        if (scrollY>=30){
+            $('.head_bottom_inner').css({
+                'position' : 'fixed',
+                'top' : '0px',
+                'line-height' : '52px',
+                'padding' : '1px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '55px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(0.7)',
+                'transition' : 'all 0.3s'
+            });
+        }else {
+            $('.head_bottom_inner').css({
+                'position' : 'relative',
+                'line-height' : '47px',
+                'padding' : '20px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '75px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(1)',
+                'transition' : 'all 0.3s'
+            })
+        }
+    }
+
+    //将数字转换成 科学计数法
+    var reg = /(?=(\B)(\d{3})+$)/g;
+
+    //计算购物车内所有的商品总价
+    function countSum2(){
+
+        let sum2 = 0;
+        let osum2 = $('.sum1')
+
+        for (let i=0;i<osum2.length;i++){
+            let temp = osum2.eq(i).text();
+            temp = temp.replace(/,/g,'')
+            temp = parseInt(temp)
+            sum2 += temp;
+            // console.log(temp);
+        }
+        sum2 = sum2.toString();
+        sum2 = sum2.replace(reg,',')
+        $('.sum2').text(sum2);
+
+        // console.log(sum2)
+    }
+
+    //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-plus',myplus)
+    function myplus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num++;
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+    //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-minus',myminus)
+    function myminus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num--;
+        if (num==0){
+            num=1;
+        }
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = price.replace(/,/g,'');
+        price = parseInt(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        let strSum1 = sum1.toString();
+        strSum1 = strSum1.replace(reg,',')
+        // console.log(strSum1)
+        $(this).parent().find('.sum1').text(strSum1);
+
+        countSum2()
+
+    }
+
+    //删除当前商品
+    $('.body_body').on('click','.fa-trash',delCell)
+    function delCell() {
+        $(this).parent().parent().remove();
+        countSum2()
+    }
+
+    //文档加载时，检查是否登陆过
+    window.onload = function () {
+        $.ajax({
+            url : '/user/checkLogin',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    }
+
+    //点击logout把session清空，再重新渲染页面
+    $('.head_top').on('click','#logout',function () {
+        $.ajax({
+            url : '/user/logout',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    })
+</script>
+</body>
+</html>

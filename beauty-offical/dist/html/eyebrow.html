@@ -1,0 +1,1240 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eyebrow</title>
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/eyebrow.css"/>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <style>
+        @media screen and (max-width: 1366px) {
+            .head_bottom_inner{
+                font-size: 12px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.5%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -20%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -31.45%;
+            }
+        }
+
+        @media screen and (min-width: 1367px) {
+            .head_bottom_inner{
+                font-size: 16px;
+            }
+            .first .myUl:nth-of-type(1){
+                margin-left: -11.05%;
+            }
+            .second .myUl:nth-of-type(1){
+                margin-left: -18.35%;
+            }
+            .four .myUl:nth-of-type(1){
+                margin-left: -27.65%;
+            }
+        }
+        .head_top,.head_bottom,footer{
+            color: darkgray;
+        }
+        .head_top ol,.head_bottom ol,.footer ol,.head_top ul,.head_bottom ul,.footer ul,
+        .head_top li,.head_bottom li,.footer li{
+            margin: 0;
+            list-style: none;
+            color: darkgray;
+        }
+        .head_top h1,.head_bottom h1,.footer h1,.head_top h2,.head_bottom h2,.footer h2,
+        .head_top h3,.head_bottom h3,.footer h3,.head_top h4,.head_bottom h4,.footer h4{
+            color: white;
+        }
+        .head_top a,.head_bottom a,.footer a{
+            color: darkgray;
+            text-decoration: none;
+        }
+        .head_top a:hover{
+            text-decoration: none;
+        }
+        .head_bottom a:hover{
+            text-decoration: none;
+        }
+        .footer a:hover{
+            text-decoration: none;
+        }
+        .head_top input,.head_bottom input,.footer input{
+            border: none;
+            padding: 6px;
+            transform: translateY(-2px);
+        }
+        .head_top{
+            background-color: #0f0f0f;
+            padding: 10px 10%;
+        }
+        .head_top:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .head_top>.clearfix{
+            float: right;
+        }
+        .head_top>.clearfix>.menu{
+            float: left;
+            font-size: 12px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .head_top>.clearfix>.menu>a:hover{
+            color: white;
+        }
+
+        .head_bottom{
+            height: 90px;
+        }
+        .head_bottom_inner{
+            padding: 20px 10%;
+            width: 100%;
+            line-height: 47px;
+            background-color: white;
+            height: 75px;
+            position: relative;
+            z-index: 999;
+        }
+        .head_bottom_inner>.clearfix{
+            float: left;
+            width: 40%;
+        }
+        .head_bottom_inner>.clearfix>.menu{
+            float: left;
+            padding: 0 20px;
+            font-weight: bold;
+            /*position: relative;*/
+        }
+        .head_bottom_inner>.clearfix>.menu>a:hover{
+            color: red;
+        }
+        .head_bottom_inner>.clearfix>.menu>a{
+            color: black;
+        }
+        .head_bottom_inner>.clearfix>i{
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+        .head_bottom_inner:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+
+        .first:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .second:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .four:hover .myUl:nth-of-type(1){
+            display: block;
+        }
+        .myUl{
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            font-size: 20px;
+            background-color: white;
+            display: none;
+            padding: 0 11%;
+            padding-top: 20px;
+
+        }
+        .myUl>li{
+            float: left;
+            padding: 30px 22px;
+        }
+        .myUl>li>a{
+            color: black;
+        }
+        .myUl>li>a:hover{
+            color: red;
+        }
+        .footer{
+            padding: 2% 10%;
+            background-color: black;
+            font-size: 10px;
+        }
+        .footer a{
+            color: white;
+        }
+        .footer>.div1:after{
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .footer>.div1>.div1_item{
+            float: left;
+            width: 35%;
+        }
+        .footer>.div2>.div2_item a{
+            margin-right: 10px;
+        }
+        .footer>.div2>.div2_item a:hover{
+            text-decoration: underline;
+        }
+        .myi>i{
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        .indexmodal{
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }
+        .indexmodal_content{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0px;
+        }
+        .mybody{
+            height: 80%;
+            /*background-color: deeppink;*/
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 0px;
+        }
+        .mybody>.body_head{
+            padding-bottom: 2%;
+            font-size: 18px;
+            color: black;
+        }
+        .mybody>.body_body{
+            overflow-y: auto;
+            /*text-align: center;*/
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid black;
+            height: 82%;
+            font-size: 22px;
+            position: relative;
+            color: black;
+        }
+        .body_body::-webkit-scrollbar {
+            width: 4px;
+            cursor: pointer;
+        }
+
+        .body_body::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: darkgray;
+        }
+
+        .body_body::-webkit-scrollbar-track {
+            /*background-color:#2f2f2f;*/
+            opacity: 1;
+        }
+        .cell_id{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        .cell_info{
+            font-size: 14px;
+        }
+        .cell_info>div{
+            padding-bottom: 15px;
+        }
+        .symbol{
+            padding: 6px 8px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        #sawProduct{
+            font-size: 14px;
+            color: black;
+            border-bottom: 1px solid black;
+            text-decoration: none;
+        }
+        .myfoot{
+            /*background-color: greenyellow;*/
+            width: 90%;
+            margin: 0 auto;
+            border-top: none;
+            text-align: left;
+            padding: 10px 15px;
+            overflow: hidden;
+        }
+        .buyNow{
+            background-color: #2f2f2f;
+            font-size: 20px;
+            width: 88%;
+            border-radius: 0;
+            margin-right: 1%;
+            border: none;
+            height: 40px;
+            float: left;
+        }
+        .buyNow:hover{
+            background-color: black!important;
+        }
+        .shopBag{
+            float: left;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            color: black;
+            font-size: 26px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .head_top p,.head_bottom p,.footer p{
+            color: darkgray
+        }
+    </style>
+</head>
+<body onload="initMap()">
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<div class="head_top">
+    <ul class="clearfix">
+        <li class="menu"><a href=" myPage.html">mypage</a></li>
+        <li class="menu"><a href=" register.html">login</a></li>
+        <li class="menu"><a href=" login.html">Sign Up</a></li>
+    </ul>
+</div>
+<div class="head_bottom">
+    <div class="head_bottom_inner">
+        <ul class="clearfix">
+            <li class="menu first">
+                <a href="newPro.html">NEW & BEST</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href="newPro.html">new product</a></li>
+                    <li><a href=" collection.html">collection</a></li>
+                    <li><a href=" best.html">best</a></li>
+                    <li><a href=" The winners.html">Awards Winner</a></li>
+                    <li><a href=" lookbook.html">Lookbook</a></li>
+                    <li><a href=" MOTD.html">MOTD</a></li>
+                </ul>
+            </li>
+            <li class="menu second">
+                <a href=" shopOfFace.html">SHOP</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" shopOfFace.html">face</a></li>
+                    <li><a href=" shopOfFace.html">Lip</a></li>
+                    <li><a href=" shopOfFace.html">children</a></li>
+                    <li><a href=" shopOfFace.html">Cheek</a></li>
+                    <li><a href=" shopOfFace.html">skin care</a></li>
+                    <li><a href=" shopOfFace.html">Tools</a></li>
+                    <li><a href=" shopOfFace.html">Fragrance / Nail</a></li>
+                </ul>
+            </li>
+            <li class="menu third"><a href=" event.html">EVENT</a></li>
+            <li class="menu four">
+                <a href=" private.html">SERVICE</a>
+                <ul class="myUl">
+                    <li style="padding-left: 0px"><a href=" private.html">Private Makeup Lessons</a></li>
+                    <li><a href=" eyebrow.html">Iva Uva</a></li>
+                    <li><a href=" uerCenter.html">Service center</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="logo clearfix" style="text-align: center;margin: 0 2%;width: 16%">
+            <a href=" index.html"><img src="../img/imgIndex/logo.gif" height="36" width="90" style="cursor: pointer;"></a>
+        </div>
+
+        <div class="search clearfix" style="text-align: right;width: 40%">
+            <i class="fa fa-search" ></i>
+            <input type="text" placeholder="SEARCH" style="height: 30px">
+            <i class="fa fa-close"></i>
+            <i class="fa fa-shopping-bag btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin: 0 0 6px 50px"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+        <div class="modal-content indexmodal_content">
+            <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+                <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body mybody">
+                <div class="body_head">
+                    <span>1</span>个产品
+                </div>
+                <div class="body_body">
+                    <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+                    <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+                    <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+                    <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+                    <!--</div>-->
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell_id">
+                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+                        <div class="cell_img" style="float: left;margin-right: 5%">
+                            <img src="../img/imgIndex/cell1.png" width="80">
+                        </div>
+                        <div class="cell_info" style="float: left">
+                            <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+                            <div>
+                                <span style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span> &nbsp;&nbsp; <span>Poseulrn</span>
+                            </div>
+                            <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+                            <div>
+                                <i class="fa fa-minus symbol"></i>
+                                <span style="margin: 0 5%" class="number">1</span>
+                                <i class="fa fa-plus symbol"></i>
+                                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+                    <span style="float:left;font-size: 14px">TOTAL</span>
+                    <span style="float: right;font-size: 22px;font-weight: bold">₩<span class="sum2">38,000</span></span>
+                </div>
+            </div>
+            <div class="modal-footer myfoot">
+                <button type="button" class="btn btn-primary buyNow">现在购买</button>
+                <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div>
+        <img src="../img/eyebrow/svc_map_bnr.jpg" alt=""/>
+    </div>
+    <div class="bt">
+        <p>ESPOIR <br/> EYEBROW BAR</p>
+        <div class="bt1">
+            <span>Your look changes with different eyebrows only. <br/> Style your eyebrow!</span>
+        </div>
+    </div>
+</header>
+<section class="sec1">
+    <ul>
+        <li onclick="tiaozhuan();border(this)" id="01" class="bor"><a href="javascript:;">EYEBROW BAR</a></li>
+        <li onclick="tiaozhuan1();border(this)" id="02"><a href="javascript:;">SERVICE&LOCATION</a></li>
+        <li onclick="tiaozhuan2();border(this)" id="03"><a href="javascript:;">EYEBROW STYLING</a></li>
+        <li onclick="tiaozhuan3();border(this)" id="04"><a href="javascript:;">BROW WAXING</a></li>
+        <li onclick="tiaozhuan4();border(this)" id="05"><a href="javascript:;">EYEBROW PRODUCT</a></li>
+    </ul>
+</section>
+<section class="sec2">
+    <div>
+        <h1 id="about">ABOUT</h1>
+        <p class="hw">전문 브라우 스타일러와 함께 당신에게 <br/> 가장 잘 어울리는 브라우 스타일을 찾아보세요!</p>
+        <p class="hw1">We use Australian LYCON Co’s high-quality wax products since your safety is our priority. <br/>
+            Experienced brow waxing expert and makeup artists create more perfect eyebrow style.</p>
+        <p style="font-size: 14px">※「캐치업 브로우샵」은 에스쁘아와 프로모션 등 업무제휴 관계에 있는
+            <br/>브로우 바 서비스 매장으로서 에스쁘아의 직영 매장이 아닙니다.</p>
+    </div>
+    <ul class="ul1">
+        <li class="li_img1">
+            <dl>
+                <dt id="tab1">Full beauty consulting!</dt>
+                <dd id="tab2">We do not rush consulting (10 minutes, 15 minutes). We offer service after finding out your skin
+                    condition through full beauty consulting with you.
+                </dd>
+            </dl>
+        </li>
+        <li class="li_img2">
+            <dl>
+                <dt id="tab3">Waxing experts provide safe, professional services!</dt>
+                <dd id="tab4">Waxing experts with national skin qualification help you find the most suitable eyebrow style for
+                    you by providing safe and professional services.
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="ul1">
+        <li class="li_img3">
+            <dl>
+                <dt id="tab5">Even treatment after waxing!</dt>
+                <dd id="tab6">By placing our priority on skin soothing and protection, we offer premium treatment care after
+                    waxing. This maximum soothing effect gets rid of any swelling or redness, so it is an optimal brow
+                    service that you can get before your important meeting, gathering, or date after point makeup.
+                </dd>
+            </dl>
+        </li>
+        <li class="li_img4">
+            <dl>
+                <dt id="tab7">Even makeup service by makeup artists!</dt>
+                <dd id="tab8">Do not hesitate even if you have an important appointment after our service! Our professional
+                    artists help in your makeup styling after treatment.
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="ul1">
+        <li class="li_img5">
+            <dl>
+                <dt id="tab9">Private space</dt>
+                <dd id="tab10">Our service is provided in a private space, so you can enjoy stable, comfortable services.</dd>
+            </dl>
+        </li>
+        <li class="li_img6">
+            <dl>
+                <dt id="tab11">Reasonable price, the best service!</dt>
+                <dd id="tab12">Experts with national skin qualification provide safe and professional services. Enjoy the best
+                    services at reasonable prices!
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</section>
+<section class="sec3">
+    <div>
+        <h1 id="ser">SERVICE & LOCATION</h1>
+        <p>We would like to introduce Espoir’s catch-up brow bar services and stores.</p>
+    </div>
+    <div style="margin-top: 3%">
+        <a id="map1" onclick="initMap()" href="javascript:;">Gangnam branch</a>
+        <a id="map2" onclick="initMap1()" href="javascript:;">Myeong-dong Central</a>
+    </div>
+    <div style="margin-top: 5%" id="dituContent">
+
+    </div>
+    <ul>
+        <li>
+            <img src="../img/eyebrow/IMG1534XmJ682877875.jpg" alt=""/>
+        </li>
+    </ul>
+    <div class="address">
+        <div>
+            <h2>Myeong-dong Central</h2>
+            <dl>
+                <dt>Position</dt>
+                <dd>Address 1306-8, Seocho-dong, Seocho-gu, Seoul</dd>
+                <dd>Road name 13, Myeongdong 8-gil, Jung-gu, Seoul, Republic of Korea</dd>
+            </dl>
+            <span>Reservation </span>
+            <span>02-3789-7788 <br/></span>
+            <span>Inquiries <br/> Business <br/> hours</span>
+        </div>
+        <div>
+            <p>Representative service programs</p>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>EYE</dt>
+                        <dd>￦25,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>EYE + LIP</dt>
+                        <dd>￦40,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>LIP</dt>
+                        <dd>￦15,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>EYE(M)</dt>
+                        <dd>￦30,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>HAIR LINE</dt>
+                        <dd>￦20,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>FOREHEAD</dt>
+                        <dd>￦30,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>FULL FACE</dt>
+                        <dd>￦150,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>EYE 5 TIMES</dt>
+                        <dd>￦100,000</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>EYE + LIP 5 <br/> TIMES</dt>
+                        <dd>￦128,000</dd>
+                    </dl>
+                </li>
+            </ul>
+            <p style="font-size: 14px;color: gray">Please call our stores and inquire about other services.</p>
+        </div>
+    </div>
+</section>
+<section class="sec4">
+    <div>
+        <h1 id="eye">EYEBROW STYLING</h1>
+        <p>We help you find the most beautiful eyebrow shape for you through beauty consulting.</p>
+    </div>
+    <ul>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_01.jpg" alt=""/></dt>
+                <dd class="d1">BASIC SHAPE</dd>
+                <dd class="d2">The most natural shape of eyebrow that’s close to a straight</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_02.jpg" alt=""/></dt>
+                <dd class="d1">ARCH SHAPE</dd>
+                <dd class="d2">The arch of eyebrow is smooth, so it provides a soft, elegant feel</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_03.jpg" alt=""/></dt>
+                <dd class="d1">HIGH ARCH SHAPE</dd>
+                <dd class="d2">Elegant image of eyebrow</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_04.jpg" alt=""/></dt>
+                <dd class="d1">STRAIGHT SHAPE</dd>
+                <dd class="d2">Linear soft eyebrow that is not long</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_05.jpg" alt=""/></dt>
+                <dd class="d1">WAVE SHAPE</dd>
+                <dd class="d2">The front area of brow has a flow, and the tail moves</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_06.jpg" alt=""/></dt>
+                <dd class="d1">ANGULAR ARCH SHAPE</dd>
+                <dd class="d2">The eyebrow provides strong structural image and multi-dimensional feel</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_07.jpg" alt=""/></dt>
+                <dd class="d1">ANGLED SHAPE</dd>
+                <dd class="d2">Defined, vivid eyebrow in straight shape</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="../img/eyebrow/ibrow_08.jpg" alt=""/></dt>
+                <dd class="d1">ROUND SHAPE</dd>
+                <dd class="d2">The eyebrow expresses an overall perfect angle and provides a feminine, warm feel</dd>
+            </dl>
+        </li>
+    </ul>
+</section>
+<section class="sec5">
+    <div>
+        <h1 id="brow">BROW WAXING</h1>
+        <p>Best-quality waxing product LYCON selected by quality salons and spas in 40 countries worldwide!<br/>
+            Since it is made of the best-quality natural beeswax and aromatherapy,<br/>
+            it provides excellent effect for even 1mm hair that cannot be easily removed.
+        </p>
+    </div>
+    <div>
+        <img src="../img/eyebrow/ibrow_waxing.jpg" alt=""/>
+    </div>
+    <div>
+        <div>The product consists of hot wax (hard wax), unique LYCON jet wax, and various treatment products that can
+            be used before and after waxing. It works well with waxing treatment. LYCON spa specialist body care
+            products provide a personal solution that can be used at home while receiving services from the salon
+        </div>
+        <div>LYCON has been establishing the standard of waxing worldwide for the past several years and playing a
+            leading role in the market in the aspects of quality and performance. The wide variety and quality of LYCON
+            wax allow experts to combine wax products that are most suitable for each customer, so it provides the
+            highest satisfaction to customers
+        </div>
+    </div>
+</section>
+<section class="sec6">
+    <div>
+        <h1 id="brow1">BROW PRODUCT</h1>
+        <p>Experience perfect eyebrow makeup with Espoir’s various brow products.</p>
+        <button type="button"><a href="#">To shop</a></button>
+    </div>
+    <div style="overflow: hidden">
+        <div class="zs">
+            <div style="text-align: center;padding: 63px 0;position: relative">
+                <img class="like1" src="../img/logo/ico_unlike.png" alt=""/>
+                <img class="like2" src="../img/logo/ico_like.png" alt=""/>
+                <img class="img-p" src="../img/eyebrow/IMG1533BXR832380844_320.png" alt=""/>
+            </div>
+            <div style="padding: 25px 0;width: 300px;text-align: left">
+                <dl>
+                    <dt>BROW DESIGNING KIT</dt>
+                    <dd class="tag"><span>#Brow kit</span>
+                        <span style="margin-left: 10px">#Brow powder</span></dd>
+                    <dd class="color">
+                        <ul>
+                            <li><span style="background: #A58E80"></span></li>
+                            <li><span style="background: #8B6A59"></span></li>
+                        </ul>
+                    </dd>
+                    <dd class="pay">
+                        <span style="display: inline-block;padding-top: 10px">$ 21.74</span>
+                        <img class="bask1" src="../img/logo/ico_basket.png" alt=""/>
+                        <img class="bask2" src="../img/logo/ico_basket_on.png" alt=""/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="zs">
+            <div style="text-align: center;padding: 63px 0;position: relative">
+                <img class="like1" src="../img/logo/ico_unlike.png" alt=""/>
+                <img class="like2" src="../img/logo/ico_like.png" alt=""/>
+                <img class="img-p" src="../img/eyebrow/IMG1533kHE832372893_320.png" alt=""/>
+            </div>
+            <div style="padding: 25px 0;width: 300px;text-align: left">
+                <dl>
+                    <dt>BROW DESIGNING PENCIL</dt>
+                    <dd class="tag"><span># Eyebrow color</span>
+                        <span style="margin-left: 10px">#Brow pencil</span></dd>
+                    <dd class="color">
+                        <ul>
+                            <li><span style="background: #98724c"></span></li>
+                            <li><span style="background: #755E5A"></span></li>
+                            <li><span style="background: #AC5D4A"></span></li>
+                            <li><span style="background: #7F5D57"></span></li>
+                            <li><span style="background: #704e48"></span></li>
+                        </ul>
+                    </dd>
+                    <dd class="pay">
+                        <span style="display: inline-block;padding-top: 10px">$ 13.05</span>
+                        <img class="bask1" src="../img/logo/ico_basket.png" alt=""/>
+                        <img class="bask2" src="../img/logo/ico_basket_on.png" alt=""/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="zs">
+            <div style="text-align: center;padding: 63px 0;position: relative">
+                <img class="like1" src="../img/logo/ico_unlike.png" alt=""/>
+                <img class="like2" src="../img/logo/ico_like.png" alt=""/>
+                <img class="img-p" src="../img/eyebrow/IMG1533BfB832370243_320.png" alt=""/>
+            </div>
+            <div style="padding: 25px 0;width: 300px;text-align: left">
+                <dl>
+                    <dt>BROW TRIMING PENCIL</dt>
+                    <dd class="tag"><span>#Brow trimming</span>
+                        <span style="margin-left: 10px">#Trimming pencil</span></dd>
+                    <dd class="color">
+                        <ul>
+                            <li><span style="background: #d6b1a3"></span></li>
+                            <li><span style="background: #e6ccc7"></span></li>
+                        </ul>
+                    </dd>
+                    <dd class="pay">
+                        <span style="display: inline-block;padding-top: 10px">$ 13.05</span>
+                        <img class="bask1" src="../img/logo/ico_basket.png" alt=""/>
+                        <img class="bask2" src="../img/logo/ico_basket_on.png" alt=""/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="zs">
+            <div style="text-align: center;padding: 63px 0;position: relative">
+                <img class="like1" src="../img/logo/ico_unlike.png" alt=""/>
+                <img class="like2" src="../img/logo/ico_like.png" alt=""/>
+                <img class="img-p" src="../img/eyebrow/IMG1533ykX832368403_320.png" alt=""/>
+            </div>
+            <div style="padding: 25px 0;width: 300px;text-align: left">
+                <dl>
+                    <dt>BROW SETTING PRIMER</dt>
+                    <dd class="tag"><span>#Brow primer</span>
+                        <span style="margin-left: 10px">#Brow setting</span></dd>
+                    <dd class="color">
+                        <ul>
+
+                        </ul>
+                    </dd>
+                    <dd class="pay">
+                        <span style="display: inline-block;padding-top: 10px">$ 13.05</span>
+                        <img class="bask1" src="../img/logo/ico_basket.png" alt=""/>
+                        <img class="bask2" src="../img/logo/ico_basket_on.png" alt=""/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sec7">
+    <ul class="ul1">
+        <li style="border: 0" class="li_img7">
+            <dl>
+                <dt>EYEBROW BAR FAQ</dt>
+                <dd style="color: gray">Please check frequently asked questions and answers regarding brow bar services.</dd>
+                <dd><a href="#">GO FAQ</a></dd>
+            </dl>
+        </li>
+    </ul>
+</section>
+<section class="sec8">
+    <div class="img1">
+        <h3>PRIVATE MAKEUP SERVICE</h3>
+        <a href="#">Go to</a>
+    </div>
+    <div class="img2">
+        <h3>EYEBROW BAR</h3>
+        <a href="#">Go to</a>
+    </div>
+</section>
+
+<div class="footer">
+    <div class="div1">
+        <div class="div1_item">
+            <h6 style="padding-bottom: 30px"><a href="#">MAKEUP</a></h6>
+            <h4><a href="#">ARTIST LIVECHAT</a></h4>
+            <p>Talk to the <br>artist about makeup troubles with live chat!</p>
+        </div>
+        <div class="div1_item" style="width: 45%">
+            <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">Service center</a></h6>
+            <h4><a href="#">080 619 8888</a></h4>
+            <p>Consulation time 09:00~18:00<br>(Mon-Fri except holidays)</p>
+        </div>
+        <div class="div1_item" style="text-align: right;width: 19.5%">
+            <h1 style="padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">Find a store</a><br> <a href=" brand.html">Brand introduction</a> <br><a href="#">membership</a><br><a href=" uerCenter">site map</a> </h1>
+            <h6><a href="#">login</a>&nbsp;&nbsp;&nbsp; <a href="#">Sign Up</a></h6>
+        </div>
+    </div>
+    <div class="div2" style="overflow: hidden;padding-top: 15px">
+        <div class="div2_item" style="float: left">
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#" style="font-weight: bold">Privacy policy</a>
+                <a href="#">Video Equipment Management Policy</a>
+                <a href="#">Confirm carrier information</a>
+                <a href="#">Unauthorized collection of e-mail</a>
+                <a href="#">Electronic notice</a>
+            </div>
+            <div>
+                <p>Esuga CEO: Lim Jung Sik &nbsp;&nbsp;&nbsp; Headquarters: Han River Boulevard 100, Yongsan-gu, Seoul (Han River 2-ga) 6th floor</p>
+                <p>Contact Us | Privacy Policy | &nbsp;&nbsp;&nbsp; Terms of &nbsp;&nbsp;&nbsp; <a href=" private.html">Service |</a></p>
+                <p>Personal Information Protection Officer: Kim Sung Hee Customer Service: 080-619-8888 &nbsp;&nbsp;&nbsp;E-mail: espoirmall@espoir.com &nbsp;&nbsp;&nbsp;Hosting Provider:</p>
+                <p>
+                    Our malls are applied to the purchase escrow INIPAY safety services ㈜KG Inicis
+                    for payment transactions for your safety mutongjang trading &nbsp;&nbsp;&nbsp;
+                    <a href=" myPage.html">services Order Status</a>
+                </p>
+                <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-camera"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-wechat"></i>
+            <i class="fa fa-weibo"></i>
+            <i class="fa fa-info"></i>
+        </div>
+    </div>
+</div>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/eyebrow.js"></script>
+<script type="text/javascript">
+  //创建和初始化地图函数：
+  function initMap(){
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加marker
+    $('#map1').css('color','red')
+    $('#map2').css('color','black')
+  }
+  function initMap1(){
+    createMap1();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加marker
+    $('#map2').css('color','red')
+    $('#map1').css('color','black')
+  }
+
+
+  //创建地图函数：
+  function createMap(){
+    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+    var point = new BMap.Point(127.026718,37.498893);//定义一个中心点坐标
+    map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map;//将map变量存储在全局
+  }
+  function createMap1(){
+    var map1 = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+    var point = new BMap.Point(126.982548,37.561722);//定义一个中心点坐标
+    map1.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map1;//将map变量存储在全z`局
+  }
+
+  //地图事件设置函数：
+  function setMapEvent(){
+    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+    map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+    map.enableKeyboard();//启用键盘上下左右键移动地图
+  }
+
+  //地图控件添加函数：
+  function addMapControl(){
+    //向地图中添加缩放控件
+    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+    //向地图中添加缩略图控件
+    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+    map.addControl(ctrl_ove);
+    //向地图中添加比例尺控件
+    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+  }
+
+  //标注点数组
+  var markerArr = [{title:"Gangnam&nbsp;branch",content:"Gangnam&nbsp;branch",point:"127.02635|37.499566",isOpen:1,icon:{w:21,h:21,l:115,t:46,x:1,lb:10}}
+    ,{title:"Myeg-dg&nbsp;Central",content:"Myeg-dg&nbsp;Central",point:"126.981547|37.562037",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}];
+  //创建marker
+  function addMarker(){
+    for(var i=0;i<markerArr.length;i++){
+      var json = markerArr[i];
+      var p0 = json.point.split("|")[0];
+      var p1 = json.point.split("|")[1];
+      var point = new BMap.Point(p0,p1);
+      var iconImg = createIcon(json.icon);
+      var marker = new BMap.Marker(point,{icon:iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+      marker.setLabel(label);
+      map.addOverlay(marker);
+      label.setStyle({
+        borderColor:"#808080",
+        color:"#333",
+        cursor:"pointer"
+      });
+
+      (function(){
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click",function(){
+          this.openInfoWindow(_iw);
+        });
+        _iw.addEventListener("open",function(){
+          _marker.getLabel().hide();
+        })
+        _iw.addEventListener("close",function(){
+          _marker.getLabel().show();
+        })
+        label.addEventListener("click",function(){
+          _marker.openInfoWindow(_iw);
+        })
+        if(!!json.isOpen){
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+    }
+  }
+  //创建InfoWindow
+  function createInfoWindow(i){
+    var json = markerArr[i];
+    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+    return iw;
+  }
+  //创建一个Icon
+  function createIcon(json){
+    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+    return icon;
+  }
+</script>
+<script>
+  window.onscroll = function () {
+    // console.log(scrollY);
+    if (scrollY>=30){
+      $('.head_bottom_inner').css({
+        'position' : 'fixed',
+        'top' : '0px',
+        'line-height' : '52px',
+        'padding' : '1px 10%',
+        'transition' : 'all 0.3s',
+        'z-index' : '999',
+        'height' : '55px'
+      });
+      $('.logo').find('img').css({
+        'transform' : 'scale(0.7)',
+        'transition' : 'all 0.3s'
+      });
+    }else {
+      $('.head_bottom_inner').css({
+        'position' : 'relative',
+        'line-height' : '47px',
+        'padding' : '20px 10%',
+        'transition' : 'all 0.3s',
+        'z-index' : '999',
+        'height' : '75px'
+      });
+      $('.logo').find('img').css({
+        'transform' : 'scale(1)',
+        'transition' : 'all 0.3s'
+      })
+    }
+  }
+
+  //将数字转换成 科学计数法
+  var reg = /(?=(\B)(\d{3})+$)/g;
+
+  //计算购物车内所有的商品总价
+  function countSum2(){
+
+    let sum2 = 0;
+    let osum2 = $('.sum1')
+
+    for (let i=0;i<osum2.length;i++){
+      let temp = osum2.eq(i).text();
+      temp = temp.replace(/,/g,'')
+      temp = parseInt(temp)
+      sum2 += temp;
+      // console.log(temp);
+    }
+    sum2 = sum2.toString();
+    sum2 = sum2.replace(reg,',')
+    $('.sum2').text(sum2);
+
+    // console.log(sum2)
+  }
+
+  //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+  $('.body_body').on('click','.fa-plus',myplus)
+  function myplus() {
+    var mystr = $(this).parent().find('.number').text();
+    var num = parseInt(mystr);
+    num++;
+    $(this).parent().find('.number').text(num);
+
+    //将单价拿到，并转化成number，再与数量想乘
+    var price = $(this).parent().parent().find('.price').text();
+    price = price.replace(/,/g,'');
+    price = parseInt(price);
+    var sum1 = num*price;
+    // console.log(sum1)
+
+    //将number类型的sum1转化成money的格式（string）
+    let strSum1 = sum1.toString();
+    strSum1 = strSum1.replace(reg,',')
+    // console.log(strSum1)
+    $(this).parent().find('.sum1').text(strSum1);
+
+    countSum2()
+
+  }
+  //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+  $('.body_body').on('click','.fa-minus',myminus)
+  function myminus() {
+    var mystr = $(this).parent().find('.number').text();
+    var num = parseInt(mystr);
+    num--;
+    if (num==0){
+      num=1;
+    }
+    $(this).parent().find('.number').text(num);
+
+    //将单价拿到，并转化成number，再与数量想乘
+    var price = $(this).parent().parent().find('.price').text();
+    price = price.replace(/,/g,'');
+    price = parseInt(price);
+    var sum1 = num*price;
+    // console.log(sum1)
+
+    //将number类型的sum1转化成money的格式（string）
+    let strSum1 = sum1.toString();
+    strSum1 = strSum1.replace(reg,',')
+    // console.log(strSum1)
+    $(this).parent().find('.sum1').text(strSum1);
+
+    countSum2()
+
+  }
+
+  //删除当前商品
+  $('.body_body').on('click','.fa-trash',delCell)
+  function delCell() {
+    $(this).parent().parent().remove();
+    countSum2()
+  }
+
+  //文档加载时，检查是否登陆过
+  window.onload = function () {
+      $.ajax({
+          url : '/user/checkLogin',
+          type : 'post',
+          data : {},
+          success : function (data) {
+              // console.log(data.session,data.msg)
+              if (data.session){
+                  $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                      '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+              } else {
+                  $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                      '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+              }
+
+          },
+          error : function (err) {
+              console.log(err)
+          }
+      })
+  }
+
+  //点击logout把session清空，再重新渲染页面
+  $('.head_top').on('click','#logout',function () {
+      $.ajax({
+          url : '/user/logout',
+          type : 'post',
+          data : {},
+          success : function (data) {
+              // console.log(data.session,data.msg)
+              if (data.session){
+                  $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                      '        <li class="menu"><a href=" myPage.html">myPage</a></li>')
+              } else {
+                  $('.head_top').find('.clearfix').html('<li class="menu"><a href=" login.html">login</a></li>\n' +
+                      '        <li class="menu"><a href=" register.html">Sign Up</a></li>')
+              }
+
+          },
+          error : function (err) {
+              console.log(err)
+          }
+      })
+  })
+</script>
+
+
+
+<!--<script>-->
+  <!--function init() {-->
+<!--// 获取当前地理位置-->
+    <!--navigator.geolocation.getCurrentPosition(function(position) {-->
+
+<!--// 设定地图参数，将用户的当前位置的经纬度设定为地图的中心点-->
+      <!--var latlng = new google.maps.LatLng(37.499547,  127.026322);-->
+      <!--var myOptions = {-->
+<!--// 设定放大倍数-->
+        <!--zoom: 14,-->
+<!--// 将地图中心点设定为指定的坐标点-->
+        <!--center: latlng,-->
+<!--// 指定地图类型-->
+        <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
+      <!--};-->
+<!--// 创建地图并在div中显示-->
+      <!--var map1;-->
+      <!--map1 = new google.maps.Map(document.getElementById("map"), myOptions);-->
+<!--// 在地图上创建标记-->
+      <!--var marker = new google.maps.Marker({-->
+        <!--position: latlng,-->
+        <!--map: map1-->
+      <!--});-->
+<!--// 设定标注窗口，并指定该窗口中的注释文字-->
+      <!--var infowindow = new google.maps.InfoWindow({-->
+        <!--content: "Gangnam branch"-->
+      <!--});-->
+<!--// 打开标注窗口-->
+      <!--infowindow.open(map1, marker);-->
+    <!--});-->
+    <!--$('#map1').css('color','red')-->
+    <!--$('#map2').css('color','black')-->
+  <!--}-->
+  <!--function init1() {-->
+<!--// 获取当前地理位置-->
+    <!--navigator.geolocation.getCurrentPosition(function(position) {-->
+
+<!--// 设定地图参数，将用户的当前位置的经纬度设定为地图的中心点-->
+      <!--var latlng = new google.maps.LatLng(37.562072, 126.981654);-->
+      <!--var myOptions = {-->
+<!--// 设定放大倍数-->
+        <!--zoom: 14,-->
+<!--// 将地图中心点设定为指定的坐标点-->
+        <!--center: latlng,-->
+<!--// 指定地图类型-->
+        <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
+      <!--};-->
+<!--// 创建地图并在div中显示-->
+      <!--var map1;-->
+      <!--map1 = new google.maps.Map(document.getElementById("map"), myOptions);-->
+<!--// 在地图上创建标记-->
+      <!--var marker = new google.maps.Marker({-->
+        <!--position: latlng,-->
+        <!--map: map1-->
+      <!--});-->
+<!--// 设定标注窗口，并指定该窗口中的注释文字-->
+      <!--var infowindow = new google.maps.InfoWindow({-->
+        <!--content: "Myeong-dong Central"-->
+      <!--});-->
+<!--// 打开标注窗口-->
+      <!--infowindow.open(map1, marker);-->
+    <!--});-->
+    <!--$('#map2').css('color','red')-->
+    <!--$('#map1').css('color','black')-->
+  <!--}-->
+
+<!--</script>-->
+
+</body>
+</html>

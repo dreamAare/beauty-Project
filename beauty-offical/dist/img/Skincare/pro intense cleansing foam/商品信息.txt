@@ -1,0 +1,30 @@
+产品信息：
+	商品名字：pro intense cleansing foam
+	商品标签：# Moisturizing deep-cleansing #Without any taut feel
+	商品现价：$ 27.33
+                商品原价：
+	商品评价星级：0
+	体积：150mL 
+	色号个数：
+	商品颜色：
+	商品的标签：Dead skin,Pore care,moisturizing
+	商品奖项：
+	主要产品规格  所有类型的皮肤
+	截止日期:	生产日期后36个月，发布后12个月
+	如何使用:取适量于湿手掌上，充分起泡。轻轻按摩脸部按摩，然后用温水洗净。
+	制造商/制造国家/经销商:Cosvision Co.，Ltd。/韩国/ Espea有限公司
+	
+
+what it is模块
+	大标题：pro intense cleansing foam
+	描述：泡沫型洁面乳可保持肌肤纹理滋润，即使在洁面后也不会有任何紧绷感，并使用荷荷巴油，绿茶输液和玫瑰精华提供深层清洁。
+
+motd模块：
+	1.大标题：
+	  小标题：
+	2.大标题：
+	   小标题:
+	3.大标题：
+	   小标题:
+	4.大标题：
+	   小标题:

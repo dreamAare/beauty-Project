@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* commons */
+.btn_base:hover{background:#403a3a;color:#fff}
+.chip_box li button:hover:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;border:2px solid #fff;border-radius:50%;}
+.chip_box li button:hover{-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);-moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);}
+.chip_box li button.line:hover:before{left:-2px;right:-2px;top:-2px;bottom:-2px;-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);-moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);border:2px solid #ff463a}
+.chip_box li button:disabled:hover:before{content:none}
+.mt_list button:hover{position: relative;padding-left: 45px;padding-right:35px;width: 100%;text-align: left;min-height:48px;background:#f7f5f5;color:#000}
+.tmH_white .chip_box button:hover:before{border:2px solid #ff463a }
+.thum_info .thum_color li span.disable:hover:before{content:none}
+.thum_info .pd_pay button:hover{background: url(../images/shop/ico_basket_on.png) no-repeat 0 0;background-size: cover;}
+.wish_list button:hover{background: url(../images/shop/ico_like.png) no-repeat 0 0;background-size:contain;}
+.select_dep ul li:hover a{color:#ff463a}
+.select_dep ul li:hover a span:after{content:"";display:block;border-bottom:1px solid #ff463a;position:absolute;bottom:-5px;left:0;right:0}
+.filter_scrh .opt_3dep .dep_tab li:hover a{color: #ff463a;}
+.shop_tab ul li a:hover{width:100%;border-bottom:1px solid #000}
+.shop_setItem ul li:hover{background:#f7f5f5}
+
+/* sub */
+.reviews .title_box .btn_area button:hover{background:#000;color:#fff}
+.mixChip_box dd button:hover:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;border:2px solid #ff463a;border-radius:50%;}
+.mixChip_box dd button:hover{-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);-moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);}
+.mixChip_box dd button:disabled:hover:before{content:none}
+.palette_box a:hover{border-top:1px solid #ff463a;border-left:1px solid #ff463a}
+.palette_box a:hover div:before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;border:2px solid #ff463a;}
+.palette_box a:hover {-webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.2);-moz-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.2);box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.2);}
+.cntPaging a:hover {color:#fff;border:1px solid #000000;background-color:#000}
+.cntPaging button:hover{color:#fff;border:1px solid #000000;background-color:#fff}
+.cntPaging button:disabled:hover{border:1px solid #dfdfdf;}
+.main_sl_01 > .bnnr_sl.bnnr_thB > .slick-dots li button:hover{color:#000 !important}
+.main_sl_01 > .bnnr_sl.bnnr_thB > .slick-dots li button:hover:after{background:#000}
+.main_sl_01 > .bnnr_sl > .slick-dots li button:hover{color:#fff}
+.main_sl_01 > .bnnr_sl > .slick-dots li button:hover:after{content:"";width:100%;height:3px;position:absolute;left:0;right:0;bottom:-1px;background:#fff}
+.tab_box .tab li a:hover{color:#ff463a}
+.base_depArea .dep_tab li:hover a{color: #ff463a;}
+.motd-topSL .date_sl li button:hover{color:#fe463c}
+.motd_inDate ul li:hover a{color:#ff463a}
+.motd_inDate ul li:hover a span:after{content:"";display:block;border-bottom:1px solid #ff463a;position:absolute;bottom:-5px;left:0;right:0}
+.s_tab li a:hover{color:#ff463a;}
+.onepay_method .card_slide_wrap .card_slide li:hover .card_body:before{border:2px solid #ff463a;position:absolute;left:0;right:0;top:0;bottom:0;content:"";z-index:1;}
+.sec_center .login_tab li a:hover{color:#000;border-bottom:1px solid #000;font-family: 'yoonb';}
+.confirms ul li button:hover{border:2px solid #ff463a}
+.myTabs li:hover:after{content:"";position:absolute;left:0;right:0;bottom:0px;border-bottom:2px solid #000;}
+.myTabs li:hover a{color:#000}
+.mypage .left_nav ul li:hover a{color:#000}
+.my_STing > ul > li:hover a{color:#ff463a}
+.my_STing > ul > li:hover a span{color:#ff463a}
+.my_STdateB ul li:hover a{color:#000;background:#fff}
+.cs_container .cs_nav .cs_navLst li a:hover{color:#000;}
+.store_map .store_addr a:hover{background-color:#f9f9f9;}
+.svc_ctr_Area .svc_04 li .skinType_box:hover{border: 1px solid #ff463a;box-sizing:border-box}
+.svc_ctr_Area .svc_05 .makeup_box:hover{border: 1px solid #ff463a}
+.review_board .shop_tab ul li a:hover{color: #000}
+.my_Ctab a:hover {color:#000}
+.makeUp_Sl .slick-arrow:hover{opacity:1 !important}
+.svc_location .shop_tab ul li a:hover{border-bottom: 2px solid #000;}
+.svc_map_Area .svc_Map_tab li a:hover{color:#ee3f22;}
+
+/* pop */
+.opstep_sl li button:hover:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;border:2px solid #fff;border-radius:50%;}
+.opstep_sl li button:hover{-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);-moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);}
+.opstep_sl li button:disabled:hover:before{content:none}
+
+.modal_chip li button:hover:before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;border:2px solid #fff;border-radius:50%;}
+.modal_chip li button:hover{-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);-moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.49);}
+.modal_chip li button:disabled:hover:before{content:none}
+
+.pop_tab li a:hover{color:#000;}
+a.cellBox.ver_post:hover{background-color:#f9f9f9;}
+.pop_choice_order .myCell > li > a:hover{background-color:#f9f9f9;}
+.modal_lesson_coupon .mt_list button:hover{height: 50px;padding-left:15px}
+

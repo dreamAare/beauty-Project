@@ -1,0 +1,383 @@
+@charset "utf-8";
+input[type="text"], input[type="tel"], input[type="password"], input[type="date"]{font-size:16px;}
+.m_logo{font-size:18px;color:#000;font-family:'Marian';letter-spacing:2px;}
+.btn_area button{font-size:22px}
+#side_m .btn_area button{font-family: 'Marian';}
+.sec_center.login .btn_area button{font-family:'Marian';}
+.sec_center.login .login_sns{margin-top:20px;}
+.sec_center.login .login_sns p{font-size:16px;margin-bottom:20px;font-family:'Marian';font-weight:bold}
+.sec_center.login .login_sns ul{margin-bottom:110px;}
+.sec_center.login  h3{font-family:'Marian';font-size:50px;font-weight:bold;letter-spacing:3px;margin-bottom:105px;}
+.sec_center.login .inp_ul li.chk_black{position:relative;}
+.sec_center.login .move_pass{position:absolute;right:0;top:3px;color:#000;font-size:12px;}
+.sec_center.login .or{text-align: center;padding:15px;font-size:20px;color:#000;font-family:'Marian';font-weight:bold;}
+.left_nav h3{font-family: 'Marian';font-size:30px;line-height:1.5;letter-spacing:0.02em;}
+.en_name li{float:left;width:48%;margin-bottom:0;}
+.en_name li + li{float:right;}
+.en_name li.err_li{margin-bottom:0;}
+.step_join .welInp li{position:relative;padding:2px 0 2px 35px;margin-top:20px;color: #000}
+.step_join .welInp li:first-child{margin-top:0;}
+.step_join .inp_hs{position:absolute;left:0;top:0;}
+.step_join .welInp li input{width:24px;height:24px;position: absolute;top:0;left:0;height:0;border:none;opacity:0;z-index:100}
+.step_join .welInp li label{padding-left:40px}
+.step_join .welInp span.inpUnder{font-weight:bold;text-decoration:underline;color:#000;cursor: pointer;}
+.step_join .welInp label p{padding-left:34px;line-height:0.5}
+.step_join .welInp label img{padding-left:15px;vertical-align:top}
+.step_join .quBtn{display:inline-block;position:relative;width:21px;height:21px;background:url(../images/member/qus.png)no-repeat center;text-indent:-99999px;margin-left:15px;}
+.step_join .quBox{position:absolute;width: 259px;height: 208px;margin:-214px 0px 0px 10px;;border:1px solid #000;background:#fff;padding:20px;display: none;z-index:5;font-size:14px;color:#000;text-indent:0}
+.step_join .quBtn:hover .quBox,.step_join .quBtn:active .quBox{display:block}
+.step_join .redCirB{position:relative;}
+.step_join .redCirB:after {content: "";display: block;width: 4px;height: 4px;border-radius: 50%;position: absolute;right: -5px;top: 0;background: #ff463a;}
+/* pc 로긴 레이어 */
+	.header_topInner .sec_center.login{padding:25px 30px;}
+	.header_topInner .sec_center.login .login_sns ul{margin-bottom:50px;}
+	.header_topInner .sec_center.login .inp_ul li{margin-bottom:15px}
+	.header_topInner .sec_center .checkArea{position:relative;text-align: center;}
+	.header_topInner .mbr_info{font-size:12px;color:#000;line-height:1.5;margin-bottom:40px;}
+	.header_topInner .mbr_info span{font-size:16px;}
+	.header_topInner .sec_center.login .login_sns{margin-top:15px;}
+	.header_topInner .sec_center.login  h3{font-size:32px;letter-spacing:0;margin-bottom:27px;}
+	.header_topInner .sec_center.login .login_sns p{font-size:14px;letter-spacing:0.09em;}
+	.header_topInner .sec_center.login .login_sns ul{margin-left:-4px}
+	.header_topInner .sec_center.login .login_sns ul li{padding:0 0 0 4px;float:left;width:33.33%}
+	.header_topInner .sec_center.login .login_sns ul li button{text-align: center;height:38px;border:1px solid #cccccc;width:100%;text-indent:-99999px}
+	.header_topInner .sec_center.login .login_sns ul li button:hover{border-color:#000}
+	.header_topInner .sec_center.login .login_sns ul li #btn_facebook{background:url(../images/member/ico_face.png) no-repeat center center;background-size:22px}
+	.header_topInner .sec_center.login .login_sns ul li #btn_ins{background:url(../images/member/ico_ins.gif) no-repeat center center;background-size:22px}
+	.header_topInner .sec_center.login .login_sns ul li #btn_gmail{background:url(../images/member/ico_gmail.gif) no-repeat center center;background-size:22px}
+	.header_topInner .sec_center .btn_area{margin-top:25px;}
+	.header_topInner .sec_center.login .btn_area button{line-height:40px;height:40px;font-size:16px !important;letter-spacing:1px;}
+	.btn_loginLP{width:30px;height:30px;display:block;text-indent:-99999px;background:url(../images/shop/chip_box_close.png) no-repeat center center;position:absolute;right:8px;top:8px;}
+
+.sec_Evt.ver_end .evt_lst .evt_thumb:after{content:'The event is closed.'}
+
+/* ==========================================================================
+Base styles: 영문 팝업 관리 css
+========================================================================== */
+/* modal_accFail_en s */
+	.modal_accFail_en .modal-content{max-width:360px;padding:55px 30px 25px;}
+	.modal_accFail_en .modal-cont p.mem_tit{padding-bottom:15px;font-size: 18px;font-family:'yoonb';;text-align:center;letter-spacing:0px;}
+	.modal_accFail_en .modal-cont p{text-align:center;font-size:14px;padding-bottom:10px;line-height: 1.6;color:#000}
+	.modal_accFail_en .modal-cont .accInput{margin-top:15px}
+	.modal_accFail_en .modal-cont .accInput input{border:0;border-bottom:1px solid #e0e0e0;color:#000}
+	.modal_accFail_en .btn_area{margin-top:30px}
+	.modal_accFail_en .btn_area button{max-width:160px;height: 40px;line-height:40px;font-size:16px;font-family:'Marian';font-weight:bold;}
+/* modal_accFail_en e */
+
+/* modal_check_en s */
+	.modal_check_en .modal-content{max-width:360px;padding:55px 30px 25px;}
+	.modal_check_en .modal-cont p{text-align:center;font-size:14px;padding-bottom:12px;line-height: 1.6;color:#000}
+	.modal_check_en .btn_area{margin-top:10px}
+	.modal_check_en .btn_area button{max-width:160px;height: 40px;line-height:40px;font-size:16px;font-family:'Marian';font-weight:bold;letter-spacing:0.05em;}
+/* modal_check_en e */
+
+/* modal_signUp_en s */
+	.modal_signUp_en .modal-content{max-width:360px;padding:55px 30px 25px;}
+	.modal_signUp_en .modal-cont p{text-align:center;font-size:14px;padding-bottom: 15px;line-height: 1.6;color:#000}
+	.modal_signUp_en .btn_area{margin-top:5px}
+	.modal_signUp_en .btn_area button{max-width:160px;height: 40px;line-height:40px;font-size:16px;font-family:'Marian';font-weight:bold;letter-spacing:0.05em;}
+/* modal_signUp_en e */
+
+/* modal_welcome_en s */
+	.modal_welcome_en .modal-content{max-width:660px;padding: 50px 40px 60px;}
+	.modal_welcome_en .modal-title{padding-bottom:45px;font-family:'Marian';font-weight:bold;letter-spacing:0.06em;line-height:37px;}
+	.modal_welcome_en .modal-cont p{font-size:16px;color:#000;line-height:1.5;letter-spacing:0;}
+	.modal_welcome_en .modal-cont p.welList{padding:13px 0 79px;}
+	.modal_welcome_en .welInp{margin-top:25px;line-height:1.5}
+	.modal_welcome_en .welInp li{position:relative;padding:0 0 2px 35px;margin-top:20px;color: #000;letter-spacing:0;}
+	.modal_welcome_en .welInp li:first-child{margin-top:0;}
+	.modal_welcome_en .inp_hs{position:absolute;left:0;top:0;}
+	.modal_welcome_en .welInp li input{width:24px;height:24px;position: absolute;top:0;left:0;height:0;border:none;opacity:0;z-index:100}
+	.modal_welcome_en .welInp li label{padding-left:40px}
+	.modal_welcome_en .welInp span.inpUnder{font-weight:bold;text-decoration:underline;color:#000;letter-spacing: 0.03em;}
+	.modal_welcome_en .welInp label p{padding-left:34px;line-height:0.5}
+	.modal_welcome_en .welInp label img{padding-left:15px;vertical-align:top}
+	.modal_welcome_en .quBtn{display:inline-block;position:relative;width:21px;height:21px;background:url(../images/member/qus.png)no-repeat center;text-indent:-99999px;margin-left:12px;}
+	.modal_welcome_en .quBox{position:absolute;width: 259px;height: 208px;margin:-214px 0px 0px 10px;;border:1px solid #000;background:#fff;padding:20px;display: none;z-index:5;font-size:14px;color:#000;text-indent:0}
+	.modal_welcome_en .quBtn:hover .quBox,.modal_welcome_en .quBtn:active .quBox{display:block}
+	.modal_welcome_en .btn_area{margin-top:55px;}
+	.modal_welcome_en .btn_area button{margin:0 5px;letter-spacing: 0.03em;}
+	.modal_welcome_en .redCirB{position: relative}
+	.modal_welcome_en .redCirB:after{content: "";display: block;width:6px;height:6px;border-radius: 50%;position: absolute;right: -9px;top: -5px;background: #ff463a;}
+/* modal_welcome_en e */
+
+/* modal_orderCenc_en s */
+	.modal_orderCenc_en .modal-content{max-width:360px;padding:55px 30px 30px;}
+	.modal_orderCenc_en .modal-cont p{font-size:14px;color:#000;text-align:center;}
+	.modal_orderCenc_en .modal-cont p.mem_tit{padding-bottom:15px;font-size:18px;font-weight:bold;line-height: 1.4;}
+	.modal_orderCenc_en .btn_area{margin-top:40px;}
+	.modal_orderCenc_en .btn_area button{max-width:120px !important;height:40px;line-height:40px;margin: 0 2px;font-size: 16px;}
+/* modal_orderCenc_en e */
+
+/* modal_shipFix_en s */
+	.modal_shipFix_en p.agr_txt{color:#ff463a}
+	.modal_shipFix_en .modal-content{max-width: 660px;padding: 60px 35px 60px;}
+	.modal_shipFix_en .modal-content.type_titS .modal-title{padding-bottom: 30px}
+	.modal_shipFix_en .modal-content .sfBox .inp_a{margin-bottom:0}
+	.modal_shipFix_en .modal-content .fx_ul li{float:left;width: 48%}
+	.modal_shipFix_en .modal-content .fx_ul li.fxright{float:right;}
+	.modal_shipFix_en .modal-content .sfBox .cellBox.ver_tel .cell.tel_01{width:48%;float:left;}
+	.modal_shipFix_en .modal-content .sfBox .cellBox.ver_tel .cell.tel_02{width:48%;float:right;}
+	.modal_shipFix_en .modal-content .sfBox .cellBox.ver_adr .cell.tel_01{width: 35%}
+	.modal_shipFix_en .modal-content .sfBox .cellBox.ver_adr .cell.tel_02{padding-left:20px}
+	.modal_shipFix_en .modal-content .sfBox .inp_am{margin-bottom: 30px}
+	.modal_shipFix_en .modal-content .sfBox .inp_am .inp_a{margin-bottom:0}
+	.modal_shipFix_en .modal-content .btn_area{margin-top:25px}
+/* modal_shipFix_en e */
+
+.mypage_cellHead dl dd{font-family:'Marian';font-weight:bold;font-size: 15px;letter-spacing: 0.06em;}
+.mycon_dateSch .mySelect .selectric .label{height:50px;line-height:50px;border-bottom:0;font-size:14px;margin:0 40px 0 10px;}
+.mycon_dateSch .mySelect .selectric{border-bottom:0;font-size:14px;}
+
+
+/* en_cscon s */
+	.en_cscon .inp_ul{margin-top:35px;}
+	.en_cscon .inp_ul>li{margin-bottom:10px;}
+	.en_cscon .inp_a{margin-bottom:0;}
+	/* .en_cscon .err{border-bottom: 2px solid #ff463a} */
+	/* .en_cscon .mySelect .selectric{border-bottom: 2px solid #ff463a} */
+	.en_cscon .inp_a{position: relative;}
+	.en_cscon .en_byte{position: absolute;right:0;bottom:0;color:#a0a0a0}
+	.en_cscon .tit_box{margin-top:45px;}
+	.en_cscon .tex_box{margin-top:10px;}
+	.en_cscon textarea{margin-bottom:30px;font-size: 22px;}
+	.en_cscon .review_file{margin-top:35px;}
+	.en_cscon .info_star li{font-size:13px;}
+/* en_cscon e */
+
+/* en_join_complete s */
+	.step_join h3, .step_finish h3{padding-bottom:20px;;font-family:'Marian';font-weight:bold;font-size:38px;letter-spacing: 0.06em;}
+	.left_con .rcpm{margin-bottom:25px;}
+/* en_join_complete e */
+.mybox_inner .my_cont .inqList li:after{bottom:inherit;top:10px}
+.my_STing > ul > li{text-align: center;}
+.inpBox_coupon .inp_a.ver_addr button{width:100px}
+.stepFinal .pay_Sinfos .payT_3{margin-top:20px;}
+
+/* en_order_item */
+.en_oRsH .viewM_pd{width: 42%;}
+.en_oRsH .viewM_g{width: 10%;}
+.en_oRsH .viewM_ea{width: 8%;}
+.en_oRsH .viewM_spay{width: 10%;}
+.en_oRsH .viewM_pay{width: 10%;}
+.en_oRsH .viewM_sale{width: 10%;}
+.en_oRsH .viewM_tpay{width: 10%;}
+
+/* pc 검색 */
+	.search_mh .src_InNer .search_Area{padding-right:175px;}
+/* 사이트맵 */
+	.ft_map dt.sm_kk{font-family: 'Marian';font-size: 22px;}
+/* check out */
+.e_tit{font-family: 'Marian';}
+/* 최근본 상품 */
+.recom_item_area h5.ff_yoon{font-family:'Marian';font-weight: bold;font-size:45px;}
+/* 결제  */
+.en_v .myCell dl.cell_th dd.cell_g{width:100px}
+.en_v .order_step .myCell dl.cell_td dd.cell_g{width:100px}
+.pay_Sinfos dl.disCt{margin-top:0;}
+.modal_nonmember .nonmember .buy_type li {width: 100%;}
+.modal_nonmember .nonmember .buy_type li a{height: 48px;line-height: 48px;}
+
+/* ==========================================================================
+Base styles: 영문 상세 css
+========================================================================== */
+.shop_information dl{min-height:150px}
+.shop_information dt{line-height:1.5;top:45px;}
+.shop_information dd{padding-right:35px;}
+.shop_information dl.rates{min-height:125px;border-top: 1px solid #efefef;}
+.shop_information dl.rates:after{background:url(../images/shop/arrow_pop.png) no-repeat center center;transform: rotate(0deg) !important;}
+
+/* ==========================================================================
+Base styles: 영문 고객센터 css
+========================================================================== */
+	.cs_main_banner h2{letter-spacing:0.03em;}
+	.cs_main_banner .txt{padding: 0 0 50px 60px;}
+	.cs_container .cs_nav h2{letter-spacing: 0.07em;}
+	
+	
+/* ==========================================================================
+Base styles: 브라우저별 관리 css
+========================================================================== */
+/* 익스용 */
+#nav.msie{}
+.ie8{}
+
+/* 사파리 */
+.safari{}
+@media only all and (max-width:1024px){
+.shop_recoSL li.slick-slide{max-width:280px;min-width:inherit}
+	
+}
+@media only all and (max-width:1023px){
+.recom_item_area h5.ff_yoon{font-size:30px;}
+.shop_information dl{min-height:inherit !important}
+.shop_information dl.rates{border-top:0;}
+.shop_information dl:after{background-size:cover !important;}
+.shop_information dt{padding:24px 20px 24px 0;top:inherit}
+.shop_information dt br{display:none}
+.cs_main.enst .cs_container.sec_04 .cs_nav h2{font-size:20px;}
+
+}
+@media only all and (max-width:768px){
+	.login_type{margin-top:20px;}
+	input[type="text"], input[type="tel"], input[type="password"], input[type="date"]{font-size:14px;}
+	.sec_center.login .login_sns ul{margin-bottom:60px;}
+	.en_name li{float:none;width:100%;margin-bottom:15px;}
+	.en_name li + li{float:right;margin-bottom:0;}
+	.en_name li.err_li{margin-bottom:0;}
+	.btn_area button{font-size:18px}
+	.step_join .quBtn{position:initial;margin-left: 9px;margin-top: 2px;background-size: 18px;width: 18px;height: 18px;}
+	.step_join .quBox{width: 220px;height: 175px;margin: -187px 0px 0px -8px;font-size: 12px;padding: 10px 15px;line-height: 1.6em;}
+	.sec_center.login .btn_area button{font-size:18px;font-weight:bold;letter-spacing: 0.06em;}
+	.sec_center.login .or{font-size:16px;}
+	.sec_center.login .login_sns p{letter-spacing:0.06em;}
+	/* modal_orderCenc_en 768px s */
+		.modal_orderCenc_en .modal-content{min-width:295px;padding: 45px 25px 35px;}
+		.modal_orderCenc_en .modal-content{max-width:295px;}
+		.modal_orderCenc_en .modal-cont p{font-size:13px}
+		.modal_orderCenc_en .modal-cont p.mem_tit{padding-bottom: 10px;font-size:16px;line-height:1.5;}
+		.modal_orderCenc_en .btn_area{margin-top:40px;}
+		.modal_orderCenc_en .btn_area button{max-width:120px;font-size:12px;margin:0;}
+	/* modal_orderCenc_en 768px e */
+
+	/* modal_shipFix_en 768px s */
+		.modal_shipFix_en .modal-content{max-width:375px;padding:50px 25px 55px;}
+		.modal_shipFix_en .modal-content.type_titS .modal-title{padding:0 0 25px 0}
+		.modal_shipFix_en .modal-content.type_titS .modal-cont{padding:0}
+		.modal_shipFix_en .modal-content.type_titS .modal-cont .agr_txt{font-size: 10px;}
+		.modal_shipFix_en .modal-content.type_titS .sfBox .inp_a{margin-bottom: 0}
+		.modal_shipFix_en .modal-content .btn_area{margin-top:30px}
+		.modal_shipFix_en .modal-content .btn_area button{max-width:inherit;width:100%}
+	/* modal_shipFix_en 768px e */
+
+	/* en_cscon 768px s */
+		/* .en_cscon .err{border-bottom:1px solid #ff463a} */
+		/* .en_cscon .mySelect .selectric{border-bottom:1px solid #ff463a} */
+		.en_cscon .inp_ul{margin-top:0;}
+		.en_cscon .inp_ul>li{margin-bottom:0px;}
+		.en_cscon .en_name li{margin-bottom:0;}
+		.en_cscon .tit_box{margin-top:15px;}
+		.en_cscon .tex_box{margin-top:0;}
+		.en_cscon .review_file{margin-top:15px;}
+		.en_cscon .en_byte{font-size:11px;}
+		.en_cscon .info_star li{font-size:11px;}
+		.en_cscon .btn_area{margin-top:45px;}
+		.en_cscon textarea{margin-bottom:15px;font-size: 13px;}
+	/* en_cscon 768px e */	
+	
+	.shop_recoSL li.slick-slide{max-width:245px;}
+	
+	/* mypage_orderReturn 768 s */
+	.my_STdateB ul li a{padding: 0 20px;}
+	/* mypage_orderReturn 768 e */
+	/* customer center 768 s */
+	.cs_main_banner .txt{padding: 0 0 15px 30px;}
+	.info_circle > li:after{top: 8px;}
+	/* customer center 768 e */
+	/* 아이브로우 바 */
+	.store_Info .store_name dt{width: 100%;}
+	/* 이벤트 */
+	.evt_bot_link{max-width: 280px;font-size: 14px;margin: 0 auto;}
+	/* 하단 고정 ui */
+	.fxb_ea{margin-bottom: 5px;}
+	
+	/* 아이브로우 바 */
+	.store_Info .store_program li dd{text-align: right;padding-right: 5px;}
+	/* store */
+	.sec_store h3.e_tit .sub_txt{padding: 0 25px;}
+	
+	
+}
+
+@media only all and (max-width:767px){
+.en_v .order_step .myCell dl.cell_td dd.cell_g{width:auto;padding-left:110px;margin-bottom:10px;}
+
+}
+@media only all and (max-width:640px){
+
+
+/* ==========================================================================
+Base styles: 영문 팝업 관리 640 css
+========================================================================== */
+/* en_passChange 640 s */
+/* en_passChange 640 e */
+
+/* en_signUp 640 s */
+.step_join .welInp li{font-size:12px;margin-top:10px;padding-left:30px;line-height:1.8;letter-spacing:0;}
+.step_join .redCirB:after{right:-8px;top:-3px}
+/* en_signUp 640 e */
+
+/* modal_check_en 640 s */
+	.modal_check_en .modal-content{max-width:295px;padding:45px 25px 20px;}
+	.modal_check_en .modal-cont p{font-size:13px;padding-bottom:20px;letter-spacing:0;}
+	.modal_check_en .btn_area{margin-top:5px;}
+	.modal_check_en .btn_area button{width: 100%;max-width: inherit;font-size:16px}
+/* modal_check_en 640 e */
+
+/* modal_signUp_en 640 s */
+	.modal_signUp_en .modal-content{max-width:295px;padding:45px 25px 20px;}
+	.modal_signUp_en .modal-cont p{font-size:13px;padding-bottom:20px;}
+	.modal_signUp_en .btn_area{margin-top:10px;}
+	.modal_signUp_en .btn_area button{width: 100%;max-width: inherit;font-size:16px}
+/* modal_signUp_en 640 e */
+
+/* modal_welcome_en 640 s */
+	.modal_welcome_en .modal-content{max-width:295px;padding: 45px 25px 60px;}
+	.modal_welcome_en .modal-title{padding-bottom:18px;font-size: 22px;letter-spacing: 0;line-height:32px;}
+	.modal_welcome_en .modal-cont p{font-size:12px;line-height: 1.7em;}
+	.modal_welcome_en .modal-cont p.welList{margin-bottom:22px;padding:14px 0 15px;border-bottom:1px solid #efefef;line-height:1.9em;}
+	.modal_welcome_en .welInp{margin-top:16px}
+	.modal_welcome_en .welInp li{padding: 3px 0 2px 30px;line-height:1.7em;margin-top:7px;font-size:12px;}
+	.modal_welcome_en .welInp p{display:inline-block;padding-left:0}
+	.modal_welcome_en .welInp input{width: 20px;height:20px}
+	.modal_welcome_en .welInp label{font-size:12px}
+	.modal_welcome_en .welInp .quBtn{width:20px;height:20px;background-size:20px;margin-left:10px;}
+	.modal_welcome_en .quBox{width: 220px;height: 175px;margin: -185px 0px 0px -90px;padding-left:30px;font-size: 12px;padding: 10px 15px;line-height: 1.6em;}
+	.modal_welcome_en .btn_area{margin-top: 30px}
+	.modal_welcome_en .btn_area button{max-width: 120px;height: 40px;line-height:40px;margin:0}
+	.modal_welcome_en .redCirB:after{content: "";display: block;width: 4px;height: 4px;border-radius: 50%;position: absolute;right: -10px;top: -3px;background: #ff463a;}
+/* modal_welcome_en 640 e */
+
+/* modal_accFail_en 640 s */
+	.modal_accFail_en .modal-content{max-width:295px;padding:40px 25px 20px;}
+	.modal_accFail_en .modal-cont p.mem_tit{padding-bottom:5px;font-size:16px;line-height:2;}
+	.modal_accFail_en .modal-cont p{font-size:13px;padding-bottom:25px;letter-spacing:0;}
+	.modal_accFail_en .modal-cont .accInput{margin-top:5px}
+	.modal_accFail_en .btn_area{margin-top:25px;}
+	.modal_accFail_en .btn_area button{width: 100%;max-width: inherit;font-size:16px}
+/* modal_accFail_en 640 e */
+
+/* en_join_complete 640 s */
+	.step_join h3, .step_finish h3{padding-bottom:20px;font-size:26px;}
+	.left_con .rcpm .rc_inner dt{padding-bottom: 15px;font-size:17px;letter-spacing: 0.04em;}
+	.left_con .rcpm .rc_inner dd.rc_pcode{padding-bottom:5px;}
+	.left_con .rcpm .rc_inner dd.rc_pcode .rc_pcodeW{padding:0 2px;}
+/* en_join_complete 640 e */
+
+/* mypage_orderReturn 640 s */
+.my_STdateB ul li a{font-size: 11px;padding: 0 0;}
+/* mypage_orderReturn 640 e */
+/* 사이트맵  640 */
+	.ft_map dt.sm_kk{font-size: 18px;}
+
+/* mypage order_table */
+.odview_ing ol li dl{padding:0 10px}
+.odview_ing ol li dl dt{left:0;text-align:left}
+.his_cell .mypage_cellBody .hisM_total:before{content:"Total";}
+.viewM_ea:before{content:"QTY : "}
+.viewM_ea:after{content:"ea"}
+.viewM_sale:before{content:"Discount";}
+.viewM_tpay:before{content:"Total";}
+
+
+}
+
+/* ==========================================================================
+Base styles: 영문 팝업 관리 320 css
+========================================================================== */
+
+@media only all and (max-width:320px){
+	.step_join .quBox{width: 220px;height: 175px;margin: -187px 0px 0px -70px;}
+	.odview_ing ol li dl span.ov_time{font-size:11px;}
+	.odview_ing ol li dl dd.ov_day{font-size:20px;}
+}

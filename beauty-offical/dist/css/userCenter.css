@@ -1,0 +1,225 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+h1{
+   text-align: center;
+    font-size: 42px;
+}
+
+.content{
+    width: 90%;
+    height: 2000px;
+    margin: auto;
+}
+/*****导航******/
+.navi ul>li{
+    float: left;
+    list-style: none;
+    padding: 20px 25px;
+    font-size: 16px;
+}
+
+.navi ul>li>a{
+    color: #888;
+}
+
+.navi>ul>li>a:hover{
+    color: #888;
+}
+
+.navi ul{
+    padding:0 0 0 18%;
+}
+
+.navi{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.user-center{
+    border-bottom: 2px solid black;
+
+}
+
+.navi .user-center>a{
+    color: #000;
+}
+
+
+
+/*****banner******/
+.banner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url("../img/imgUserCenter/bg_cs_main_banner.jpg");
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.banner h2{
+    text-align: right;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+.text{
+    position: absolute;
+    width: 30%;
+    left: 5%;
+    bottom: 10%;
+}
+
+.text p{
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.text h3{
+    color: #ffffff;
+}
+
+/*****live-chart******/
+.live-chart{
+    width: 100%;
+    margin-top: 90px;
+}
+
+.left{
+    width: 30%;
+    float: left;
+   /* background: pink;*/
+}
+
+.middle{
+    width: 50%;
+    /*background: yellow;*/
+    float: left;
+    color: #000;
+}
+
+.middle div{
+    font-size: 70px;
+    color: #000;
+}
+
+.middle button{
+    width: 120px;
+    height: 42px;
+    line-height: 42px;
+    background: #000;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.right{
+    width: 20%;
+    float: left;
+   /* background: #2aabd2;*/
+}
+
+.more{
+    margin-top: 30px ;
+    color: #000;
+}
+
+/*****常见问题******/
+.normal-problem{
+    width: 100%;
+    margin-top: 90px;
+}
+
+.problem-left{
+    width: 30%;
+    float: left;
+}
+
+.problem-right input{
+    width: 80%;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.problem-right{
+    width: 70%;
+    float: left;
+    color: #000;
+}
+
+.problem-right p{
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.problem-right ul{
+    margin: 0;
+    padding: 0;
+}
+
+.problem-right ul>li{
+    font-size: 16px;
+    padding: 10px 0;
+    color: #666;
+}
+
+.problem-right ul>li>a{
+     color: #666;
+ }
+
+/*****购物指南*****/
+.shop-point{
+    width: 100%;
+    margin-top: 90px;
+}
+
+/*****通知*****/
+.note{
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    color: #000;
+}
+
+
+.note-middle{
+    text-align: center;
+    width: 35%;
+    float: left;
+}
+
+.note-right{
+    text-align: center;
+    width: 35%;
+    float: left;
+}
+
+.note-right div{
+    margin: auto;
+}
+
+.notice{
+    width: 100%;
+    margin: auto;
+    height: 70px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.content1{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.content1 div{
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+}

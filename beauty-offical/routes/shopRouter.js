@@ -1,0 +1,17 @@
+const express=require('express');
+const router=express.Router();
+const shopController=require('../controller/shopController');
+router.route('/shopbestsale').post(shopController.shopbestsale).get(shopController.shopbestsale);
+router.route('/markbest').post(shopController.markbest).get(shopController.markbest);
+router.route('/highTolow').post(shopController.highTolow).get(shopController.highTolow);
+router.route('/lowTohigh').post(shopController.lowTohigh).get(shopController.lowTohigh);
+router.route('/shopshow').post(shopController.shopshow).get(shopController.shopshow);
+router.route('/getcolorImg').post(shopController.getcolorImg).get(shopController.getcolorImg);
+router.route('/review').post(shopController.review).get(shopController.review);
+router.route('/addToWish').post(shopController.addToWish).get(shopController.addToWish);
+router.route('/addToCar').post(shopController.addToCar).get(shopController.addToCar);
+router.route('/addToCar2').post(shopController.addToCar2).get(shopController.addToCar2);
+router.route('/fliterproduct').post(shopController.fliterproduct).get(shopController.fliterproduct);
+router.route('/:id').post(shopController.shopType).get(shopController.shopType);
+router.route('/').post(shopController.Fn).get(shopController.Fn);
+module.exports=router;

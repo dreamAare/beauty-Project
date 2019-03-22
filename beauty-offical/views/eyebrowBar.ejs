@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>eyebrow</title>
+  <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+  <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/eyebrow.css"/>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <style>
+    @media screen and (max-width: 1366px) {
+      .head_bottom_inner {
+        font-size: 12px;
+      }
+
+      .first .myUl:nth-of-type(1) {
+        margin-left: -11.5%;
+      }
+
+      .second .myUl:nth-of-type(1) {
+        margin-left: -20%;
+      }
+
+      .four .myUl:nth-of-type(1) {
+        margin-left: -31.45%;
+      }
+    }
+
+    @media screen and (min-width: 1367px) {
+      .head_bottom_inner {
+        font-size: 16px;
+      }
+
+      .first .myUl:nth-of-type(1) {
+        margin-left: -11.05%;
+      }
+
+      .second .myUl:nth-of-type(1) {
+        margin-left: -18.35%;
+      }
+
+      .four .myUl:nth-of-type(1) {
+        margin-left: -27.65%;
+      }
+    }
+
+    .head_top, .head_bottom, footer {
+      color: darkgray;
+    }
+
+    .head_top ol, .head_bottom ol, .footer ol, .head_top ul, .head_bottom ul, .footer ul,
+    .head_top li, .head_bottom li, .footer li {
+      margin: 0;
+      list-style: none;
+      color: darkgray;
+    }
+
+    .head_top h1, .head_bottom h1, .footer h1, .head_top h2, .head_bottom h2, .footer h2,
+    .head_top h3, .head_bottom h3, .footer h3, .head_top h4, .head_bottom h4, .footer h4 {
+      color: white;
+    }
+
+    .head_top a, .head_bottom a, .footer a {
+      color: darkgray;
+      text-decoration: none;
+    }
+
+    .head_top a:hover {
+      text-decoration: none;
+    }
+
+    .head_bottom a:hover {
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: none;
+    }
+
+    .head_top input, .head_bottom input, .footer input {
+      border: none;
+      padding: 6px;
+      transform: translateY(-2px);
+    }
+
+    .head_top {
+      background-color: #0f0f0f;
+      padding: 10px 10%;
+    }
+
+    .head_top:after {
+      clear: both;
+      display: block;
+      content: "";
+      height: 0;
+    }
+
+    .head_top > .clearfix {
+      float: right;
+    }
+
+    .head_top > .clearfix > .menu {
+      float: left;
+      font-size: 12px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .head_top > .clearfix > .menu > a:hover {
+      color: white;
+    }
+
+    .head_bottom {
+      height: 90px;
+    }
+
+    .head_bottom_inner {
+      padding: 20px 10%;
+      width: 100%;
+      line-height: 47px;
+      background-color: white;
+      height: 75px;
+      position: relative;
+      z-index: 999;
+    }
+
+    .head_bottom_inner > .clearfix {
+      float: left;
+      width: 40%;
+    }
+
+    .head_bottom_inner > .clearfix > .menu {
+      float: left;
+      padding: 0 20px;
+      font-weight: bold;
+      /*position: relative;*/
+    }
+
+    .head_bottom_inner > .clearfix > .menu > a:hover {
+      color: red;
+    }
+
+    .head_bottom_inner > .clearfix > .menu > a {
+      color: black;
+    }
+
+    .head_bottom_inner > .clearfix > i {
+      cursor: pointer;
+      font-size: 20px;
+      color: black;
+    }
+
+    .head_bottom_inner:after {
+      clear: both;
+      display: block;
+      content: "";
+      height: 0;
+    }
+
+    .first:hover .myUl:nth-of-type(1) {
+      display: block;
+    }
+
+    .second:hover .myUl:nth-of-type(1) {
+      display: block;
+    }
+
+    .four:hover .myUl:nth-of-type(1) {
+      display: block;
+    }
+
+    .myUl {
+      position: fixed;
+      overflow: hidden;
+      width: 100%;
+      font-size: 16px;
+      background-color: white;
+      display: none;
+      padding: 0 11%;
+      padding-top: 20px;
+
+    }
+
+    .myUl > li {
+      float: left;
+      padding: 20px 22px;
+    }
+
+    .myUl > li > a {
+      color: black;
+    }
+
+    .myUl > li > a:hover {
+      color: red;
+    }
+
+    .footer {
+      padding: 2% 10%;
+      background-color: black;
+      font-size: 10px;
+    }
+
+    .footer a {
+      color: white;
+    }
+
+    .footer > .div1:after {
+      clear: both;
+      display: block;
+      content: "";
+      height: 0;
+    }
+
+    .footer > .div1 > .div1_item {
+      float: left;
+      width: 35%;
+    }
+
+    .footer > .div2 > .div2_item a {
+      margin-right: 10px;
+    }
+
+    .footer > .div2 > .div2_item a:hover {
+      text-decoration: underline;
+    }
+
+    .myi > i {
+      margin-left: 25px;
+      cursor: pointer;
+    }
+
+    .indexmodal {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: 0;
+    }
+
+    .indexmodal_content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0px;
+    }
+
+    .mybody {
+      height: 80%;
+      /*background-color: deeppink;*/
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 0px;
+    }
+
+    .mybody > .body_head {
+      padding-bottom: 2%;
+      font-size: 18px;
+      color: black;
+    }
+
+    .mybody > .body_body {
+      overflow-y: auto;
+      /*text-align: center;*/
+      border-top: 1px solid darkgray;
+      border-bottom: 1px solid black;
+      height: 82%;
+      font-size: 22px;
+      position: relative;
+      color: black;
+    }
+
+    .body_body::-webkit-scrollbar {
+      width: 4px;
+      cursor: pointer;
+    }
+
+    .body_body::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: darkgray;
+    }
+
+    .body_body::-webkit-scrollbar-track {
+      /*background-color:#2f2f2f;*/
+      opacity: 1;
+    }
+
+    .cell_id {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .cell_info {
+      font-size: 14px;
+    }
+
+    .cell_info > div {
+      padding-bottom: 15px;
+    }
+
+    .symbol {
+      padding: 6px 8px;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    #sawProduct {
+      font-size: 14px;
+      color: black;
+      border-bottom: 1px solid black;
+      text-decoration: none;
+    }
+
+    .myfoot {
+      /*background-color: greenyellow;*/
+      width: 90%;
+      margin: 0 auto;
+      border-top: none;
+      text-align: left;
+      padding: 10px 15px;
+      overflow: hidden;
+    }
+
+    .buyNow {
+      background-color: #2f2f2f;
+      font-size: 20px;
+      width: 88%;
+      border-radius: 0;
+      margin-right: 1%;
+      border: none;
+      height: 40px;
+      float: left;
+    }
+
+    .buyNow:hover {
+      background-color: black !important;
+    }
+
+    .shopBag {
+      float: left;
+      border: 1px solid black;
+      width: 40px;
+      height: 40px;
+      color: black;
+      font-size: 26px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .head_top p, .head_bottom p, .footer p {
+      color: darkgray
+    }
+  </style>
+</head>
+<body onload="initMap()">
+<%-include head.ejs%>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog indexmodal" role="document" style="width: 510px">
+    <div class="modal-content indexmodal_content">
+      <div class="modal-header" style="border-bottom: none;padding: 5px 15px">
+        <button type="button" class="close" style="font-size: 40px;opacity: 0.8" data-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body mybody">
+        <div class="body_head">
+          <span>1</span>个产品
+        </div>
+        <div class="body_body">
+          <!--<div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
+          <!--<div class="fa fa-shopping-cart" style="font-size: 42px"></div>-->
+          <!--<div style="padding:25px 0px 15px 0px">你的购物车是空的</div>-->
+          <!--<div><a href="#" id="sawProduct">查看产品</a></div>-->
+          <!--</div>-->
+          <div class="cell_id">
+            <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+            <div class="cell_img" style="float: left;margin-right: 5%">
+              <img src="../img/imgIndex/cell.png" width="80">
+            </div>
+            <div class="cell_info" style="float: left">
+              <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+              <div>
+                <span
+                  style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span>
+                &nbsp;&nbsp; <span>Poseulrn</span>
+              </div>
+              <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+              <div>
+                <i class="fa fa-minus symbol"></i>
+                <span style="margin: 0 5%" class="number">1</span>
+                <i class="fa fa-plus symbol"></i>
+                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cell_id">
+            <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+            <div class="cell_img" style="float: left;margin-right: 5%">
+              <img src="../img/imgIndex/cell1.png" width="80">
+            </div>
+            <div class="cell_info" style="float: left">
+              <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+              <div>
+                <span
+                  style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span>
+                &nbsp;&nbsp; <span>Poseulrn</span>
+              </div>
+              <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+              <div>
+                <i class="fa fa-minus symbol"></i>
+                <span style="margin: 0 5%" class="number">1</span>
+                <i class="fa fa-plus symbol"></i>
+                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cell_id">
+            <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>
+            <div class="cell_img" style="float: left;margin-right: 5%">
+              <img src="../img/imgIndex/cell1.png" width="80">
+            </div>
+            <div class="cell_info" style="float: left">
+              <div>Pro Taylor Foundation Beagle SPF25 PA ++</div>
+              <div>
+                <span
+                  style="width: 10px;height: 10px;border-radius: 50%;background-color: #f3ebd8;display: inline-block"></span>
+                &nbsp;&nbsp; <span>Poseulrn</span>
+              </div>
+              <div style="font-size: 16px">₩<span class="price">38,000</span></div>
+              <div>
+                <i class="fa fa-minus symbol"></i>
+                <span style="margin: 0 5%" class="number">1</span>
+                <i class="fa fa-plus symbol"></i>
+                <div style="float: right;font-size: 20px">₩ <span class="sum1">38,000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body_foot" style="overflow: hidden;line-height: 40px;color: black;">
+          <span style="float:left;font-size: 14px">TOTAL</span>
+          <span style="float: right;font-size: 22px;font-weight: bold">₩<span class="sum2">38,000</span></span>
+        </div>
+      </div>
+      <div class="modal-footer myfoot">
+        <button type="button" class="btn btn-primary buyNow">现在购买</button>
+        <div class="shopBag fa fa-shopping-bag" style="text-align: center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <div>
+    <img src="../img/eyebrow/svc_map_bnr.jpg" alt=""/>
+  </div>
+  <div class="bt">
+    <p>艾丝珀 <br/> 眉棒</p>
+    <div class="bt1">
+      <span>你的外观只会因不同的眉毛而改变。 <br/> 打造你的眉毛！</span>
+    </div>
+  </div>
+</header>
+<section class="sec1">
+  <ul>
+    <li onclick="tiaozhuan();border(this)" id="01" class="bor"><a href="javascript:;">眉棒</a></li>
+    <li onclick="tiaozhuan1();border(this)" id="02"><a href="javascript:;">服务和位置</a></li>
+    <li onclick="tiaozhuan2();border(this)" id="03"><a href="javascript:;">眉毛样式</a></li>
+    <li onclick="tiaozhuan3();border(this)" id="04"><a href="javascript:;">布朗蜡</a></li>
+    <li onclick="tiaozhuan4();border(this)" id="05"><a href="javascript:;">眼睛产品</a></li>
+  </ul>
+</section>
+<section class="sec2">
+  <div>
+    <h1 id="about">关于</h1>
+    <p class="hw">使用专业的浏览器 <br/> 样式为您找到最佳浏览风格！</p>
+    <p class="hw1">我们使用澳大利亚LYCON Co的高品质蜡产品，因为您的安全是我们的首要任务。 <br/>
+      经验丰富的眉毛打蜡专家和化妆师创造更完美的眉毛风格。</p>
+    <p style="font-size: 14px">※“Catch Up Broth Shop”
+      <br/>不是Espea的直营店，因为Brobe Bar Service Stores与Espea 和Promotion等商业合作伙伴关系。</p>
+  </div>
+  <ul class="ul1">
+    <li class="li_img1">
+      <dl>
+        <dt id="tab1">全程美容咨询！</dt>
+        <dd id="tab2">我们不急于咨询（10分钟，15分钟）。我们通过全面的美容咨询，在您找到您的皮肤状况后提供服务。
+        </dd>
+      </dl>
+    </li>
+    <li class="li_img2">
+      <dl>
+        <dt id="tab3">打蜡专家提供安全，专业的服务！</dt>
+        <dd id="tab4">具有国家皮肤资格的打蜡专家通过提供安全和专业的服务帮助您找到最合适的眉毛样式。
+        </dd>
+      </dl>
+    </li>
+  </ul>
+  <ul class="ul1">
+    <li class="li_img3">
+      <dl>
+        <dt id="tab5">打蜡后即使治疗！</dt>
+        <dd id="tab6">通过优先考虑皮肤舒缓和保护，我们在打蜡后提供优质的护理服务。这种最大的舒缓效果消除了任何肿胀或发红，因此它是您在重要的会议，聚会或点化妆之后可以获得的最佳眉毛服务。
+        </dd>
+      </dl>
+    </li>
+    <li class="li_img4">
+      <dl>
+        <dt id="tab7">化妆师甚至化妆服务！</dt>
+        <dd id="tab8">即使您在我们的服务后有重要的约会，也不要犹豫！我们的专业艺术家在治疗后帮助您化妆。
+        </dd>
+      </dl>
+    </li>
+  </ul>
+  <ul class="ul1">
+    <li class="li_img5">
+      <dl>
+        <dt id="tab9">私人空间</dt>
+        <dd id="tab10">我们的服务在私人空间提供，因此您可以享受稳定，舒适的服务。</dd>
+      </dl>
+    </li>
+    <li class="li_img6">
+      <dl>
+        <dt id="tab11">价格合理，服务最好！</dt>
+        <dd id="tab12">拥有国家皮肤资质的专家提供安全和专业的服务。以合理的价格享受最好的服务！
+        </dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section class="sec3">
+  <div>
+    <h1 id="ser">服务和位置</h1>
+    <p>我们想介绍艾丝珀的眉毛服务和商店。</p>
+  </div>
+  <div style="margin-top: 3%">
+    <a id="map1" onclick="initMap()" href="javascript:;">江南分公司</a>
+    <a id="map2" onclick="initMap1()" href="javascript:;">明洞中央</a>
+  </div>
+  <div style="margin-top: 5%" id="dituContent">
+
+  </div>
+  <ul>
+    <li>
+      <img src="../img/eyebrow/IMG1534XmJ682877875.jpg" alt=""/>
+    </li>
+  </ul>
+  <div class="address">
+    <div>
+      <h2>江南分公司</h2>
+      <dl>
+        <dt>位置</dt>
+        <dd>
+          地址 首尔市瑞草区瑞草洞1306-8号</dd>
+        <dd>道路名称 415，Gangnam-daero，Seocho-gu，Seoul，Korea</dd>
+      </dl>
+      <span>预订咨询 </span>
+      <span>02-3478-7450 <br/></span>
+      <span>营业时间</span>
+    </div>
+    <div>
+      <p>代表性服务计划</p>
+      <ul>
+        <li>
+          <dl>
+            <dt>眼睛</dt>
+            <dd>￦25,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>眼睛+唇膏</dt>
+            <dd>￦40,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>唇</dt>
+            <dd>￦15,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>眼睛(M)</dt>
+            <dd>￦30,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>头发线</dt>
+            <dd>￦20,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>前额</dt>
+            <dd>￦30,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>整个脸</dt>
+            <dd>￦150,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>眼睛5次</dt>
+            <dd>￦100,000</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>眼睛+唇 5次</dt>
+            <dd>￦128,000</dd>
+          </dl>
+        </li>
+      </ul>
+      <p style="font-size: 14px;color: gray">请致电我们的商店并咨询其他服务。</p>
+    </div>
+  </div>
+</section>
+<section class="sec4">
+  <div>
+    <h1 id="eye">眉毛形状</h1>
+    <p>我们通过美容咨询帮助您找到最美丽的眉毛形状。</p>
+  </div>
+  <ul>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_01.jpg" alt=""/></dt>
+        <dd class="d1">基本形状</dd>
+        <dd class="d2">眉毛最自然的形状，接近直线</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_02.jpg" alt=""/></dt>
+        <dd class="d1">拱形状</dd>
+        <dd class="d2">眉弓光滑，提供柔软，优雅的感觉</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_03.jpg" alt=""/></dt>
+        <dd class="d1">高拱形</dd>
+        <dd class="d2">眉毛的优雅形象</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_04.jpg" alt=""/></dt>
+        <dd class="d1">直形</dd>
+        <dd class="d2">线性柔软的眉毛不长</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_05.jpg" alt=""/></dt>
+        <dd class="d1">波形</dd>
+        <dd class="d2">眉毛的前部区域有流动，尾部移动</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_06.jpg" alt=""/></dt>
+        <dd class="d1">角拱形状</dd>
+        <dd class="d2">眉毛提供强烈的结构图像和多维感觉</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_07.jpg" alt=""/></dt>
+        <dd class="d1">角形形状</dd>
+        <dd class="d2">直线形状的定义，生动的眉毛</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt><img src="../img/eyebrow/ibrow_08.jpg" alt=""/></dt>
+        <dd class="d1">圆形</dd>
+        <dd class="d2">眉毛表达整体完美的角度，提供柔美，温暖的感觉</dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section class="sec5">
+  <div>
+    <h1 id="brow">布朗蜡</h1>
+    <p>最优质的打蜡产品LYCON被全球40个国家的优质沙龙和水疗中心选中！<br/>
+      由于它采用最优质的天然蜂蜡和芳香疗法制成，<br/>
+      因此即使是1mm头发也不易被去除，效果极佳。
+    </p>
+  </div>
+  <div>
+    <img src="../img/eyebrow/ibrow_waxing.jpg" alt=""/>
+  </div>
+  <div>
+    <div>该产品由热蜡（硬蜡），独特的LYCON喷射蜡以及可在打蜡前后使用的各种处理产品组成。它适用于打蜡处理。LYCON水疗专家身体护理产品提供个人解决方案，可在家中使用，同时接收沙龙的服务
+    </div>
+    <div>LYCON在过去几年中一直在建立全球打蜡标准，并在质量和性能方面在市场中发挥主导作用。LYCON蜡的种类繁多，质量上乘，专家可以结合最适合每位客户的蜡制品，为客户提供最高的满意度
+    </div>
+  </div>
+</section>
+<section class="sec6">
+  <div style="margin-bottom: 50px">
+    <h1 id="brow1">眉毛产品</h1>
+    <p>使用艾丝珀的各种眉毛产品，体验完美的眉妆。</p>
+    <button type="button"><a href="#">To shop</a></button>
+  </div>
+  <div style="overflow: hidden">
+    <% for(var i = 0 ; i < list[0].length ; i++){ %>
+      <div class="zs">
+        <div style="text-align: center;padding: 63px 0;position: relative">
+          <img class="like1" src="../img/logo/ico_unlike.png" alt=""/>
+          <img class="like2" src="../img/logo/ico_like.png" alt=""/>
+          <a href="/shop/shopshow?productId=<%= list[0][i].product_id%>"><img class="img-p" src="../<%= list[0][i].pic_path %>" alt=""/></a>
+        </div>
+        <div style="padding: 25px 0;width: 300px;text-align: left">
+          <dl>
+            <dt><%= list[0][i].product_name %></dt>
+            <dd class="tag"><span><%= list[0][i].English_name %></span></dd>
+            <dd class="color">
+              <ul>
+                <%var colorsArr=[];%>
+                <%for(var j=0;j<list[1].length;j++){%>
+                <%if (list[1][j].product_id==list[0][i].product_id) if (colorsArr.length<6){colorsArr.push(list[1][j].color_value)} %>
+                <%}%>
+                <%for (var m=0;m<colorsArr.length;m++) {%>
+                <li><span style="background-color: <%=colorsArr[m]%>"></span></li>
+                <%}%>
+              </ul>
+            </dd>
+            <dd class="pay">
+              <span style="display: inline-block;padding-top: 10px">$ <%= list[0][i].price %></span>
+              <img class="bask1" src="../img/logo/ico_basket.png" alt=""/>
+              <img class="bask2" src="../img/logo/ico_basket_on.png" alt=""/>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</section>
+<section class="sec7">
+  <ul class="ul1">
+    <li style="border: 0" class="li_img7">
+      <dl>
+        <dt>眉棒常见问题</dt>
+        <dd style="color: gray">请查看有关眉杆服务的常见问题和解答。</dd>
+        <dd><a href="#">GO FAQ</a></dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section class="sec8">
+  <div class="img1">
+    <h3>私人化妆服务</h3>
+    <a href="#">Go to</a>
+  </div>
+  <div class="img2">
+    <h3>眉棒</h3>
+    <a href="#">Go to</a>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="div1">
+    <div class="div1_item">
+      <h6 style="padding-bottom: 30px"><a href="#">化妆</a></h6>
+      <h4><a href="#">艺术家LIVECHAT</a></h4>
+      <p>聊到 <br>艺术家关于与实时聊天的烦恼！</p>
+    </div>
+    <div class="div1_item" style="width: 45%">
+      <h6 style="padding-bottom: 30px"><a href=" uerCenter.html">服务中心</a></h6>
+      <h4><a href="#">080 619 8888</a></h4>
+      <p>服务时间 09:00~18:00<br>(周一至周五除节假日外)</p>
+    </div>
+    <div class="div1_item" style="text-align: right;width: 19.5%">
+      <h1 style="padding-bottom: 20px;line-height: 40px;font-size: 24px"><a href=" findStore.html">查找商店</a><br>
+        <a href=" brand.html">品牌介绍</a> <br><a href="#">会员</a><br><a href=" uerCenter">网站地图</a>
+      </h1>
+      <h6><a href="#">登录</a>&nbsp;&nbsp;&nbsp; <a href="#">注册</a></h6>
+    </div>
+  </div>
+  <div class="div2" style="overflow: hidden;padding-top: 15px">
+    <div class="div2_item" style="float: left">
+      <div>
+        <a href="#">服务条款</a>
+        <a href="#" style="font-weight: bold">隐私政策</a>
+        <a href="#">视频设备管理政策</a>
+        <a href="#">确认承运人信息</a>
+        <a href="#">未经授权收集电子邮件</a>
+        <a href="#">电子通知</a>
+      </div>
+      <div>
+        <p>Esuga 首席执行官: Lim Jung Sik &nbsp;&nbsp;&nbsp; 总部: 首尔龙山区汉江大道100号(汉江2街)6楼</p>
+        <p>联系我们 | 隐私政策 | <a href=" private.html">服务条款
+            |</a></p>
+        <p>个人信息保护官: Kim Sung Hee 客户服务: 080-619-8888 &nbsp;&nbsp;&nbsp;电子邮件:
+          espoirmall@espoir.com &nbsp;&nbsp;&nbsp;托管服务提供商:</p>
+        <p>
+          我们的购物中心适用于购买代管INIPAY安全服务㈜KG Inicis
+          用于支付您的安全mutongjang交易服务的订单&nbsp;&nbsp;&nbsp;
+          <a href=" myPage.html">订单状态</a>
+        </p>
+        <p style="margin-top: 50px">Copyright ⓒ 2018 espoir. All Rights Reserved.</p>
+      </div>
+    </div>
+    <div class="div2_item myi" style="color: white;float: right;font-size: 16px;margin-top: 60px">
+      <i class="fa fa-facebook-f"></i>
+      <i class="fa fa-camera"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa fa-wechat"></i>
+      <i class="fa fa-weibo"></i>
+      <i class="fa fa-info"></i>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/eyebrow.js"></script>
+<script type="text/javascript">
+  //创建和初始化地图函数：
+  function initMap() {
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加marker
+    $('#map1').css('color', 'red')
+    $('#map2').css('color', 'black')
+  }
+
+  function initMap1() {
+    createMap1();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加marker
+    $('#map2').css('color', 'red')
+    $('#map1').css('color', 'black')
+  }
+
+
+  //创建地图函数：
+  function createMap() {
+    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+    var point = new BMap.Point(127.026718, 37.498893);//定义一个中心点坐标
+    map.centerAndZoom(point, 17);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map;//将map变量存储在全局
+  }
+
+  function createMap1() {
+    var map1 = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+    var point = new BMap.Point(126.982548, 37.561722);//定义一个中心点坐标
+    map1.centerAndZoom(point, 17);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map1;//将map变量存储在全z`局
+  }
+
+  //地图事件设置函数：
+  function setMapEvent() {
+    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+    map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+    map.enableKeyboard();//启用键盘上下左右键移动地图
+  }
+
+  //地图控件添加函数：
+  function addMapControl() {
+    //向地图中添加缩放控件
+    var ctrl_nav = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+    //向地图中添加缩略图控件
+    var ctrl_ove = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1});
+    map.addControl(ctrl_ove);
+    //向地图中添加比例尺控件
+    var ctrl_sca = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+  }
+
+  //标注点数组
+  var markerArr = [{
+    title: "Gangnam&nbsp;branch",
+    content: "Gangnam&nbsp;branch",
+    point: "127.02635|37.499566",
+    isOpen: 1,
+    icon: {w: 21, h: 21, l: 115, t: 46, x: 1, lb: 10}
+  }
+    , {
+      title: "Myeg-dg&nbsp;Central",
+      content: "Myeg-dg&nbsp;Central",
+      point: "126.981547|37.562037",
+      isOpen: 0,
+      icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}
+    }];
+
+  //创建marker
+  function addMarker() {
+    for (var i = 0; i < markerArr.length; i++) {
+      var json = markerArr[i];
+      var p0 = json.point.split("|")[0];
+      var p1 = json.point.split("|")[1];
+      var point = new BMap.Point(p0, p1);
+      var iconImg = createIcon(json.icon);
+      var marker = new BMap.Marker(point, {icon: iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title, {"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)});
+      marker.setLabel(label);
+      map.addOverlay(marker);
+      label.setStyle({
+        borderColor: "#808080",
+        color: "#333",
+        cursor: "pointer"
+      });
+
+      (function () {
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click", function () {
+          this.openInfoWindow(_iw);
+        });
+        _iw.addEventListener("open", function () {
+          _marker.getLabel().hide();
+        })
+        _iw.addEventListener("close", function () {
+          _marker.getLabel().show();
+        })
+        label.addEventListener("click", function () {
+          _marker.openInfoWindow(_iw);
+        })
+        if (!!json.isOpen) {
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+    }
+  }
+
+  //创建InfoWindow
+  function createInfoWindow(i) {
+    var json = markerArr[i];
+    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+    return iw;
+  }
+
+  //创建一个Icon
+  function createIcon(json) {
+    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+      imageOffset: new BMap.Size(-json.l, -json.t),
+      infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+      offset: new BMap.Size(json.x, json.h)
+    })
+    return icon;
+  }
+</script>
+<script>
+    window.onscroll = function () {
+        // console.log(scrollY);
+        if (scrollY>=30){
+            $('.head_bottom_inner').css({
+                'position' : 'fixed',
+                'top' : '0px',
+                'line-height' : '52px',
+                'padding' : '1px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '55px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(0.7)',
+                'transition' : 'all 0.3s'
+            });
+        }else {
+            $('.head_bottom_inner').css({
+                'position' : 'relative',
+                'line-height' : '47px',
+                'padding' : '20px 10%',
+                'transition' : 'all 0.3s',
+                'z-index' : '999',
+                'height' : '75px'
+            });
+            $('.logo').find('img').css({
+                'transform' : 'scale(1)',
+                'transition' : 'all 0.3s'
+            })
+        }
+    }
+
+    //将数字转换成 科学计数法
+    // var reg = /(?=(\B)(\d{3})+$)/g;
+
+    //计算购物车内所有的商品总价
+    function countSum2(){
+
+        let sum2 = 0;
+        let osum2 = $('.sum1')
+
+        for (let i=0;i<osum2.length;i++){
+            let temp = osum2.eq(i).text();
+            temp = parseFloat(temp)
+            sum2 += temp;
+            // console.log(temp);
+        }
+        sum2 = sum2.toFixed(2)
+        $('.sum2').text(sum2);
+
+        // console.log(sum2)
+    }
+
+    //添加当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-plus',myplus)
+    function myplus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num++;
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = parseFloat(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        // console.log(strSum1)
+        sum1 = sum1.toFixed(2)
+        $(this).parent().find('.sum1').text(sum1);
+
+        countSum2()
+
+    }
+    //减少当前商品的数量，并计算当前商品总价 and 计算所有商品总价
+    $('.body_body').on('click','.fa-minus',myminus)
+    function myminus() {
+        var mystr = $(this).parent().find('.number').text();
+        var num = parseInt(mystr);
+        num--;
+        if (num==0){
+            num=1;
+        }
+        $(this).parent().find('.number').text(num);
+
+        //将单价拿到，并转化成number，再与数量想乘
+        var price = $(this).parent().parent().find('.price').text();
+        price = parseFloat(price);
+        var sum1 = num*price;
+        // console.log(sum1)
+
+        //将number类型的sum1转化成money的格式（string）
+        // console.log(strSum1)
+        sum1 = sum1.toFixed(2)
+        $(this).parent().find('.sum1').text(sum1);
+
+        countSum2()
+
+    }
+
+    //删除当前商品
+    $('.body_body').on('click','.fa-trash',delCell)
+    function delCell() {
+        var carId = $(this).parent().parent().attr('car_id')
+        var reqDataArr = [carId];
+        // console.log(reqDataArr)
+        var that =this;
+        $.ajax({
+            url : '/cart/delete',
+            type : 'post',
+            data : {reqDataArr},
+            traditional:true,
+            success :function (data) {
+                console.log(data)
+                if (data.result==200){
+                    // console.log('ok')
+                    $(that).parent().parent().remove();
+                    countSum2()
+                    countCell()
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+
+    }
+
+    //文档加载时，检查是否登陆过
+    //并从购物车表拿数据，如果登录过，则根据登录ID拿数据，如果没有登录过，则显示没有商品
+    window.onload = function () {
+        $.ajax({
+            url : '/user/checkLogin',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                console.log(data.session,data.msg)
+                if (data.session){
+                    //如果登录过，将login改成loginout,并将购物车表拿数据渲染到页面
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href="/html/myPage.html">myPage</a></li>')
+
+                    var userId = data.session.user_id
+                    $.ajax({
+                        url : '/cart/modalCarList',
+                        type : 'post',
+                        data : {userId},
+                        success : function (data) {
+                            console.log(data)
+                            var str ='';
+                            var num =0;
+                            for (let i=0;i<data.data.length;i++){
+                                str += '<div class="cell_id" user_id="'+data.data[i].user_id+'" car_id="'+data.data[i].car_id+'" product_id="'+data.data[i].product_id+'" color_id="'+data.data[i].color_id+'">\n' +
+                                    '                        <div style="text-align: right;padding-right: 20px"><i class="fa fa-trash" style="cursor: pointer"></i></div>\n' +
+                                    '                        <div class="cell_img" style="float: left;margin-right: 5%">\n' +
+                                    '                            <img class="checkImg" src="../'+data.data[i].pic_path+'" width="80">\n' +
+                                    '                        </div>\n' +
+                                    '                        <div class="cell_info" style="float: left">\n' +
+                                    '                            <div class="checkName">'+data.data[i].product_name+'</div>\n' +
+                                    '                            <div>\n' +
+                                    '                                <span class="checkColorVal" style="width: 10px;height: 10px;border-radius: 50%;background-color: '+data.data[i].color_value+';display: inline-block"></span> &nbsp;&nbsp; <span class="checkColorName">'+data.data[i].color_name+'</span>\n' +
+                                    '                            </div>\n' +
+                                    '                            <div style="font-size: 16px">$<span class="price checkPrice">'+data.data[i].price+'</span></div>\n' +
+                                    '                            <div style="position: relative">\n' +
+                                    '                                <i class="fa fa-minus symbol"></i>\n' +
+                                    '                                <span style="margin: 0 5%" class="number checkNum">'+data.data[i].quantity+'</span>\n' +
+                                    '                                <i class="fa fa-plus symbol"></i>\n' +
+                                    '                                <div style="position: absolute;left: 80%;bottom: 30%;font-size: 20px">$<span class="sum1">'+data.data[i].price*data.data[i].quantity+'</span> </div>\n' +
+                                    '                            </div>\n' +
+                                    '                        </div>\n' +
+                                    '                    </div>'
+
+                                num += data.data[i].price*data.data[i].quantity;
+                            }
+                            $('.body_body').html(str);
+
+                            $('.body_foot').find('.sum2').html(num)
+                        }
+                    })
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href="/html/login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href="/html/register.html">Sign Up</a></li>')
+
+                    $('.body_body').html('             <div style="text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">\n' +
+                        '                    <div class="fa fa-shopping-cart" style="font-size: 42px"></div>\n' +
+                        '                    <div style="padding:25px 0px 15px 0px">你的购物车是空的</div>\n' +
+                        '                    <div><a href="#" id="sawProduct">查看产品</a></div>\n' +
+                        '                    </div>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    }
+
+    //点击购物袋弹出模态框之后再将商品的数量渲染出来
+    $('#modalCar').on('click',countCell)
+    function countCell() {
+        var cellNum = $('.cell_id').length;
+        $('.body_head').find('span').html(cellNum)
+    }
+
+    //点击logout把session清空，再重新渲染页面
+    $('.head_top').on('click','#logout',function () {
+        $.ajax({
+            url : '/user/logout',
+            type : 'post',
+            data : {},
+            success : function (data) {
+                // console.log(data.session,data.msg)
+                if (data.session){
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a id="logout" href="javascript:;">loginout</a></li>\n' +
+                        '        <li class="menu"><a href="/html/myPage.html">myPage</a></li>')
+                } else {
+                    $('.head_top').find('.clearfix').html('<li class="menu"><a href="/html/login.html">login</a></li>\n' +
+                        '        <li class="menu"><a href="/html/register.html">Sign Up</a></li>')
+                }
+
+            },
+            error : function (err) {
+                console.log(err)
+            }
+        })
+    })
+
+    //点击现在购买，向check(支付页面)插入新数据
+    $('.buyNow').on('click',modalToCheck)
+    function modalToCheck() {
+        var cell = $('.cell_id')
+        var myreqDataArr = [];
+        for (var i=0;i<cell.length;i++){
+            var car_id = cell.eq(i).attr('car_id');
+            var user_id = cell.eq(i).attr('user_id');
+            var img = cell.eq(i).find('.checkImg').attr('src');
+            img = img.slice(2);
+            var name = cell.eq(i).find('.checkName').text()
+            var colorVal = cell.eq(i).find('.checkColorVal').css('background-color')
+            var count = cell.eq(i).find('.checkNum').text()
+            var price = cell.eq(i).find('.checkPrice').text()
+            var colorName =cell.eq(i).find('.checkColorName').text()
+            var product_id = cell.eq(i).attr('product_id');
+            var color_id = cell.eq(i).attr('color_id');
+            myreqDataArr.push(car_id,img,name,colorVal,count,price,user_id,colorName,product_id,color_id);
+        }
+        if (cell.length>0){
+            // console.log(img)
+            $.ajax({
+                url : '/cart/addcheck',
+                type: 'post',
+                data: {myreqDataArr},
+                traditional : true,
+                success : function (data) {
+                    if (data.result==200){
+                        // console.log('ok')
+                        location.href='/myPage/list/12';
+                    } else {
+                        console.log('客户端错误')
+                    }
+                }
+            })
+        }
+    }
+
+</script>
+<script type=text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</body>
+</html>

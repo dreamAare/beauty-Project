@@ -1,0 +1,146 @@
+/*公共样式*/
+
+body, ul, li, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+/*清楚浮动的影响*/
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+.b-title{
+    color: #000;
+}
+/*左边板块*/
+.left-board {
+    float: left;
+    position: relative;
+    padding-left: 10%;
+
+}
+
+.left-board > .sidetxt {
+    transform: rotate3d(0, 0, 360, -90deg);
+    position: absolute;
+    left: -10px;
+    top: 200px;
+    letter-spacing: 0.06em;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.big-box > img {
+
+    padding: 7%;
+    border: 0;
+    vertical-align: top;
+}
+
+.bg-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.inner-box {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.inner-box dt {
+    font-weight: bold;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+
+.inner-box dd > a {
+
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+}
+
+/*右边板块*/
+.right-board {
+    float: right;
+    position: relative;
+    padding: 5% 15% 0 0;
+
+}
+
+.right-board > .sidetxt {
+    transform: rotate3d(0, 0, 360, -90deg);
+    position: absolute;
+    right: 0;
+    bottom: 21%;
+    letter-spacing: 0.06em;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.right-box dt {
+    font-weight: bold;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    right: 45%;
+
+}
+
+.right-box dd>a {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    position: absolute;
+    bottom: 10%;
+    right: 50%;
+}

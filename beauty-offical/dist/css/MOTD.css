@@ -1,0 +1,1223 @@
+@media screen and (max-width: 1366px) {
+    .head_bottom_inner{
+        font-size: 12px;
+    }
+    .first .myUl:nth-of-type(1){
+        margin-left: -11.5%;
+    }
+    .second .myUl:nth-of-type(1){
+        margin-left: -20%;
+    }
+    .four .myUl:nth-of-type(1){
+        margin-left: -31.45%;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    .head_bottom_inner{
+        font-size: 16px;
+    }
+    .first .myUl:nth-of-type(1){
+        margin-left: -11.05%;
+    }
+    .second .myUl:nth-of-type(1){
+        margin-left: -18.35%;
+    }
+    .four .myUl:nth-of-type(1){
+        margin-left: -27.65%;
+    }
+}
+body,html,ol,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: darkgray;
+}
+h1,h2,h3,h4{
+    color: white;
+}
+a{
+    color: darkgray;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+input{
+    border: none;
+    padding: 6px;
+    transform: translateY(-2px);
+}
+.head_top{
+    background-color: #0f0f0f;
+    padding: 10px 10%;
+}
+.head_top:after{
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+.head_top>.clearfix{
+    float: right;
+}
+.head_top>.clearfix>.menu{
+    float: left;
+    font-size: 12px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.head_top>.clearfix>.menu>a:hover{
+    color: white;
+}
+
+.head_bottom{
+    height: 90px;
+}
+.head_bottom_inner{
+    padding: 20px 10%;
+    width: 100%;
+    line-height: 47px;
+    background-color: white;
+    height: 75px;
+    position: relative;
+    z-index: 999;
+}
+.head_bottom_inner>.clearfix{
+    float: left;
+    width: 40%;
+}
+.head_bottom_inner>.clearfix>.menu{
+    float: left;
+    padding: 0 20px;
+    font-weight: bold;
+    /*position: relative;*/
+}
+.head_bottom_inner>.clearfix>.menu>a:hover{
+    color: red;
+}
+.head_bottom_inner>.clearfix>.menu>a{
+    color: black;
+}
+.head_bottom_inner>.clearfix>i{
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+}
+.head_bottom_inner:after{
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+
+.first:hover .myUl:nth-of-type(1){
+    display: block;
+}
+.second:hover .myUl:nth-of-type(1){
+    display: block;
+}
+.four:hover .myUl:nth-of-type(1){
+    display: block;
+}
+.myUl{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    font-size: 16px;
+    background-color: white;
+    display: none;
+    padding: 0 11%;
+    padding-top: 20px;
+
+}
+.myUl>li{
+    float: left;
+    padding: 20px 22px;
+}
+.myUl>li>a{
+    color: black;
+}
+.myUl>li>a:hover{
+    color: red;
+}
+.footer{
+    padding: 2% 10%;
+    background-color: black;
+    font-size: 10px;
+}
+.footer a{
+    color: white;
+}
+.footer>.div1:after{
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+.footer>.div1>.div1_item{
+    float: left;
+    width: 35%;
+}
+.footer>.div2>.div2_item a{
+    margin-right: 10px;
+}
+.footer>.div2>.div2_item a:hover{
+    text-decoration: underline;
+}
+.myi>i{
+    margin-left: 25px;
+    cursor: pointer;
+}
+.indexmodal{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+}
+.indexmodal_content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0px;
+}
+.mybody{
+    height: 80%;
+    /*background-color: deeppink;*/
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 0px;
+}
+.mybody>.body_head{
+    padding-bottom: 2%;
+    font-size: 18px;
+    color: black;
+}
+.mybody>.body_body{
+    overflow-y: auto;
+    /*text-align: center;*/
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid black;
+    height: 82%;
+    font-size: 22px;
+    position: relative;
+    color: black;
+}
+.body_body::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+}
+
+.body_body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: darkgray;
+}
+
+.body_body::-webkit-scrollbar-track {
+    /*background-color:#2f2f2f;*/
+    opacity: 1;
+}
+.cell_id{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.cell_info{
+    font-size: 14px;
+}
+.cell_info>div{
+    padding-bottom: 15px;
+}
+.symbol{
+    padding: 6px 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#sawProduct{
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+}
+.myfoot{
+    /*background-color: greenyellow;*/
+    width: 90%;
+    margin: 0 auto;
+    border-top: none;
+    text-align: left;
+    padding: 10px 15px;
+    overflow: hidden;
+}
+.buyNow{
+    background-color: #2f2f2f;
+    font-size: 20px;
+    width: 88%;
+    border-radius: 0;
+    margin-right: 1%;
+    border: none;
+    height: 40px;
+    float: left;
+}
+.item-select-ul a{
+    color: black;
+}
+.buyNow:hover{
+    background-color: black!important;
+}
+.shopBag{
+    float: left;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    color: black;
+    font-size: 26px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width:60%;
+    margin:  auto;
+}
+.container h1{
+    margin-left: 22px;
+    font-size: 28px;
+}
+
+/*****内容1******************/
+.content1{
+    position: relative;
+    width: 90%;
+    /*background: pink;*/
+    margin: auto;
+}
+
+.content1 img{
+    float: right;
+    width: 660px;
+    height: 660px;
+}
+
+.content1-box {
+    position: absolute;
+    width: 30%;
+    left: 14%;
+    top: 25%;
+}
+
+.content1-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content1-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content1-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content1-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+   /* height: 600px;*/
+   /* background: yellow;*/
+}
+
+.close-box,.close-box2,.close-box3,.close-box4,.close-box5,.close-box6{
+    font-size: 20px;
+    margin: auto;
+    width: 20px;
+    color: #000;
+}
+
+/*****内容2******************/
+.content2{
+    position: relative;
+    width: 90%;
+  /*  background: pink;*/
+    margin: auto;
+}
+
+.content2 img{
+    float: right;
+    width: 660px;
+    height: 520px;
+    margin-right: 18%;
+  /*  position: absolute;
+    right: 20%;*/
+}
+
+.content2-box {
+    position: absolute;
+    width: 30%;
+    left: 14%;
+    top: 25%;
+}
+
+.content2-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content2-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content2-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content2-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+    /* height: 600px;*/
+    /* background: yellow;*/
+}
+
+/*****内容3******************/
+.content3{
+    position: relative;
+    width: 90%;
+   /* background: pink;*/
+    margin: auto;
+}
+
+.content3 img{
+    float: left;
+    width: 660px;
+    height: 520px;
+    margin-left: 18%;
+    /*  position: absolute;
+      right: 20%;*/
+}
+
+.content3-box {
+    position: absolute;
+    width: 30%;
+    right: 14%;
+    top: 25%;
+}
+
+.content3-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content3-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content3-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content3-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+    /* height: 600px;*/
+    /* background: yellow;*/
+}
+
+/*****内容4******************/
+.content4{
+    position: relative;
+    width: 90%;
+    /*background: pink;*/
+    margin: auto;
+}
+
+.content4 img{
+    float: left;
+    width: 660px;
+    height: 660px;
+    margin-left: 18%;
+}
+
+.content4-box {
+    position: absolute;
+    width: 30%;
+    right: 14%;
+    top: 25%;
+}
+
+.content4-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content4-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content4-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content4-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+    /* height: 600px;*/
+    /* background: yellow;*/
+}
+
+/*****内容5******************/
+.content5{
+    position: relative;
+    width: 90%;
+    /*background: pink;*/
+    margin: auto;
+}
+
+.content5 img{
+    float: right;
+    width: 660px;
+    height: 660px;
+}
+
+.content5-box {
+    position: absolute;
+    width: 30%;
+    left: 14%;
+    top: 25%;
+}
+
+.content5-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content5-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content5-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content5-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+    /* height: 600px;*/
+    /* background: yellow;*/
+}
+
+.close-box5{
+    font-size: 20px;
+    margin: auto;
+    width: 20px;
+}
+
+/*****内容6******************/
+.content6{
+    position: relative;
+    width: 90%;
+   /* background: pink;*/
+    margin: auto;
+}
+
+.content6 img{
+    float: left;
+    width: 660px;
+    height: 880px;
+    margin-left: 18%;
+    /*  position: absolute;
+      right: 20%;*/
+}
+
+.content6-box {
+    position: absolute;
+    width: 30%;
+    right: 14%;
+    top: 25%;
+}
+
+.content6-box h1{
+    color: #000;
+    font-size: 48px;
+}
+
+.content6-box a{
+    display: block;
+    font-size: 18px;
+    width: 86px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.content6-box p{
+    font-size: 16px;
+    color: #000;
+}
+
+.content6-pro{
+    width: 90%;
+    margin: auto;
+    display: none;
+    /* height: 600px;*/
+    /* background: yellow;*/
+}
+
+
+
+
+.close-box,.close-box2,.close-box3,.close-box4,.close-box5,.close-box6{
+    font-size: 20px;
+    margin: auto;
+    width: 20px;
+    cursor: pointer;
+}
+
+.content1,.content2,.content3,.content4,.content5,.content6{
+    padding: 60px 0;
+}
+
+/*标题下面p元素的样式*/
+.container p{
+    width:174px;
+    text-align: center;
+     margin-left: -17px;
+    font-size: 13px;
+    color: gray;
+}
+/*第一张图片外框的样式*/
+.container70{
+    position: relative;
+    width: 65%;
+    height: 460px;
+    margin: 0 auto;
+}
+/*大框下面图片的样式*/
+.container70>img{
+    z-index: 0;
+     float: right;
+    width: 540px;
+    height: 460px;
+    border-radius: 2px;
+ }
+/*大框下面div的样式*/
+.container70>div{
+    margin-left: 50px;
+    width: 284px;
+    height: 460px;
+    float: left;
+    position: relative;
+}
+/*大框下面h1标题的样式*/
+.container70 h1{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 94px;
+    font-weight:normal;
+}
+
+.div1{
+    margin-top: 100px;
+}
+/*大框下面p元素的样式*/
+.container70  p{
+    float: right;
+    width: 180px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: normal;
+}
+/*大框下面按钮的样式*/
+.container70 button{
+    position: absolute;
+    border: none;
+     cursor: pointer;
+    text-decoration:underline;
+    background-color: white;
+    outline: none;
+    top:280px;
+    right: 60px;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container80{
+    width: 51%;
+    height: 420px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面div的样式*/
+.container80>div{
+    float: left;
+    margin-left: -120px;
+    /*margin-top: 30px;*/
+    width: 220px;
+    height: 420px;
+}
+/*外框下面h1的样式*/
+.container80 >div>h1{
+    width: 200px;
+    font-size: 28px;
+    font-weight: normal;
+}
+/*外框下面图片的样式*/
+.container80>img{
+    float: left;
+    width: 490px;
+    height: 420px;
+    border-radius: 2px;
+}
+/*外框下面p段落的样式*/
+.container80>div>p{
+    width: 200px;
+    font-size: 13px;
+  text-align: center;
+}
+/*外框下面按钮的样式*/
+.container80>div> button{
+    margin-left: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background-color: #dadee7;
+    outline: none;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container90{
+    position: relative;
+    width: 51%;
+    height: 420px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面图片的样式*/
+.container90>img{
+    float: right;
+    width: 490px;
+    height: 420px;
+    border-radius: 2px;
+}
+/*外框下面div的样式*/
+.container90>div{
+    position: absolute;
+    top: 100px;
+    left: 90px;
+}
+/*外框下面h1的样式*/
+.container90 >div>h1{
+    margin-left: 10px;
+    width:200px;
+    font-size: 28px;
+    font-weight: normal;
+}
+/*外框下面p段落的样式*/
+.container90>div>p{
+    width: 210px;
+    font-size: 13px;
+    text-align: center;
+}
+/*外框下面按钮的样式*/
+.container90>div> button{
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+/*外框下面图片的样式*/
+.container100 img{
+    width: 460px;
+    height: 460px;
+}
+/*外框的样式*/
+.container100{
+    position: relative;
+    width: 51%;
+    height: 460px;
+    margin: 1px auto 0 auto;
+}
+/*外框下面div的样式*/
+.container100>div{
+    position: absolute;
+    top: 120px;
+    right: 80px;
+    float: right;
+    width: 220px;
+    height: 460px;
+}
+/*外框下面h1的样式*/
+.container100>div>h1{
+    margin-left: 10px;
+    font-weight: normal;
+    font-size:28px;
+    width: 200px;
+}
+/*外框下面p段落的样式*/
+.container100>div>p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+}
+/*外框下面按钮的样式*/
+.container100>div> button{
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container110{
+    position: relative;
+    width: 51%;
+    height: 420px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面图片的样式*/
+.container110>img{
+    float: right;
+    width: 490px;
+    height: 420px;
+    border-radius: 2px;
+}
+/*外框下面div的样式*/
+.container110>div{
+    position: absolute;
+    top: 30px;
+    left: 90px;
+
+}
+/*外框下面h1标题的样式*/
+.container110 >div>h1{
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    font-weight: normal;
+}
+.container110>div>p{
+    width: 200px;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+}
+/*外框下面按钮的样式*/
+.container110>div> button{
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container120{
+    position: relative;
+    width: 51%;
+    height: 420px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面div的样式*/
+.container120>div{
+    position: absolute;
+    top: 70px;
+   right: 70px;
+    width: 221px;
+    height:220px;
+}
+/*外框下面h1标题的样式*/
+.container120 >div>h1{
+    font-weight: normal;
+    width: 190px;
+    font-size: 28px;
+    text-align: center;
+}
+/*外框下面图片的样式*/
+.container120>img{
+    float: left;
+    width: 490px;
+    height: 420px;
+    border-radius: 2px;
+}
+/*外框下面p段落的样式*/
+.container120>div>p{
+    width: 200px;
+    font-size: 13px;
+     text-align: center;
+}
+/*外框下面按钮的样式*/
+.container120>div> button{
+    margin-left:70px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container130{
+    position: relative;
+    width: 51%;
+    height: 490px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面图片的样式*/
+.container130>img{
+    float: right;
+    width: 490px;
+    height: 490px;
+    border-radius: 2px;
+}
+/*外框下面div的样式*/
+.container130>div{
+    position: absolute;
+    top: 90px;
+    left: 90px;
+}
+/*外框下面h1标题的样式*/
+.container130 >div>h1{
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    font-weight: normal;
+}
+/*外框下面p段落的样式*/
+.container130>div>p{
+    margin-left: 11px;
+    width: 186px;
+    font-size: 12px;
+    text-align: center;
+}
+/*外框下面按钮的样式*/
+.container130>div> button{
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+/*外框的样式*/
+.container140{
+    position: relative;
+    width: 51%;
+    height: 580px;
+    margin: 120px auto 0 auto;
+}
+/*外框下面div的样式*/
+.container140>div{
+    position: absolute;
+    top: 120px;
+    right: 50px;
+    width: 231px;
+    height: 580px;
+}
+/*外框下面h1标题的样式*/
+.container140 >div>h1{
+    margin-left: -10px;
+    text-align: center;
+    font-weight: normal;
+    width: 200px;
+    font-size: 28px;
+}
+/*外框下面图片的样式*/
+.container140>img{
+    float: left;
+    width: 490px;
+    height: 580px;
+    border-radius: 2px;
+}
+/*外框下面p段落的样式*/
+.container140>div>p{
+    margin-left: -20px;
+    text-align: center;
+    width: 220px;
+    font-size: 12px;
+}
+/*外框下面按钮的样式*/
+.container140>div> button{
+    margin-left: 60px;
+    border: none;
+    cursor: pointer;
+    text-decoration:underline;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+}
+.item-select{
+    width: 12%;
+    margin: 0 auto;
+    text-align: center;
+    height: 120px;
+    position: relative;
+    background-color: white;
+}
+.item-select>div{
+    margin-left: 5px;
+    width: 130px;
+}
+.item-select-ul>ul{
+    list-style: none;
+    margin: 0 ;
+    padding: 0;
+}
+.item-select-ul>ul>li{
+    padding: 10px;
+}
+.item-select>div:first-child{
+    height: 60px;
+    line-height: 60px;
+}
+#icon-angleUp{
+    transition: all 0.3s linear;
+}
+.item-select-ul li{
+    color: black;
+}
+.item-select-ul{
+    z-index: 5;
+    /*padding:0 auto;*/
+    width: 170px;
+    /*outline: 1px solid #dadada;*/
+    position: absolute;
+    transition: height 0.3s linear;
+    height: 0;
+    overflow: hidden;
+    color: black;
+    background-color: white;
+}
+.item-select-ul>ul{
+    overflow:scroll;
+    height: 230px;
+}
+.item-select-ul>ul>li:hover a{
+    color: rgba(255, 44, 40, 0.94);
+    border-bottom: 1px solid rgba(255, 44, 40, 0.94);
+}
+.item-select a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+.item-select>div:first-child a{
+    font-size: 16px;
+    color: black;
+}
+/*滚动条样式*/
+.item-select-ul>ul::-webkit-scrollbar{/*滚动条整体部分*/
+    width: 3px;
+    height: 3px;
+}
+.item-select-ul>ul::-webkit-scrollbar-button{
+    display: none;
+}
+.item-select-ul>ul::-webkit-scrollbar-track{
+    display: none;
+}
+.item-select-ul>ul::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.item-select-ul>ul::-webkit-scrollbar-thumb{
+    background-color: #B6C1CE;
+    border-radius: 2px;
+}
+.item-select-ul>ul::-webkit-scrollbar-corner{
+    display: none;
+}
+
+
+/*typeSelect*/
+.item-type{
+    width: 90%;
+    margin: 0 auto;
+    height: 80px;
+}
+.item-type-head{
+    height: 80px;
+    overflow: hidden;
+    padding: 30px 0 0 0;
+}
+.item-type-head a{
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+.item-type-head a:hover{
+    color: red;
+}
+.item-type-head>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.item-type-head>ul>li{
+    float: left;
+    margin: 0 29px 0 0;
+}
+.item-type-head>ul>li:last-child{
+    float: right;
+}
+#type-screen,#type-bestSeller{
+    margin-left: 29px;
+    display: inline-block;
+}
+#type-screen>i,#type-bestSeller>i{
+    font-size: 16px;
+}
+#type-screen:hover,#type-bestSeller:hover{
+    color: black;
+}
+.item-type-screen{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s linear;
+}
+.item-type-screen>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden;
+    height: 60px;
+}
+.item-type-screen>ul li{
+    float: left;
+    width: 15%;
+}
+
+input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid #4b4b4b;
+    text-indent: .15em;
+    line-height: 1;
+}
+.item-type-screen label:hover{
+    cursor: pointer;
+}
+input[type="radio"]:checked + label::before {
+    background-color: #4b4b4b;
+    background-clip: content-box;
+    padding: 0;
+}
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+.item-type-checked{
+    padding: 20px 70px;
+    width: 90%;
+    margin: 0 5%;
+    background-color: #F7F7F7;
+}
+.clearAllType{
+    display: inline-block;
+    font-size: 15px;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 40px;
+}
+.clearAllType i{
+    border-left: 1px solid grey;
+    content: '';
+    margin-right: 10px;
+}
+.btn-checked-ok{
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    border: 0;
+}
+.type-checked-box{
+    display: inline-block;
+    width: 80%;
+}
+.type-checked-box>div{
+    display: inline-block;
+}
+.type-checked-box span{
+    display: inline-block;
+    padding: 0 15px;
+}
+.item-type-btn{
+    float: right;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

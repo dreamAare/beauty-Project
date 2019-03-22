@@ -1,0 +1,226 @@
+.item-select{
+    width: 12%;
+    margin: 0 auto;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    background-color: white;
+    z-index: 5;
+}
+.item-select-ul>ul{
+    list-style: none;
+    margin: 0 ;
+    padding: 0;
+}
+.item-select-ul>ul>li{
+    height: 35px;
+    line-height: 35px;
+}
+.item-select>div:first-child{
+    height: 60px;
+    line-height: 60px;
+}
+#icon-angleUp{
+    transition: all 0.3s linear;
+}
+.item-select-ul{
+
+    width: 100%;
+    /*outline: 1px solid #dadada;*/
+    position: absolute;
+    transition: height 0.3s linear;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+}
+.item-select-ul>ul{
+    overflow:scroll;
+    height: 250px;
+}
+.item-select-ul>ul>li{
+    width: 100%;
+    text-align: center;
+}
+.item-select-ul>ul>li:hover a{
+    color: rgba(255, 44, 40, 0.94);
+    border-bottom: 1px solid rgba(255, 44, 40, 0.94);
+}
+.item-select a{
+    text-decoration: none;
+    font-size: 14px;
+    color: grey;
+}
+.item-select>div:first-child a{
+    font-size: 16px;
+    color: black;
+}
+/*滚动条样式*/
+.item-select-ul>ul::-webkit-scrollbar{/*滚动条整体部分*/
+    width: 3px;
+    height: 3px;
+}
+.item-select-ul>ul::-webkit-scrollbar-button{
+    display: none;
+}
+.item-select-ul>ul::-webkit-scrollbar-track{
+    display: none;
+}
+.item-select-ul>ul::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.item-select-ul>ul::-webkit-scrollbar-thumb{
+    background-color: #B6C1CE;
+    border-radius: 2px;
+}
+.item-select-ul>ul::-webkit-scrollbar-corner{
+    display: none;
+}
+
+
+/*typeSelect*/
+.item-type{
+    width: 90%;
+    margin: 0 auto;
+    height: 80px;
+}
+.item-type-head{
+    height: 80px;
+    padding: 30px 0 0 0;
+}
+.item-type-head a{
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+.item-type-head a:hover{
+    color: red;
+}
+.item-type-head>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.item-type-head>ul>li{
+    float: left;
+    margin: 0 29px 0 0;
+}
+.item-type-head>ul>li:last-child{
+    float: right;
+    margin: 0;
+}
+#type-screen,#type-bestSeller{
+    display: inline-block;
+}
+#type-screen>i,#type-bestSeller>i{
+    font-size: 16px;
+}
+#type-screen:hover,#type-bestSeller:hover{
+    color: black;
+}
+#type-bestSeller{
+    display: inline-block;
+    margin-right: 29px;
+}
+#dropdownMenu2{
+    border: 0;
+    background-color: transparent;
+}
+.item-type-screen{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s linear;
+}
+.item-type-screen>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden;
+    height: 60px;
+}
+.item-type-screen>ul li{
+    float: left;
+    width: 15%;
+}
+
+input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid #4b4b4b;
+    text-indent: .15em;
+    line-height: 1;
+}
+.item-type-screen label:hover{
+    cursor: pointer;
+}
+input[type="radio"]:checked + label::before {
+    background-color: #4b4b4b;
+    background-clip: content-box;
+    padding: 0;
+}
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+
+/*checkedBox*/
+.item-type-checked{
+    padding: 20px 70px;
+    width: 90%;
+    margin: 0 5%;
+    background-color: #F7F7F7;
+    display: none;
+}
+.clearAllType{
+    display: inline-block;
+    font-size: 15px;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 40px;
+}
+.clearAllType i{
+    border-left: 1px solid grey;
+    content: '';
+    margin-right: 10px;
+}
+.btn-checked-ok{
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    border: 0;
+
+}
+.type-checked-box{
+    display: inline-block;
+    width: 80%;
+}
+.type-checked-box>div{
+    display: inline-block;
+}
+.type-checked-box span{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.type-checked-box span:after{
+    content: '×';
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.item-type-btn{
+    float: right;
+}

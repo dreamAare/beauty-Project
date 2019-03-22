@@ -1,0 +1,306 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background: #ffe1d5;
+}
+body{
+    overflow-x: hidden;
+}
+h1{
+    font-size: 48px;
+    margin: 15px 0;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 18px;
+}
+header{
+    text-align: center;
+    height: 760px;
+    width: 100%;
+    margin-top: -15px;
+}
+.header{
+    background: url("../img/lookbook/IMG1538RDB124534867.jpg") no-repeat fixed;
+    background-position: center;
+    background-size: 100% auto;
+    z-index: 1;
+    position: relative;
+}
+.header1{
+    background: url("../img/lookbook/IMG1538eVA124708457.jpg") no-repeat fixed;
+    background-position: center;
+    background-size: 100% auto;
+    z-index: 1;
+    position: relative;
+    box-sizing:border-box;
+}
+.header2{
+    background: url("../img/lookbook/IMG1538yOs124713060.jpg") no-repeat fixed;
+    background-position: center;
+    background-size: 100% auto;
+    z-index: 1;
+    position: relative;
+    box-sizing:border-box;
+}
+.header3{
+    background: url("../img/lookbook/IMG1538gkj124802642.jpg") no-repeat fixed;
+    background-position: center;
+    background-size: 100% auto;
+    z-index: 1;
+    position: relative;
+    box-sizing:border-box;
+}
+.header1:after,.header2:after,.header3:after{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(30px);
+    z-index: 1;
+}
+header>div>span{
+    color: #b37a6b;;
+}
+header>div>h2{
+    color: white;
+}
+.lunbo{
+    width: 70%;
+    height: 60.5%;
+    margin: 2% 15% 2% 15%;
+}
+.xian{
+    border-bottom: 2px solid #c2c2c2;
+    width: 90%;
+    margin-left: 5%;
+    color: white!important;
+    text-align: left;
+    position: relative;
+    z-index: 4;
+}
+.xian2{
+    background: white;
+    width: 18%;
+    height: 2px;
+    margin-left: 5%;
+    position: relative;
+    left: 0;
+    top: -0.2%;
+    transition: width 1s;
+    z-index: 4;
+}
+.jt>a:first-child{
+    position: absolute;
+    left: 5%;
+    top: 40%;
+    z-index: 999;
+}
+.jt>a:nth-child(2){
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    z-index: 999;
+}
+
+.lunbo img{
+    width: 360px;
+    height: 481px;
+}
+.lunbo>div{
+    width: 946px;
+    height: 485px;
+}
+button{
+    width: 3px;
+    height: 16px;
+    border: 1px solid white;
+    float: right;
+    margin: 2px;
+}
+.bgc1{
+    background: rgba(255, 255, 255, 0);
+}
+.bgc{
+    background: rgba(255, 255, 255, 98);
+}
+.btnthis{
+    width: 100%;
+    height: 5%;
+}
+.img{
+    transition: all 1s;
+}
+.img>img{
+    width: 30%;
+    margin: 5% 1% 1% 1%;
+    float: left;
+    transition: all 1s;
+}
+.dingwei{
+    position: absolute;
+    left: 201.5px;
+    top: 22%;
+    transition: all 1s;
+    z-index: 4;
+}
+.dingwei1{
+    position: absolute;
+    left: 1349px;
+    top: 22%;
+    transition: all 1s;
+    z-index: 4;
+}
+.dingwei2{
+    position: absolute;
+    left: -1349px;
+    top: 22%;
+    transition: all 1s;
+    z-index: 4;
+}
+section{
+    text-align: center;
+    margin-top: 10%;
+}
+section>div:nth-child(2){
+    width: 90%;
+    margin: 5%;
+}
+section>div:nth-child(2)>div>div:first-child{
+    background: white;
+}
+section>div:nth-child(2)>div>div:nth-child(2){
+    text-align: left;
+}
+section>div:nth-child(2)>div{
+    width: 23%;
+    float: left;
+    margin: 1%;
+    height: 700px;
+}
+section img{
+    width: 100%;
+    /*height: 273px;*/
+}
+.img-p{
+    padding-top:30px;
+}
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+ul>li>span{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: red;
+    display: block;
+}
+section ul>li{
+    float: left;
+    padding-right:10px ;
+}
+.bask1{
+    width: 46px;height: 46px;position: absolute;left: 22%;top: 1657px;
+}
+.bask2{
+    width: 46px;height: 46px;position: absolute;left: 22%;top: 1657px;display: none;
+}
+.bask2:hover{
+    display: block;
+}
+.bask1:hover +.bask2{
+    display: block;
+}
+
+.bask3{
+    width: 46px;height: 46px;position: absolute;left: 45%;top: 1657px
+}
+.bask4{
+    width: 46px;height: 46px;position: absolute;left: 45%;top: 1657px;display: none
+}
+.bask4:hover{
+    display: block;
+}
+.bask3:hover +.bask4{
+    display: block;
+}
+
+.bask5{
+    width: 46px;height: 46px;position: absolute;left: 67%;top: 1657px
+}
+.bask6{
+    width: 46px;height: 46px;position: absolute;left: 67%;top: 1657px;display: none
+}
+.bask6:hover{
+    display: block;
+}
+.bask5:hover +.bask6{
+    display: block;
+}
+.some-head{
+    position: relative;
+}
+.some-head>i{
+    position: absolute;
+    top:10px;
+    left: 20px;
+    font-size: 20px;
+}
+.some-head>p{
+    font-size: 17px;color: gray;position: absolute;top:10px;right: 20px;
+}
+.some-head>i:hover{
+    color: red;
+}
+.like1{
+    width: 20px;height: 18px;position: absolute;
+}
+.like2{
+    width: 20px;height: 18px;position: absolute;display: none;
+
+}
+.like2:hover{
+    display: block;
+}
+.like1:hover +.like2{
+    display: block;
+}
+.like3{
+    width: 20px;height: 18px;position: absolute;
+}
+.like4{
+    width: 20px;height: 18px;display: none;position: absolute;
+}
+.like4:hover{
+    display: block;
+}
+.like3:hover +.like4{
+    display: block;
+}
+.like5{
+    width: 20px;height: 18px;position: absolute;
+}
+.like6{
+    width: 20px;height: 18px;display: none;position: absolute;
+}
+.like6:hover{
+    display: block;
+}
+.like5:hover +.like6{
+    display: block;
+}
+#name{
+    height: 40px;
+}
+

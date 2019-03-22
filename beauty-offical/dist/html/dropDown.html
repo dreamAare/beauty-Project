@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../comm/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../comm/iconfont/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/dropDown.css">
+    <title>二逼~转型的力量</title>
+</head>
+<body>
+<section class="shopItem-head">
+    <!--下拉选择框-->
+    <div class="item-select">
+       <div><a href="javascript:void(0);" class="item-select-btn">脸&nbsp;&nbsp;<i class="fa fa-angle-up" id ='icon-angleUp'></i></a></div>
+       <div class="item-select-ul">
+           <ul>
+               <li><a href="javascript:void(0);">脸</a></li>
+               <li><a href="javascript:void(0);">唇</a></li>
+               <li><a href="javascript:void(0);">眼睛</a></li>
+               <li><a href="javascript:void(0);">脸颊</a></li>
+               <li><a href="javascript:void(0);">皮肤护理</a></li>
+               <li><a href="javascript:void(0);">工具</a></li>
+               <li><a href="javascript:void(0);">美甲/香水</a></li>
+               <li><a href="javascript:void(0);">线上</a></li>
+               <li><a href="javascript:void(0);">Specialset</a></li>
+               <li><a href="javascript:void(0);">最后的机会</a></li>
+           </ul>
+       </div>
+    </div>
+    <!--过滤器-->
+    <div class="item-type">
+        <div class="item-type-head">
+            <ul>
+                <li><a href="javascript:void(0);">所有</a></li>
+                <li><a href="javascript:void(0);">基础</a></li>
+                <li><a href="javascript:void(0);">遮瑕</a></li>
+                <li><a href="javascript:void(0);">底漆/Luminizer</a></li>
+                <li><a href="javascript:void(0);">BB/有色</a></li>
+                <li><a href="javascript:void(0);">粉末</a></li>
+                <li><a href="javascript:void(0);">荧光笔/轮廓</a></li>
+                <li>
+                    <div id="type-bestSeller" class="dropdown"><i class="fa fa-filter"></i>&nbsp;&nbsp;
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            最畅销
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="#">最畅销</a></li>
+                            <li><a href="#">新</a></li>
+                            <li><a href="#">评论</a></li>
+                            <li><a href="#">价格从低到高</a></li>
+                            <li><a href="#">价格从高到低</a></li>
+                            <li><a href="#">评分最高</a></li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" id="type-screen"><i class="fa fa-sliders" ></i>&nbsp;&nbsp;过滤</a>
+                    <div>
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="item-type-screen">
+        <ul>
+            <li>价钱</li>
+            <li><input type="radio"><label>~10,000韩元</label></li>
+            <li><input type="radio"><label>10,000~20,000韩元</label></li>
+            <li><input type="radio"><label>20,000~30,000韩元</label></li>
+            <li><input type="radio"><label>30,000韩元〜</label></li>
+        </ul>
+        <ul>
+            <li>完</li>
+            <li><input type="radio"><label>辉光</label></li>
+            <li><input type="radio"><label>半哑光（柔滑）</label></li>
+            <li><input type="radio"><label>磨砂</label></li>
+        </ul>
+        <ul>
+            <li>覆盖</li>
+            <li><input type="radio"><label>SHEER</label></li>
+            <li><input type="radio"><label>介质</label></li>
+            <li><input type="radio"><label> 高</label></li>
+        </ul>
+        <ul>
+            <li>皮肤类型</li>
+            <li><input type="radio"><label>皮肤干燥型</label></li>
+            <li><input type="radio"><label>正常皮肤类型</label></li>
+            <li><input type="radio"><label>油性皮肤类型</label></li>
+            <li><input type="radio"><label>水分缺乏油性类型</label></li>
+        </ul>
+        <ul>
+            <li>式</li>
+            <li><input type="radio"><label>棒</label></li>
+            <li><input type="radio"><label>奶油</label></li>
+            <li><input type="radio"><label>液体</label></li>
+            <li><input type="radio"><label>人</label></li>
+            <li><input type="radio"><label>香脂</label></li>
+        </ul>
+    </div>
+    <div class="item-type-checked">
+        <div class="type-checked-box">
+            <div></div>
+            <a href="javascript:void(0);" class="clearAllType"><i></i>清除所有</a>
+        </div>
+        <div class="item-type-btn">
+            <button class="btn-checked-ok">完成</button>
+        </div>
+    </div>
+</section>
+<script src="../comm/jquery/jquery-3.2.1.js"></script>
+<script src="../comm/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/dropDown.js"></script>
+</body>
+</html>

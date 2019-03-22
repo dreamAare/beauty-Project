@@ -1,0 +1,67 @@
+.event-play{
+    width: 90%;
+    height: 680px;
+    /*background: #2aabd2;*/
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+h1,h3{
+    text-align: center;
+    color: #000;
+}
+
+h3{
+    padding: 10px;
+}
+h1{
+    padding: 40px;
+}
+
+.event-holder{
+    width: 90%;
+    margin: auto;
+}
+
+.event-box{
+    height: 418px;
+}
+
+
+.event-box p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.infor{
+    color: #a0a0a0;
+    margin: 30px 0 15px 0;
+}
+
+.date{
+    color:#ff463a ;
+}
+
+.event-box img{
+    width: 100%;
+}
+
+table{
+    width: 30%;
+    height: 85px;
+    /*background: coral;*/
+    margin:60px auto;
+}
+
+table td{
+    font-size: 18px;
+    width: 50%;
+}
+

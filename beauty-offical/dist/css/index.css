@@ -1,0 +1,405 @@
+@media screen and (max-width: 1366px) {
+    .content{
+        padding: 0 10%;
+        padding-bottom: 100px;
+    }
+    .mylistbox {
+        width: 18%;
+    }
+    .myangel{
+        font-size: 50px;
+    }
+    .myh1 {
+        text-align: left;
+        line-height: 60px;
+        font-size: 36px;
+        transform: translate(15px, -100px);
+    }
+
+    .myp1 {
+        font-size: 18px;
+        text-align: left;
+        color: darkgray;
+        transform: translate(15px, -100px);
+    }
+
+    .myh4 {
+        text-align: left;
+        transform: translate(15px, -50px);
+        color: white;
+        font-size: 12px;
+    }
+
+    .mystar{
+        font-size: 18px;
+    }
+    .mydes1{
+        font-size: 24px;
+    }
+    .mydes2{
+        font-size: 18px;
+    }
+    .myScroll > .description {
+        padding-top: 60px;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    .content{
+        padding: 0 10%;
+        padding-bottom: 200px;
+    }
+    .mylistbox {
+        width: 12%;
+    }
+    .myangel{
+        font-size: 80px;
+    }
+    .myh1 {
+        text-align: left;
+        line-height: 100px;
+        font-size: 50px;
+        transform: translate(15px, -180px);
+    }
+
+    .myp1 {
+        font-size: 24px;
+        text-align: left;
+        color: darkgray;
+        transform: translate(15px, -180px);
+    }
+
+    .myh4 {
+        text-align: left;
+        transform: translate(15px, -90px);
+        color: white;
+    }
+    .mystar{
+        font-size: 22px;
+    }
+    .mydes1{
+        font-size: 36px;
+    }
+    .mydes2{
+        font-size: 24px;
+    }
+    .myScroll > .description {
+        padding-top: 120px;
+    }
+}
+
+
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-control.left {
+
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+
+.carousel-control.right {
+    left: auto;
+    right: 0;
+
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+
+.mylistbox {
+    border-bottom: 1px solid gray;
+    left: 41%;
+    top: 12%;
+    height: 33px;
+    font-size: larger;
+    box-sizing: content-box;
+    padding-bottom: 18px;
+}
+
+.mylistbox > li {
+    text-indent: 0px;
+    border-radius: 0px;
+    height: 30px;
+    width: 32px;
+    border: none;
+    color: gray;
+    transform: translateY(2px);
+    margin: 0;
+    box-sizing: content-box;
+    padding-bottom: 16px;
+}
+
+.mylistbox > li:hover {
+    border-bottom: 4px solid white;
+    color: white;
+}
+
+.mylistbox .active {
+    width: 32px;
+    height: 30px;
+    border-bottom: 4px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.mycontent {
+    left: 10%;
+    right: 10%;
+    text-shadow: none;
+}
+
+
+.myh4 > a {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.myh4 > a:hover {
+    color: white;
+
+}
+
+.myabsolute {
+    position: absolute;
+    width: 100%;
+    top: 68%;
+    text-shadow: none;
+    text-align: center;
+}
+
+.myabsolute .items {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+
+}
+
+.banner2 > .accColor > div {
+    height: 105px;
+    padding: 20px 70px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s;
+    clear: both;
+}
+
+.banner2 > .accColor > .act h5 {
+    color: white;
+    position: absolute;
+    font-size: 24px;
+    line-height: 44px;
+    bottom: 12%;
+    left: 20%;
+    right: 20%;
+    transition: all 0.3s;
+}
+
+.banner2 > .accColor > .act {
+    position: relative;
+    height: 550px;
+    transition: all 0.3s;
+}
+
+.banner2 > .accColor > .act > h4 {
+    font-size: 36px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.banner2 > .accColor > .act > h1 {
+    margin-top: 30px;
+    transition: all 0.3s;
+}
+
+.myScroll:after {
+    content: '';
+    height: 0;
+    clear: both;
+    display: block;
+}
+
+.myScroll > .description {
+    text-align: center;
+    color: black;
+    float: left;
+    width: 34%;
+}
+
+
+.myScroll > .mySlides {
+    float: left;
+    width: 66%;
+    overflow: hidden;
+    position: relative;
+    /*background-color: #4cae4c;*/
+}
+
+.myScroll > .mySlides > .width300 {
+    margin-left: -50%;
+
+}
+
+.myScroll > .mySlides .myitem {
+    float: left;
+    width: 16.66%;
+}
+
+.myControl > div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    color: darkgray;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.myControl > div:hover {
+    color: gray;
+}
+
+.myControl > .mypre {
+    left: -5%;
+    top: 45%;
+}
+
+.myControl > .mynext {
+    right: -5%;
+    top: 45%;
+}
+
+.mymodel {
+    text-align: center;
+    position: relative;
+}
+
+.mymodel > .model1 {
+    background: url("http://192.168.3.243:3100/img/imgIndex/model1.jpg");
+    background-size: cover;
+    width: 45%;
+    height: 60%;
+    margin: 0 auto;
+    position: relative;
+    color: white;
+    text-align: left;
+    padding: 3%;
+    /*overflow: hidden;*/
+}
+
+.mymodel > .model2 {
+    background: url("../img/imgIndex/model2.jpg");
+    padding: 3%;
+    text-align: left;
+    color: white;
+    background-size: cover;
+    width: 35%;
+    height: 65%;
+    position: absolute;
+    top: 11%;
+    left: 67%;
+}
+
+.model1 > .add {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 26px;
+    color: black;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.model1 > .add:hover span {
+    color: red;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.model1 > .add div {
+    position: absolute;
+    padding: 70%;
+    display: none;
+    z-index: 99;
+}
+
+.model1 > .add:hover div {
+    display: block;
+}
+
+.myScroll2 {
+    position: relative;
+}
+
+.myScroll2 > .mySlides2 {
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.myScroll2 > .mySlides2 > .width700:after {
+    clear: both;
+    display: block;
+    content: '';
+    height: 0;
+}
+
+.myScroll2 > .mySlides2 > .width700 {
+    /*width: 7680px;*/
+    width: 1000%;
+    margin-left: -94%;
+    /*margin-left: -151%;*/
+
+}
+
+.myScroll2 > .mySlides2 > .width700 div {
+    float: left;
+    font-size: 1.1em;
+    position: relative;
+    margin: 0 100px;
+    width: 500px;
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+
+.myScroll2 > .mySlides2 > .width700 .myactive {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.myScroll2 > .mySlides2 > .width700 .myactive > img {
+    transform: scale(1.4);
+    transition: all 0.3s;
+}
+
+.myScroll2 > .mySlides2 > .width700 div > img {
+    width: 80%;
+    transition: all 0.3s;
+}
+
+.myScroll2 > .mySlides2 > .width700 div > h1 {
+    color: black;
+    font-size: 2em;
+    position: absolute;
+    left: 12%;
+    top: 20%;
+    text-align: center;
+}
+
+.mycontrol2 > div {
+    color: gray;
+    cursor: pointer;
+    position: absolute;
+    font-size: 70px;
+}
+
+.mycontrol2 > div:hover {
+    color: #2f2f2f;
+}
